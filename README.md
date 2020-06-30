@@ -1,5 +1,5 @@
 # yjeafar.github.io
-My portfolio
+
 This is a simple react app I created to make my personal website. This website includes information about me and projects I am currently work on, 
 as well as previous employment, education, etc. It also gives a way for the user to contact me. 
 
