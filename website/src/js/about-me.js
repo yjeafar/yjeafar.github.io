@@ -5,7 +5,7 @@ export default function AboutMe() {
   
     return (
       <div className="AboutMe">
-        <Header/>
+        <Header />
         About Me works!
       </div>
     );

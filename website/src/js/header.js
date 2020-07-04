@@ -11,8 +11,6 @@ import resumeIcon from '../media/resume-document.png'
 import { Link } from "react-router-dom";
 import '../css/header.css'
 
-
-
 export default function Header() {
 
     const useStyles = makeStyles({
@@ -27,7 +25,11 @@ export default function Header() {
     const [value, setValue] = React.useState(0);
 
     const handleChange = (event, newValue) => {
+        console.log(newValue);
+        
         setValue(newValue);
+
+        console.log(value)
     };
 
     return (
