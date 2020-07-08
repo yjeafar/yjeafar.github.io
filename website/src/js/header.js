@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import Paper from '@material-ui/core/Paper';
 import { makeStyles } from '@material-ui/core/styles';
 import Tabs from '@material-ui/core/Tabs';
@@ -11,7 +11,7 @@ import resumeIcon from '../media/resume-document.png'
 import { Link } from "react-router-dom";
 import '../css/header.css'
 
-export default function Header() {
+export default function Header(props) {
 
     const useStyles = makeStyles({
         root: {
@@ -19,10 +19,13 @@ export default function Header() {
             maxWidth: 1000,
         },
     });
-
     const classes = useStyles();
 
     const [value, setValue] = React.useState(0);
+
+    useEffect(() => {
+        setValue(value);
+    }, []);
 
     const handleChange = (event, newValue) => {
         console.log(newValue);
