@@ -1,11 +1,9 @@
 import React from 'react';
-import Header from './header';
 
 export default function AboutMe() {
   
     return (
       <div className="AboutMe">
-        <Header />
         <h1>A bit about me... </h1>
         <image href='' />
         <p>
@@ -15,7 +13,7 @@ export default function AboutMe() {
           community I can.
           Make it funny too!
         </p>
-        Images of me doing some stuff (skydiving, fishing, with friends/fam, etc)
+        Images of me doing some stuff (skydiving, fishing, lookking thorugh telescope, etc)
         <img href=''></img>
         <img href=''></img>
         <img href=''></img>
