@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import TextField from '@material-ui/core/TextField';
 import Grid from '@material-ui/core/Grid';
@@ -22,50 +22,44 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const initialValues = {
-  name: '',
-  email: '',
-  message: '',
-  errors: {
-    name: '',
-    email: '',
-    message: ''
-  }
-};
-
-
 export default function ContactMe() {
+
+  const [name, setName] = useState("")
+
+  const [email, setEmail] = useState("")
+
+  const [message, setMessage] = useState("")
+
+  const onSubmit = data => console.log(data);
 
   const classes = useStyles();
 
-  function getEmailError() {
-    return "You suck"
+  function handleChange (e, label) {
+    switch(label) {
+      case 'name':
+        break;
+        case 'email': 
+        break;
+        case 'message': 
+        break;
+    }
+    console.log(e.target.value);
   }
 
-  function getEmptyError() {
-    return "You suck"
-  }
+  function checkEmail(e) {
+    console.log(e)
+    return false;
+  } 
 
-  function handleSubmit() {
-    return '';
-  }
-  function handleSubmit() {
-    return '';
-  }
-
-  function handleChange () {
-    return '';
-  }
-
-  function handleBlur() {
-    return  '';
+  function handleSubmit(e) {
+    
   }
 
   return (
     <div className="ContactMe">
       <Card className={classes.card}>
         <CardContent>
-            <form className={classes.root} autoComplete="off" onSubmit={handleSubmit}>
+            <form className={classes.root} autoComplete="off" onSubmit={handleSubmit(onSubmit)}>
               <div className={classes.margin}>
                 <Grid container spacing={1} alignItems="flex-end">
                   <Grid item>
@@ -73,15 +67,13 @@ export default function ContactMe() {
                   </Grid>
                   <Grid item>
                     <TextField
-                      error={getEmptyError()}
-                      helperText={getEmptyError()}
+                      
                       id="input-with-icon-grid"
                       label="Name"
                       name="name"
                       variant="outlined"
                       margin="dense"
-                      onChange={handleChange}
-                      onBlur={handleBlur}
+                    //  onChange={e => handleChange(e, 'name')}
                     />
                   </Grid>
                 </Grid>
@@ -93,22 +85,20 @@ export default function ContactMe() {
                   </Grid>
                   <Grid item>
                     <TextField
-                      error={getEmailError}
+                      error={e => checkEmail(e)}
                       id="input-with-icon-grid"
                       label="Email"
-                      name="email"
                       type="email"
                       variant="outlined"
                       margin="dense"
-                      onChange={handleChange}
-                      onBlur={handleBlur}
+                      onChange={e => handleChange(e, 'email')}
                     />
                   </Grid>
                 </Grid>
               </div>
               <div>
                 <TextField
-                  error={getEmptyError}
+               //   error={checkEmpty}
                   id="outlined-multiline-static"
                   label="Message"
                   name="message"
@@ -117,8 +107,7 @@ export default function ContactMe() {
                   rowsMax={10}
                   variant="outlined"
                   margin="dense"
-                  onChange={handleChange}
-                  onBlur={handleBlur}
+                  onChange={e => handleChange(e, 'message')}
                 />
               </div>
               <Button
