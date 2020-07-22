@@ -24,32 +24,46 @@ const useStyles = makeStyles((theme) => ({
 
 export default function ContactMe() {
 
-  const [name, setName] = useState("")
+  const [name, setName] = useState(" ")
 
-  const [email, setEmail] = useState("")
+  const [email, setEmail] = useState(" ")
 
-  const [message, setMessage] = useState("")
+  const [message, setMessage] = useState(" ")
 
   const onSubmit = data => console.log(data);
 
   const classes = useStyles();
 
-  function handleChange (e, label) {
-    switch(label) {
-      case 'name':
-        break;
-        case 'email': 
-        break;
-        case 'message': 
-        break;
-    }
-    console.log(e.target.value);
-  }
-
   function checkEmail(e) {
     console.log(e)
     return false;
   } 
+
+  function checkError() {
+    console.log(name)
+    return (name === 'hi');
+    
+  } 
+
+  function getErrorText(label) {
+    console.log(email)
+    switch(label) {
+      case 'name':
+        if (!name) {
+          return ("Name must not be empty");
+        }
+        break;
+      case 'email': 
+        if (email.length <= 1 ) {
+          return ("Email must be valid");
+        }
+        break;
+      case 'message':
+        if (!message)
+        return ("Message must not be empty");
+        break;
+      }
+  }
 
   function handleSubmit(e) {
     
@@ -67,13 +81,15 @@ export default function ContactMe() {
                   </Grid>
                   <Grid item>
                     <TextField
-                      
+                      error={ !name }
+                      helperText={ getErrorText('name')}
                       id="input-with-icon-grid"
                       label="Name"
                       name="name"
+                      required
                       variant="outlined"
                       margin="dense"
-                    //  onChange={e => handleChange(e, 'name')}
+                      onChange={e => setName(e.target.value)}
                     />
                   </Grid>
                 </Grid>
@@ -85,29 +101,33 @@ export default function ContactMe() {
                   </Grid>
                   <Grid item>
                     <TextField
-                      error={e => checkEmail(e)}
+                      error={ !email }
+                      helperText={ getErrorText('email')}
                       id="input-with-icon-grid"
                       label="Email"
                       type="email"
+                      required
                       variant="outlined"
                       margin="dense"
-                      onChange={e => handleChange(e, 'email')}
+                      onChange={e => setEmail(e.target.value)}
                     />
                   </Grid>
                 </Grid>
               </div>
               <div>
                 <TextField
-               //   error={checkEmpty}
+                  error={ !message }
+                  helperText={ getErrorText('message')}
                   id="outlined-multiline-static"
                   label="Message"
                   name="message"
+                  required
                   multiline
                   rows={10}
                   rowsMax={10}
                   variant="outlined"
                   margin="dense"
-                  onChange={e => handleChange(e, 'message')}
+                  onChange={e => setMessage(e.target.value)}
                 />
               </div>
               <Button
