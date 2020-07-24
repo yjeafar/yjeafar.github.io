@@ -24,56 +24,63 @@ const useStyles = makeStyles((theme) => ({
 
 export default function ContactMe() {
 
-  const [name, setName] = useState(" ")
+  const [name, setName] = useState(" "); // Set initial state, space used so no error displayed on page load
 
-  const [email, setEmail] = useState(" ")
+  const [email, setEmail] = useState(" ");
 
-  const [message, setMessage] = useState(" ")
+  const [message, setMessage] = useState(" ");
 
   const onSubmit = data => console.log(data);
 
   const classes = useStyles();
 
-  function checkEmail(e) {
-    console.log(e)
-    return false;
-  } 
-
-  function checkError() {
-    console.log(name)
-    return (name === 'hi');
-    
-  } 
-
   function getErrorText(label) {
-    console.log(email)
     switch(label) {
       case 'name':
         if (!name) {
-          return ("Name must not be empty");
+          return ("Name can't not be empty");
         }
         break;
       case 'email': 
-        if (email.length <= 1 ) {
-          return ("Email must be valid");
+        if (email.length < 1) {
+          return ("Email can't be empty");
+        }
+        else if (email !== ' ' && email.length > 1 && !email.match(/(?:[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*|"(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21\x23-\x5b\x5d-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])*")@(?:(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?|\[(?:(?:(2(5[0-5]|[0-4][0-9])|1[0-9][0-9]|[1-9]?[0-9]))\.){3}(?:(2(5[0-5]|[0-4][0-9])|1[0-9][0-9]|[1-9]?[0-9])|[a-z0-9-]*[a-z0-9]:(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21-\x5a\x53-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])+)\])/)) {
+          return ('Invalid Email');
         }
         break;
       case 'message':
         if (!message)
-        return ("Message must not be empty");
+        return ("Message can't not be empty");
         break;
       }
   }
 
-  function handleSubmit(e) {
-    
+  function checkLength(label) {
+    if (label === 'message') {
+      if (message.length <= 5) {
+        return('Message is too short')
+      }
+    }
   }
+
+  function handleSubmit() {
+      if (message === ' ') {
+        return false;
+      }
+  }
+
+  function afterSubmission(event) {
+    event.preventDefault();
+    let name = '';
+    
+}
 
   return (
     <div className="ContactMe">
       <Card className={classes.card}>
         <CardContent>
-            <form className={classes.root} autoComplete="off" onSubmit={handleSubmit(onSubmit)}>
+            <form className={classes.root} autoComplete="off"  onSubmit={handleSubmit(onSubmit)}>
               <div className={classes.margin}>
                 <Grid container spacing={1} alignItems="flex-end">
                   <Grid item>
@@ -81,15 +88,15 @@ export default function ContactMe() {
                   </Grid>
                   <Grid item>
                     <TextField
-                      error={ !name }
-                      helperText={ getErrorText('name')}
+                      error={ !name } // Empty name, initialized to be a space so this is not triggered
+                      helperText={ getErrorText('name')} // Only show helper text on error
                       id="input-with-icon-grid"
                       label="Name"
                       name="name"
                       required
                       variant="outlined"
                       margin="dense"
-                      onChange={e => setName(e.target.value)}
+                      onChange={e => setName(e.target.value)} // Set state hook to new value everytime it changes
                     />
                   </Grid>
                 </Grid>
@@ -101,11 +108,10 @@ export default function ContactMe() {
                   </Grid>
                   <Grid item>
                     <TextField
-                      error={ !email }
+                      error={ !email || (email !== " " && email.length > 1 && !email.match(/(?:[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*|"(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21\x23-\x5b\x5d-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])*")@(?:(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?|\[(?:(?:(2(5[0-5]|[0-4][0-9])|1[0-9][0-9]|[1-9]?[0-9]))\.){3}(?:(2(5[0-5]|[0-4][0-9])|1[0-9][0-9]|[1-9]?[0-9])|[a-z0-9-]*[a-z0-9]:(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21-\x5a\x53-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])+)\])/)) }
                       helperText={ getErrorText('email')}
                       id="input-with-icon-grid"
                       label="Email"
-                      type="email"
                       required
                       variant="outlined"
                       margin="dense"
@@ -119,7 +125,7 @@ export default function ContactMe() {
                   error={ !message }
                   helperText={ getErrorText('message')}
                   id="outlined-multiline-static"
-                  label="Message"
+                  label="Message" 
                   name="message"
                   required
                   multiline
@@ -131,11 +137,11 @@ export default function ContactMe() {
                 />
               </div>
               <Button
-                className={classes.submitButton}
-                variant="contained"
-                color="primary"
-                type="submit"> Submit </Button>
-            </form>
+                className={classes.submitButton} 
+                variant="contained"  
+                color="primary" 
+                type="submit"> Submit </Button>  
+            </form> 
         </CardContent>
       </Card>
     </div>
