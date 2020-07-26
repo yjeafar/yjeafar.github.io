@@ -30,15 +30,13 @@ export default function ContactMe() {
 
   const [message, setMessage] = useState(" ");
 
-  const onSubmit = data => console.log(data);
-
   const classes = useStyles();
 
   function getErrorText(label) {
     switch(label) {
       case 'name':
         if (!name) {
-          return ("Name can't not be empty");
+          return ("Name can't be empty");
         }
         break;
       case 'email': 
@@ -51,36 +49,37 @@ export default function ContactMe() {
         break;
       case 'message':
         if (!message)
-        return ("Message can't not be empty");
+        return ("Message can't be empty");
+        else if (message != ' ' && message.length <= 5) {
+          return ('Message is too short')
+        }
         break;
       }
   }
 
-  function checkLength(label) {
-    if (label === 'message') {
-      if (message.length <= 5) {
-        return('Message is too short')
+  // function checkLength(label) {
+  //   if (label === 'message') {
+  //     if (message.length <= 5) {
+  //       return('Message is too short')
+  //     }
+  //   }
+  // }
+
+  function handleSubmit(e) {
+      e.preventDefault();
+      if (!name.trim().length) { 
+          setName(''); 
       }
-    }
+      setName(null);
+
   }
 
-  function handleSubmit() {
-      if (message === ' ') {
-        return false;
-      }
-  }
-
-  function afterSubmission(event) {
-    event.preventDefault();
-    let name = '';
-    
-}
 
   return (
     <div className="ContactMe">
       <Card className={classes.card}>
         <CardContent>
-            <form className={classes.root} autoComplete="off"  onSubmit={handleSubmit(onSubmit)}>
+            <form className={classes.root} autoComplete="off"  onSubmit={handleSubmit}>
               <div className={classes.margin}>
                 <Grid container spacing={1} alignItems="flex-end">
                   <Grid item>
@@ -122,7 +121,7 @@ export default function ContactMe() {
               </div>
               <div>
                 <TextField
-                  error={ !message }
+                  error={ !message || (message != ' ' && message.length <= 5) }
                   helperText={ getErrorText('message')}
                   id="outlined-multiline-static"
                   label="Message" 
