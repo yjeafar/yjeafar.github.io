@@ -22,7 +22,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function ContactMe() {
+export default function ContactMe(props) {
 
   const [name, setName] = useState(" "); // Set initial state, space used so no error displayed on page load
 
@@ -30,48 +30,63 @@ export default function ContactMe() {
 
   const [message, setMessage] = useState(" ");
 
+  const [errors, setError] = useState({});
+
   const classes = useStyles();
+
+  let errorValues = {};
 
   function getErrorText(label) {
     switch(label) {
       case 'name':
         if (!name) {
-          return ("Name can't be empty");
+          errorValues.name = "Name can't be empty";
+          return("Name can't be empty");
+        }
+        else if (name !== " " && name.length <= 1) {
+          errorValues.name = "Name is too short";
+          return("Name is too short");
         }
         break;
       case 'email': 
         if (email.length < 1) {
+          errorValues.email =  "Email can't be empty";
           return ("Email can't be empty");
         }
         else if (email !== ' ' && email.length > 1 && !email.match(/(?:[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*|"(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21\x23-\x5b\x5d-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])*")@(?:(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?|\[(?:(?:(2(5[0-5]|[0-4][0-9])|1[0-9][0-9]|[1-9]?[0-9]))\.){3}(?:(2(5[0-5]|[0-4][0-9])|1[0-9][0-9]|[1-9]?[0-9])|[a-z0-9-]*[a-z0-9]:(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21-\x5a\x53-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])+)\])/)) {
+          errorValues.email = "Invalid email";
           return ('Invalid Email');
         }
         break;
       case 'message':
-        if (!message)
-        return ("Message can't be empty");
-        else if (message != ' ' && message.length <= 5) {
+        if (!message) {
+          errorValues.message = "Message can't be empty";
+          return ("Message can't be empty");
+        }
+        else if (message !== " " && message.length <= 5) {
+          errorValues.message = "Message is too short";
           return ('Message is too short')
         }
         break;
       }
+      console.log(props);
+      // if (errorValues) {
+      //     setError(errorValues);
+      // }
   }
 
-  // function checkLength(label) {
-  //   if (label === 'message') {
-  //     if (message.length <= 5) {
-  //       return('Message is too short')
-  //     }
-  //   }
-  // }
+  function handleBlur() {
+    return;
+  }
+
 
   function handleSubmit(e) {
       e.preventDefault();
-      if (!name.trim().length) { 
-          setName(''); 
+      console.log(errors);
+      if (name.length <= 1 && name !== ' ') {
+          getErrorText('name');
       }
-      setName(null);
-
+      console.log(name);
   }
 
 
@@ -95,6 +110,7 @@ export default function ContactMe() {
                       required
                       variant="outlined"
                       margin="dense"
+                      onBlur = { handleBlur }
                       onChange={e => setName(e.target.value)} // Set state hook to new value everytime it changes
                     />
                   </Grid>
@@ -114,6 +130,7 @@ export default function ContactMe() {
                       required
                       variant="outlined"
                       margin="dense"
+                      onBlur = { handleBlur }
                       onChange={e => setEmail(e.target.value)}
                     />
                   </Grid>
@@ -132,6 +149,7 @@ export default function ContactMe() {
                   rowsMax={10}
                   variant="outlined"
                   margin="dense"
+                  onBlur = { handleBlur }
                   onChange={e => setMessage(e.target.value)}
                 />
               </div>
