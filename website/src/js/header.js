@@ -10,6 +10,7 @@ import ContactMailIcon from '@material-ui/icons/ContactMail';
 import resumeIcon from '../media/resume-document.png'
 import { Link } from "react-router-dom";
 import '../css/header.css'
+import 'bootstrap/dist/css/bootstrap.min.css';
 import * as TabValue from '../enum';
 
 export default function Header() {

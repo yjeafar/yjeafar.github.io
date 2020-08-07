@@ -1,0 +1,17 @@
+.horizontalLine {
+    color: black;
+    background-color: black;
+    height: 1px;
+}
+
+.companyName {
+    font-weight: bold;
+}
+
+.positionName {
+    font-style: italic;
+}
+
+#downloadResume {
+    margin-left: 20%;
+}
