@@ -2,15 +2,22 @@ import React from 'react';
 import Button from '@material-ui/core/Button';
 import { Row, Container, Col } from 'react-bootstrap';
 import FiberManualRecordIcon from '@material-ui/icons/FiberManualRecord';
-import FiberManualRecordOutlinedIcon from '@material-ui/icons/FiberManualRecordOutlined';
 import '../css/resume.css';
-
+import Skillset from './skills'
 
 
 export default function Resume() {
 
-  function downloadPDF(){
-      return;
+  var skillValues = {
+    Cplusplus: 3, Java: 2, VirtualBox: 3,
+    Git: 2, CSharp: 4, Bootstrap: 3, SQL: 4, AngularJs: 4,
+    React: 2, Django: 3, Python: 3, Linux: 4
+  };
+
+  console.log(skillValues);
+
+  function downloadPDF() {
+    return;
   }
 
   return (
@@ -19,7 +26,7 @@ export default function Resume() {
       Yasser Jeafar
         </div>
       <div>
-        <hr class='horizontalLine' />
+        <hr className='horizontalLine' />
         Personal Profile
       </div>
       <br />
@@ -27,7 +34,7 @@ export default function Resume() {
         <h2>
           Work Experience
         </h2>
-        <hr class='horizontalLine' />
+        <hr className='horizontalLine' />
         <Container fluid>
           <Row className='companyName'>
             <Col xs={6}>
@@ -65,7 +72,7 @@ export default function Resume() {
         <Container fluid>
           <Row className='companyName'>
             <Col xs={6}>
-              DTE Energy 
+              DTE Energy
               </Col>
             <Col xs={6}>
               February 2019 - May 2019, August 2019 - December 2019
@@ -84,22 +91,22 @@ export default function Resume() {
               Worked in SQL to find missing revenue, optimized searches for tables with 2 million+ rows
               <ul>
                 <li>
-                Revenue included unbilled traffic signals, street lights, outdoor protective lights, etc
+                  Revenue included unbilled traffic signals, street lights, outdoor protective lights, etc
                 </li>
               </ul>
             </li>
             <li>
-            Added about $70,000 in annual revenue that DTE was not billing for from before
+              Added about $70,000 in annual revenue that DTE was not billing for from before
             </li>
           </ul>
         </Container>
         <Container fluid>
           <Row className='companyName'>
             <Col xs={6}>
-              Epitec 
+              Epitec
               </Col>
             <Col xs={6}>
-            June 2018 – August 2018
+              June 2018 – August 2018
               </Col>
           </Row>
           <Row className='positionName'>
@@ -121,17 +128,17 @@ export default function Resume() {
         </Container>
       </div>
 
-      <br/>
+      <br />
 
       <div>
         <h2>
           Education
         </h2>
-        <hr class='horizontalLine' />
+        <hr className='horizontalLine' />
         <Container fluid>
           <Row className='companyName'>
             <Col xs={6}>
-              University of Michigan - Dearborn 
+              University of Michigan - Dearborn
             </Col>
             <Col xs={6}>
               December 2019
@@ -146,189 +153,92 @@ export default function Resume() {
               </Col>
           </Row>
           <div>
-          Graduated with High Distinction; 3.80 GPA; Part of Institute of Software Engineers;
+            Graduated with High Distinction; 3.80 GPA; Part of Institute of Software Engineers;
           </div>
         </Container>
       </div>
-      <br/>
+      <br />
       <div>
         <h2>
           Skills & Interests
         </h2>
         <ul>
-        <li>Skills:</li>
-        <br/>
-        <Row>
-          <div>
-            <Row>
-              <Col>
-                C++
-              </Col>
-              <Col>
-                <FiberManualRecordIcon color="primary"/>
-                <FiberManualRecordIcon/>
-                <FiberManualRecordIcon/>
-                <FiberManualRecordIcon/>
-                <FiberManualRecordIcon/>
-                <FiberManualRecordOutlinedIcon/>
-                <FiberManualRecordOutlinedIcon/>
-              </Col>
-              <Col>
-                Java;
-              </Col>
-              <Col>
-                <FiberManualRecordIcon color="primary"/>
-                <FiberManualRecordIcon/>
-                <FiberManualRecordIcon/>
-                <FiberManualRecordIcon/>
-                <FiberManualRecordIcon/>
-                <FiberManualRecordOutlinedIcon/>
-                <FiberManualRecordOutlinedIcon/>
-              </Col>
-            </Row> 
-            <Row>
-              <Col>
-                VirtualBox
-              </Col>
-              <Col>
-                <FiberManualRecordIcon color="primary"/>
-                <FiberManualRecordIcon/>
-                <FiberManualRecordIcon/>
-                <FiberManualRecordIcon/>
-                <FiberManualRecordIcon/>
-                <FiberManualRecordOutlinedIcon/>
-                <FiberManualRecordOutlinedIcon/>
-              </Col>
-              <Col>
-                Git
-              </Col>
-              <Col>
-                <FiberManualRecordIcon color="primary"/>
-                <FiberManualRecordIcon/>
-                <FiberManualRecordIcon/>
-                <FiberManualRecordIcon/>
-                <FiberManualRecordIcon/>
-                <FiberManualRecordOutlinedIcon/>
-                <FiberManualRecordOutlinedIcon/>
-              </Col>
-            </Row> 
-            <Row>
-              <Col>
-                 Bootstrap
-              </Col>
-              <Col>
-                <FiberManualRecordIcon color="primary"/>
-                <FiberManualRecordIcon/>
-                <FiberManualRecordIcon/>
-                <FiberManualRecordIcon/>
-                <FiberManualRecordIcon/>
-                <FiberManualRecordOutlinedIcon/>
-                <FiberManualRecordOutlinedIcon/>
-              </Col>
-              <Col>
-                C#
-              </Col>
-              <Col>
-                <FiberManualRecordIcon color="primary"/>
-                <FiberManualRecordIcon/>
-                <FiberManualRecordIcon/>
-                <FiberManualRecordIcon/>
-                <FiberManualRecordIcon/>
-                <FiberManualRecordOutlinedIcon/>
-                <FiberManualRecordOutlinedIcon/>
-              </Col>
-            </Row> 
-            <Row>
-              <Col>
-                SQL
-              </Col>
-              <Col>
-                <FiberManualRecordIcon color="primary"/>
-                <FiberManualRecordIcon/>
-                <FiberManualRecordIcon/>
-                <FiberManualRecordIcon/>
-                <FiberManualRecordIcon/>
-                <FiberManualRecordOutlinedIcon/>
-                <FiberManualRecordOutlinedIcon/>
-              </Col>
-              <Col>
-              AngularJs
-              </Col>
-              <Col>
-                <FiberManualRecordIcon color="primary"/>
-                <FiberManualRecordIcon/>
-                <FiberManualRecordIcon/>
-                <FiberManualRecordIcon/>
-                <FiberManualRecordIcon/>
-                <FiberManualRecordOutlinedIcon/>
-                <FiberManualRecordOutlinedIcon/>
-              </Col>
-            </Row> 
-            <Row>
-              <Col>
-                React
-              </Col>
-              <Col>
-                <FiberManualRecordIcon color="primary"/>
-                <FiberManualRecordIcon/>
-                <FiberManualRecordIcon/>
-                <FiberManualRecordIcon/>
-                <FiberManualRecordIcon/>
-                <FiberManualRecordOutlinedIcon/>
-                <FiberManualRecordOutlinedIcon/>
-              </Col>
-              <Col>
-                Django
-              </Col>
-              <Col>
-                <FiberManualRecordIcon color="primary"/>
-                <FiberManualRecordIcon/>
-                <FiberManualRecordIcon/>
-                <FiberManualRecordIcon/>
-                <FiberManualRecordIcon/>
-                <FiberManualRecordOutlinedIcon/>
-                <FiberManualRecordOutlinedIcon/>
-              </Col>
-            </Row> 
-            <Row>
-              <Col>
-                Python
-              </Col>
-              <Col>
-                <FiberManualRecordIcon color="primary"/>
-                <FiberManualRecordIcon/>
-                <FiberManualRecordIcon/>
-                <FiberManualRecordIcon/>
-                <FiberManualRecordIcon/>
-                <FiberManualRecordOutlinedIcon/>
-                <FiberManualRecordOutlinedIcon/>
-              </Col>
-              <Col>
-                Linux (Ubuntu, Arch, Manjaro)
-              </Col>
-              <Col>
-                <FiberManualRecordIcon color="primary"/>
-                <FiberManualRecordIcon/>
-                <FiberManualRecordIcon/>
-                <FiberManualRecordIcon/>
-                <FiberManualRecordIcon/>
-                <FiberManualRecordOutlinedIcon/>
-                <FiberManualRecordOutlinedIcon/>
-              </Col>
-            </Row> 
-            
-          </div>
+          <li>Skills:</li>
+          <br />
+          <Row>
+            <div>
+              <Row>
+                <Col>
+                  C++
+                </Col>
+                <Skillset value={skillValues.Cplusplus} />
+                <Col>
+                  Java
+                </Col>
+                <Skillset value={skillValues.Java} />
+              </Row>
+              <Row>
+                <Col>
+                  VirtualBox
+                </Col>
+                <Skillset value={skillValues.VirtualBox} />
+                <Col>
+                  Git
+                </Col>
+                <Skillset value={skillValues.Git} />
+              </Row>
+              <Row>
+                <Col>
+                  Bootstrap
+                </Col>
+                <Skillset value={skillValues.Bootstrap} />
+                <Col>
+                  C#
+                </Col>
+                <Skillset value={skillValues.CSharp} />
+              </Row>
+              <Row>
+                <Col>
+                  SQL
+                </Col>
+                <Skillset value={skillValues.SQL} />
+                <Col>
+                  AngularJs
+                </Col>
+                <Skillset value={skillValues.AngularJs} />
+              </Row>
+              <Row>
+                <Col>
+                  React
+                </Col>
+                <Skillset value={skillValues.React} />
+                <Col>
+                  Django
+                </Col>
+                <Skillset value={skillValues.Django} />
+              </Row>
+              <Row>
+                <Col>
+                  Python
+                </Col>
+                <Skillset value={skillValues.Python} />
+                <Col>
+                  Linux (Arch, Ubuntu, Debian)
+                </Col>
+                <Skillset value={skillValues.Linux} />
+              </Row>
+            </div>
           </Row>
-        <li>Interests: </li>
+          <li>Interests: </li>
         </ul>
       </div>
       <div>
-      <Button
-            id="downloadResume"
-            variant="contained"  
-            color="primary" 
-            onClick="downloadPDF()"
-            > Download Resume as PDF </Button>  
+        <Button
+          id="downloadResume"
+          variant="contained"
+          color="primary"
+          onClick="downloadPDF()"
+        > Download Resume as PDF </Button>
       </div>
     </div>
   );
