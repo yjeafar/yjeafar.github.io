@@ -43,10 +43,6 @@ export default function ContactMe(props) {
           errorValues.name = "Name can't be empty";
           return("Name can't be empty");
         }
-        else if (name !== " " && name.length <= 1) {
-          errorValues.name = "Name is too short";
-          return("Name is too short");
-        }
         break;
       case 'email': 
         if (email.length < 1) {
@@ -102,7 +98,7 @@ export default function ContactMe(props) {
                   </Grid>
                   <Grid item>
                     <TextField
-                      error={ !name } // Empty name, initialized to be a space so this is not triggered
+                      error={ !name  } // Empty name, initialized to be a space so this is not triggered
                       helperText={ getErrorText('name')} // Only show helper text on error
                       id="input-with-icon-grid"
                       label="Name"

@@ -1,7 +1,6 @@
 import React from 'react';
 import Button from '@material-ui/core/Button';
 import { Row, Container, Col } from 'react-bootstrap';
-import FiberManualRecordIcon from '@material-ui/icons/FiberManualRecord';
 import '../css/resume.css';
 import Skillset from './skills'
 
@@ -104,18 +103,18 @@ export default function Resume() {
           <Row className='companyName'>
             <Col xs={6}>
               Epitec
-              </Col>
+            </Col>
             <Col xs={6}>
               June 2018 – August 2018
-              </Col>
+            </Col>
           </Row>
           <Row className='positionName'>
             <Col xs={12} md={6}>
               Software Engineering Intern
-              </Col>
+            </Col>
             <Col xs={6} md={4}>
               Southfield, MI
-              </Col>
+            </Col>
           </Row>
           <ul>
             <li>

@@ -42,7 +42,7 @@ export default function Header() {
                             aria-label="icon label tabs example"
                         >
                             <Tab icon={<HomeIcon />} label="HOME" component={Link} to='/' />
-                            <Tab icon={<FaceIcon />} label="ABOUT ME" component={Link} to='/about-me' />
+                            <Tab icon={<FaceIcon />} label="EXPERIENCES" component={Link} to='/experiences' />
                             <Tab icon={<BusinessCenterIcon />} label="PORTFOLIO" component={Link} to='/portfolio' />
                             <Tab icon={<img src={resumeIcon} alt="Icon of Resume" />} label="RESUME" component={Link} to='/resume' />
                             <Tab icon={<ContactMailIcon />} label="CONTACT ME" component={Link} to='/contact-me' />
