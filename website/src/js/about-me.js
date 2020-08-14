@@ -1,7 +1,8 @@
 import React from 'react';
 import Experiences from './experiences';
-import Portfolio from './portfolio'
-import ContactMe from './contact-me'
+import Portfolio from './portfolio';
+import ContactMe from './contact-me';
+import Skills from './skills'
 
 export default function AboutMe() {
 
@@ -20,6 +21,7 @@ export default function AboutMe() {
       </p>
       <Experiences/>
       <Portfolio/>
+      <Skills/>
       <ContactMe/>
     </div>
   );
