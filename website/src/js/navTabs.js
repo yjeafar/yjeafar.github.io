@@ -13,12 +13,13 @@ import '../css/header.css'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import * as TabValue from '../enum';
 
-export default function Header() {
+export default function NavTabs() {
 
     const useStyles = makeStyles({
         root: {
             flexGrow: 1,
-            maxWidth: 1000,
+            maxWidth: 200,
+            float: "right",
         },
     });
     const classes = useStyles();
@@ -31,10 +32,10 @@ export default function Header() {
 
     return (
         <div className="header">
-            <header>
                 <Paper square className={classes.root}>
                         <Tabs
                             value={value}
+                            orientation = "vertical"
                             onChange={handleChange}
                             variant="fullWidth"
                             indicatorColor="primary"
@@ -42,14 +43,11 @@ export default function Header() {
                             aria-label="icon label tabs example"
                         >
                             <Tab icon={<HomeIcon />} label="HOME" component={Link} to='/' />
-                            <Tab icon={<FaceIcon />} label="EXPERIENCES" component={Link} to='/experiences' />
-                            <Tab icon={<BusinessCenterIcon />} label="PORTFOLIO" component={Link} to='/portfolio' />
-                            <Tab icon={<img src={resumeIcon} alt="Icon of Resume" />} label="RESUME" component={Link} to='/resume' />
-                            <Tab icon={<ContactMailIcon />} label="CONTACT ME" component={Link} to='/contact-me' />
+                            <Tab icon={<FaceIcon />} label="EXPERIENCES" component={Link} to='/#experiences' />
+                            <Tab icon={<BusinessCenterIcon />} label="PORTFOLIO" component={Link} to='/#portfolio' />
+                            <Tab icon={<ContactMailIcon />} label="CONTACT ME" component={Link} to='/#contact-me' />
                         </Tabs>
                 </Paper>
-            </header>
         </div>
     );
-
 }

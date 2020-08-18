@@ -3,6 +3,7 @@ import Experiences from './experiences';
 import Portfolio from './portfolio';
 import ContactMe from './contact-me';
 import Skills from './skills'
+import NavTabs from './navTabs';
 
 export default function AboutMe() {
 
@@ -19,6 +20,7 @@ export default function AboutMe() {
         community I can.
         Make it funny too!
       </p>
+      <NavTabs/>
       <Experiences/>
       <Portfolio/>
       <Skills/>
