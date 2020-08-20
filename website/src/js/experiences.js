@@ -15,9 +15,39 @@ export default function Experiences() {
         </div>
       <div>
         <hr className='horizontalLine' />
-        Personal Profile
+      </div>
+      <br /> 
+       <div>
+        <h2>
+          Education
+        </h2>
+        <hr className='horizontalLine' />
+        <Container fluid>
+          <Row className='companyName'>
+            <Col xs={6}>
+              University of Michigan - Dearborn
+            </Col>
+            <Col xs={6}>
+              December 2019
+            </Col>
+          </Row>
+          <Row className='positionName'>
+            <Col xs={12} md={6}>
+              Bachelor of Science in Software Engineering
+              </Col>
+            <Col xs={6} md={4}>
+              Dearborn, MI
+              </Col>
+          </Row>
+          <div>
+            Graduated with High Distinction; 3.80 GPA; Part of Institute of Software Engineers;
+          </div>
+        </Container>
       </div>
       <br />
+
+
+
       <div>
         <h2>
           Work Experience
@@ -118,47 +148,6 @@ export default function Experiences() {
 
       <br />
 
-      <div>
-        <h2>
-          Education
-        </h2>
-        <hr className='horizontalLine' />
-        <Container fluid>
-          <Row className='companyName'>
-            <Col xs={6}>
-              University of Michigan - Dearborn
-            </Col>
-            <Col xs={6}>
-              December 2019
-            </Col>
-          </Row>
-          <Row className='positionName'>
-            <Col xs={12} md={6}>
-              Bachelor of Science in Software Engineering
-              </Col>
-            <Col xs={6} md={4}>
-              Dearborn, MI
-              </Col>
-          </Row>
-          <div>
-            Graduated with High Distinction; 3.80 GPA; Part of Institute of Software Engineers;
-          </div>
-        </Container>
-      </div>
-      <br />
-      <div>
-        <h2>
-          Skills & Interests
-        </h2>
-        <ul>
-          <li>Skills:</li>
-          <br />
-          <Row>
-    
-          </Row>
-          <li>Interests: </li>
-        </ul>
-      </div>
     </div>
   );
 }
