@@ -134,7 +134,7 @@ export default function ContactMe(props) {
               </div>
               <div>
                 <TextField
-                  error={ !message || (message != ' ' && message.length <= 5) }
+                  error={ !message || (message !== ' ' && message.length <= 5) }
                   helperText={ getErrorText('message')}
                   id="outlined-multiline-static"
                   label="Message" 

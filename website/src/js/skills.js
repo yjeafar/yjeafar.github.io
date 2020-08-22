@@ -1,6 +1,5 @@
 import React from 'react';
-import Button from '@material-ui/core/Button';
-import { Row, Container, Col } from 'react-bootstrap';
+import { Row, Col } from 'react-bootstrap';
 import '../css/resume.css';
 import Skillset from './skillBar'
 
@@ -12,8 +11,6 @@ export default function Skills() {
         Git: 2, CSharp: 4, Bootstrap: 3, SQL: 4, AngularJs: 4,
         React: 2, Django: 3, Python: 3, Linux: 4
     };
-
-    console.log(skillValues);
 
     function downloadPDF() {
         return;

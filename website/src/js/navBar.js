@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import Paper from '@material-ui/core/Paper';
 import { makeStyles } from '@material-ui/core/styles';
 import Tabs from '@material-ui/core/Tabs';
@@ -12,8 +12,10 @@ import { Link } from "react-router-dom";
 import '../css/header.css'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import * as TabValue from '../enum';
+import { ScrollLink } from 'react-scroll';
+import { Nav } from 'react-bootstrap';
 
-export default function NavTabs() {
+export default function NavBar() {
 
     const useStyles = makeStyles({
         root: {
@@ -42,10 +44,22 @@ export default function NavTabs() {
                             textColor="primary"
                             aria-label="icon label tabs example"
                         >
-                            <Tab icon={<HomeIcon />} label="HOME" component={Link} to='/' />
+                            {/* <Tab icon={<HomeIcon />} label="HOME" component={Link} to='/'/>
                             <Tab icon={<FaceIcon />} label="EXPERIENCES" component={Link} to='/#experiences' />
                             <Tab icon={<BusinessCenterIcon />} label="PORTFOLIO" component={Link} to='/#portfolio' />
-                            <Tab icon={<ContactMailIcon />} label="CONTACT ME" component={Link} to='/#contact-me' />
+                            <Tab icon={<ContactMailIcon />} label="CONTACT ME" component={Link} to='/#contact-me' /> */}
+                        <Nav>
+                            <ScrollLink 
+                            to="example-destination" 
+                            spy={true} 
+                            smooth={true} 
+                            duration={500} 
+                            className='some-class' 
+                            activeClass='some-active-class'
+                            >
+                            Link Text Goes Here
+                            </ScrollLink>  
+                        </Nav> 
                         </Tabs>
                 </Paper>
         </div>

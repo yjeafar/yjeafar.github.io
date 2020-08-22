@@ -1,5 +1,4 @@
 import React from 'react';
-import { Col } from 'react-bootstrap';
 import FiberManualRecordIcon from '@material-ui/icons/FiberManualRecord';
 import FiberManualRecordOutlinedIcon from '@material-ui/icons/FiberManualRecordOutlined';
 import '../css/resume.css';

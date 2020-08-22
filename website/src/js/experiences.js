@@ -10,9 +10,6 @@ export default function Experiences() {
 
   return (
     <div className="Resume">
-      <div>Picture of me
-      Yasser Jeafar
-        </div>
       <div>
         <hr className='horizontalLine' />
       </div>
