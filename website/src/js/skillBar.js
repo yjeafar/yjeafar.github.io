@@ -1,12 +1,9 @@
 import React from 'react';
 import FiberManualRecordIcon from '@material-ui/icons/FiberManualRecord';
 import FiberManualRecordOutlinedIcon from '@material-ui/icons/FiberManualRecordOutlined';
-import '../css/resume.css';
 
 export default function SkillSet(skills) {
 
-
-    console.log(skills.value)
     var skillVal = [] // Holds filled in circles
 
     var totalVal = [] // Holds empty circles (5 minus filled in circles)

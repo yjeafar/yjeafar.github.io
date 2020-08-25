@@ -13,7 +13,6 @@ import '../css/header.css'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import * as TabValue from '../enum';
 import { ScrollLink } from 'react-scroll';
-import { Nav } from 'react-bootstrap';
 
 export default function NavBar() {
 
@@ -48,18 +47,19 @@ export default function NavBar() {
                             <Tab icon={<FaceIcon />} label="EXPERIENCES" component={Link} to='/#experiences' />
                             <Tab icon={<BusinessCenterIcon />} label="PORTFOLIO" component={Link} to='/#portfolio' />
                             <Tab icon={<ContactMailIcon />} label="CONTACT ME" component={Link} to='/#contact-me' /> */}
-                        <Nav>
-                            <ScrollLink 
-                            to="example-destination" 
-                            spy={true} 
-                            smooth={true} 
-                            duration={500} 
-                            className='some-class' 
-                            activeClass='some-active-class'
-                            >
-                            Link Text Goes Here
-                            </ScrollLink>  
-                        </Nav> 
+                            <Tab icon={<HomeIcon />} label="HOME" >
+                                <ScrollLink 
+                                to="/life" 
+                                spy={true} 
+                                smooth={true} 
+                                duration={500} 
+                                className='some-class' 
+                                activeClass='some-active-class'
+                                >
+                                Link Text Goes Here
+                                </ScrollLink>  
+                            </Tab>
+                      
                         </Tabs>
                 </Paper>
         </div>

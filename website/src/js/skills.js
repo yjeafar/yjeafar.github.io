@@ -1,6 +1,5 @@
 import React from 'react';
-import { Row, Col } from 'react-bootstrap';
-import '../css/resume.css';
+import { Row, Col, Container } from 'react-bootstrap';
 import Skillset from './skillBar'
 
 
@@ -12,15 +11,33 @@ export default function Skills() {
         React: 2, Django: 3, Python: 3, Linux: 4
     };
 
-    function downloadPDF() {
-        return;
-    }
-
     return (
         <div className="Skills">
             <div>
-            <ul>
-                <li>Skills:</li>
+                    <Container>
+                        <Row className="justify-content-md-center">
+                            <Col md="5">
+                                <h1 className="sectionTitle">Skills and Interests</h1>
+                                <div className="sectionTitle">Skills: Things I have learned <br/>  Interests: Things I do in my free time </div>
+                                <hr className='horizontalLine' />
+                            </Col>
+                        </Row>
+                    </Container>
+                    <h2>
+                        Skills
+                    </h2>
+                    <h4>
+                        Languages and Frameworks
+                    </h4>
+                    <h4>
+                        Tools
+                    </h4>
+                    <h4>
+                        Other Skills
+                    </h4>
+                    <h2>
+                        Interests
+                    </h2>
                 <br />
                     <Row>
                         <div>
@@ -86,8 +103,6 @@ export default function Skills() {
                             </Row>
                         </div>
                 </Row>
-                    <li>Interests: </li>
-                </ul>
             </div>
         </div>
     );

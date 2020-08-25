@@ -42,3 +42,13 @@
   margin: 0 auto;
   width: 70%
 }
+
+.sectionTitle {
+  text-align: center;
+}
+
+.horizontalLine {
+  color: black;
+  background-color: black;
+  height: 0.4px;
+}

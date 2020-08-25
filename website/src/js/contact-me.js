@@ -6,6 +6,7 @@ import AccountCircle from '@material-ui/icons/AccountCircle';
 import Button from '@material-ui/core/Button';
 import { Card, CardContent } from '@material-ui/core';
 import '../css/contact-me.css'
+import { Container, Row, Col } from 'react-bootstrap';
 
 
 const useStyles = makeStyles((theme) => ({
@@ -65,7 +66,6 @@ export default function ContactMe(props) {
         }
         break;
       }
-      console.log(props);
       // if (errorValues) {
       //     setError(errorValues);
       // }
@@ -82,12 +82,20 @@ export default function ContactMe(props) {
       if (name.length <= 1 && name !== ' ') {
           getErrorText('name');
       }
-      console.log(name);
   }
 
 
   return (
     <div className="ContactMe">
+      <Container>
+        <Row className="justify-content-md-center">
+          <Col md="5">
+            <h1 className="sectionTitle">Contact Me</h1>
+            <div className="sectionTitle">I usually respond pretty quickly, technology is great </div>
+            <hr className='horizontalLine' />
+          </Col>
+        </Row>
+      </Container>
       <Card className={classes.card}>
         <CardContent>
             <form className={classes.root} autoComplete="off"  onSubmit={handleSubmit}>

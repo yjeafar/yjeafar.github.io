@@ -1,7 +1,6 @@
 import React from 'react';
 import AboutMe from './js/about-me';
-import Portfolio from './js/portfolio';
-import Resume from './js/resume';
+import Projects from './js/projects';
 import ContactMe from './js/contact-me';
 import { Route } from 'react-router';
 import { Switch } from "react-router-dom";
@@ -19,8 +18,7 @@ export default function App() {
         <Switch>
           <Route path="/" component={AboutMe} exact />
           <Route path="/experiences" component={Experiences} />
-          <Route path="/portfolio" component={Portfolio} />
-          <Route path="/resume" component={Resume} />
+          <Route path="/portfolio" component={Projects} />
           <Route path="/contact-me" component={ContactMe} />
           <Route component={NotFound} />
         </Switch>

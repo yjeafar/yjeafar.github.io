@@ -1,13 +1,13 @@
 import React, { useRef } from 'react';
 import Experiences from './experiences';
-import Portfolio from './portfolio';
+import Projects from './projects';
 import ContactMe from './contact-me';
 import Skills from './skills'
 import NavBar from './navBar';
 import { Element } from 'react-scroll';
 
 export default function AboutMe() {
-  
+
   return (
     <div className="AboutMe">
       <div>Picture of me</div>
@@ -21,13 +21,14 @@ export default function AboutMe() {
         community I can.
         Make it funny too!
       </p>
-      <NavBar/>
 
+      <NavBar/> 
+    
       <Element id='example-destination' name='example-destination'>
         <Experiences/>
       </Element>
       {/* <Experiences /> */}
-      <Portfolio/>
+      <Projects/>
       <Skills/>
       <ContactMe/>
     </div>

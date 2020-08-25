@@ -1,7 +1,6 @@
 import React from 'react';
-import Button from '@material-ui/core/Button';
 import { Row, Container, Col } from 'react-bootstrap';
-import '../css/resume.css';
+import '../css/experiences.css';
 
 
 export default function Experiences() {
@@ -9,16 +8,21 @@ export default function Experiences() {
 
 
   return (
-    <div className="Resume">
-      <div>
-        <hr className='horizontalLine' />
-      </div>
+    <div className="Experiences">
+      <Container>
+        <Row className="justify-content-md-center">
+          <Col md="5">
+            <h1 className="sectionTitle">Experiences</h1>
+            <div className="sectionTitle">The experiences from my life </div>
+            <hr className="horizontalLine"/>
+          </Col>
+        </Row>
+      </Container>
       <br /> 
        <div>
         <h2>
           Education
         </h2>
-        <hr className='horizontalLine' />
         <Container fluid>
           <Row className='companyName'>
             <Col xs={6}>
@@ -41,6 +45,7 @@ export default function Experiences() {
           </div>
         </Container>
       </div>
+      <hr className='horizontalLine' />
       <br />
 
 
@@ -49,7 +54,6 @@ export default function Experiences() {
         <h2>
           Work Experience
         </h2>
-        <hr className='horizontalLine' />
         <Container fluid>
           <Row className='companyName'>
             <Col xs={6}>
