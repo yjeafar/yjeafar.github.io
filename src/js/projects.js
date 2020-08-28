@@ -1,5 +1,6 @@
 import React from 'react';
 import { Container, Col, Row } from 'react-bootstrap';
+import '../css/projects.css'
 import coach from '../pictures/coach.jpg'
 
 export default function Projects() {
@@ -17,31 +18,31 @@ export default function Projects() {
       </Container>
       <Container>
         <Row className="justify-content-md-center">
-          <div style={{paddingTop: 10, paddingRight: 10, paddingLeft:10}}>
+          <div className="imageSpacing">
             <a href="project1">
             <img height="180" width="250" src={coach}
               alt="Basketball Coach looking at players on court" />
             </a>
           </div>
-          <div  style={{paddingTop: 10, paddingRight: 10, paddingLeft:10}}>
+          <div  className="imageSpacing">
             <img height="180" width="250" src={coach}
               alt="Basketball Coach looking at players on court" />
               </div>
-          <div  style={{paddingTop: 10, paddingRight: 10, paddingLeft:10}}>
+          <div  className="imageSpacing">
             <img height="180" width="250" src={coach}
               alt="Basketball Coach looking at players on court" />
               </div>
         </Row>
         <Row className="justify-content-md-center">
-          <div style={{paddingTop: 10, paddingRight: 10, paddingLeft:10}}>
+          <div className="imageSpacing">
             <img height="180" width="250" src={coach}
               alt="Basketball Coach looking at players on court" />
           </div>
-          <div  style={{paddingTop: 10, paddingRight: 10, paddingLeft:10}}>
+          <div  className="imageSpacing">
             <img height="180" width="250" src={coach}
               alt="Basketball Coach looking at players on court" />
               </div>
-          <div  style={{paddingTop: 10, paddingRight: 10, paddingLeft:10}}>
+          <div  className="imageSpacing">
             <img height="180" width="250" src={coach}
               alt="Basketball Coach looking at players on court" />
               </div>

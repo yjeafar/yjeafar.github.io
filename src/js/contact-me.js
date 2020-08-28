@@ -14,13 +14,21 @@ const useStyles = makeStyles((theme) => ({
     margin: theme.spacing(1),
   },
   card: {
-    maxWidth: 420,
-    marginTop: 50
+    width: 600,
+    marginTop: 50,
+    marginLeft:"auto",
+    marginRight:"auto",
+    marginBottom: 50
   },
   submitButton: {
     marginTop: 10,
-    float: "right"
+    float: "right",
+    marginBottom:20
   },
+  textLength: {
+    width: 500,
+    marginLeft: 25
+  }
 }));
 
 export default function ContactMe(props) {
@@ -31,9 +39,9 @@ export default function ContactMe(props) {
 
   const [message, setMessage] = useState(" ");
 
-  const [errors, setError] = useState({});
-
   const classes = useStyles();
+
+  let isEmpty = false;
 
   let errorValues = {};
 
@@ -43,6 +51,10 @@ export default function ContactMe(props) {
         if (!name) {
           errorValues.name = "Name can't be empty";
           return("Name can't be empty");
+        }
+        if (name === ' ' && isEmpty) {
+          errorValues.name = "Name can't be empty dumbass"
+          return("Name can't be empty dumbass");
         }
         break;
       case 'email': 
@@ -66,9 +78,6 @@ export default function ContactMe(props) {
         }
         break;
       }
-      // if (errorValues) {
-      //     setError(errorValues);
-      // }
   }
 
   function handleBlur() {
@@ -78,7 +87,8 @@ export default function ContactMe(props) {
 
   function handleSubmit(e) {
       e.preventDefault();
-      console.log(errors);
+      console.log('Made it!')
+      isEmpty = true;
       if (name.length <= 1 && name !== ' ') {
           getErrorText('name');
       }
@@ -101,46 +111,40 @@ export default function ContactMe(props) {
             <form className={classes.root} autoComplete="off"  onSubmit={handleSubmit}>
               <div className={classes.margin}>
                 <Grid container spacing={1} alignItems="flex-end">
-                  <Grid item>
-                    <AccountCircle />
-                  </Grid>
-                  <Grid item>
                     <TextField
-                      error={ !name  } // Empty name, initialized to be a space so this is not triggered
+                      error={ !name || (name === ' ' && isEmpty)  } // Empty name, initialized to be a space so this is not triggered
                       helperText={ getErrorText('name')} // Only show helper text on error
-                      id="input-with-icon-grid"
+                      id="filled-required"
                       label="Name"
                       name="name"
                       required
                       variant="outlined"
                       margin="dense"
+                      className={classes.textLength}
                       onBlur = { handleBlur }
                       onChange={e => setName(e.target.value)} // Set state hook to new value everytime it changes
                     />
-                  </Grid>
                 </Grid>
               </div>
               <div className={classes.margin}>
                 <Grid container spacing={1} alignItems="flex-end">
-                  <Grid item>
-                    <AccountCircle />
-                  </Grid>
-                  <Grid item>
                     <TextField
                       error={ !email || (email !== " " && email.length > 1 && !email.match(/(?:[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*|"(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21\x23-\x5b\x5d-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])*")@(?:(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?|\[(?:(?:(2(5[0-5]|[0-4][0-9])|1[0-9][0-9]|[1-9]?[0-9]))\.){3}(?:(2(5[0-5]|[0-4][0-9])|1[0-9][0-9]|[1-9]?[0-9])|[a-z0-9-]*[a-z0-9]:(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21-\x5a\x53-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])+)\])/)) }
                       helperText={ getErrorText('email')}
-                      id="input-with-icon-grid"
+                      id="filled-required"
                       label="Email"
                       required
                       variant="outlined"
                       margin="dense"
+                      className={classes.textLength}
                       onBlur = { handleBlur }
                       onChange={e => setEmail(e.target.value)}
                     />
-                  </Grid>
                 </Grid>
               </div>
               <div>
+              <Grid container spacing={1} alignItems="flex-end">
+                  <Grid item>
                 <TextField
                   error={ !message || (message !== ' ' && message.length <= 5) }
                   helperText={ getErrorText('message')}
@@ -151,11 +155,14 @@ export default function ContactMe(props) {
                   multiline
                   rows={10}
                   rowsMax={10}
+                  className={classes.textLength}
                   variant="outlined"
                   margin="dense"
                   onBlur = { handleBlur }
                   onChange={e => setMessage(e.target.value)}
                 />
+                  </Grid>
+                </Grid>
               </div>
               <Button
                 className={classes.submitButton} 
