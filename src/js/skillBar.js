@@ -8,11 +8,11 @@ export default function SkillSet(skills) {
 
     var totalVal = [] // Holds empty circles (5 minus filled in circles)
 
-    for (var i = 0; i < skills.value; i++) {
+    for (let i = 0; i < skills.value; i++) {
         skillVal.push(' ');
     }
 
-    for (var i = 0; i < (5 - skills.value); i++) {
+    for (let i = 0; i < (5 - skills.value); i++) {
         totalVal.push(' ');
     }
 
