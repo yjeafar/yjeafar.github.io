@@ -56,35 +56,36 @@ export default function ContactMe(props) {
 
   const [message, setMessage] = useState("");
 
+  const [touched, setTouched] = useState([]);
+
   const [successShow, setSuccessShow] = useState(false); // Keeps track of success alert
 
   const [failShow, setFailShow] = useState(false); // Keeps track of failure alert
 
   const [progress, setProgress] = useState(false); // Keeps track of spinner
 
-
   const classes = useStyles();
 
   function getErrorText(label) {
     switch (label) {
       case 'name':
-        if (!name) {
+        if (!name && touched[0]) {
           return ("Name can't be empty");
         }
         break;
       case 'email':
-        if (email.length < 1) {
+        if (email.length < 1 && touched[1]) {
           return ("Email can't be empty");
         }
-        else if (email !== ' ' && email.length > 1 && !email.match(/(?:[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*|"(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21\x23-\x5b\x5d-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])*")@(?:(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?|\[(?:(?:(2(5[0-5]|[0-4][0-9])|1[0-9][0-9]|[1-9]?[0-9]))\.){3}(?:(2(5[0-5]|[0-4][0-9])|1[0-9][0-9]|[1-9]?[0-9])|[a-z0-9-]*[a-z0-9]:(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21-\x5a\x53-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])+)\])/)) {
+        else if (touched[1] && email.length > 5 && !email.match(/(?:[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*|"(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21\x23-\x5b\x5d-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])*")@(?:(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?|\[(?:(?:(2(5[0-5]|[0-4][0-9])|1[0-9][0-9]|[1-9]?[0-9]))\.){3}(?:(2(5[0-5]|[0-4][0-9])|1[0-9][0-9]|[1-9]?[0-9])|[a-z0-9-]*[a-z0-9]:(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21-\x5a\x53-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])+)\])/)) {
           return ('Invalid Email');
         }
         break;
       case 'message':
-        if (!message) {
+        if (!message && touched[2]) {
           return ("Message can't be empty");
         }
-        else if (message !== " " && message.length <= 5) {
+        else if (touched[2] && message.length <= 5) {
           return ('Message is too short')
         }
         break;
@@ -94,21 +95,31 @@ export default function ContactMe(props) {
   }
 
   function resetForm() {
-    
     setName("");
     setEmail("");
     setMessage("");
-   // document.getElementById("contactForm").reset();
+    setTouched([]);
+  }
+
+  function handleBlur(event) {
+    if (!touched.includes(event.target.name)) {
+      setTouched([
+        ...touched,
+        event.target.name
+      ])
+    }
   }
 
 
   function handleSubmit(e) {
     e.preventDefault();
-    setProgress(true);
-    window.emailjs.send(
-      'gmail', 'OnlineResume', { message: message, user_name: name, user_email: email }
-    ).then(res => { setSuccessShow(true); setProgress(false); resetForm(); })
-      .catch(err => { setFailShow(true); setProgress(false) })
+    if (name && email && message) {
+      setProgress(true);
+      window.emailjs.send(
+        'gmail', 'OnlineResume', { message: message, user_name: name, user_email: email }
+      ).then(res => { setSuccessShow(true); setProgress(false); resetForm(); })
+        .catch(err => { setFailShow(true); setProgress(false) })
+    }
   }
 
 
@@ -156,12 +167,13 @@ export default function ContactMe(props) {
             <div className={classes.margin}>
               <Grid container spacing={1} alignItems="flex-end">
                 <TextField
-                  error={!name} // Empty name, initialized to be a space so this is not triggered
+                  error={!name && touched.includes("name")} // Empty name, initialized to be a space so this is not triggered
                   helperText={getErrorText('name')} // Only show helper text on error
                   id="filled-required"
                   label="Name"
                   name="name"
-                  value= {name}
+                  value={name}
+                  onBlur={(e) => handleBlur(e)}
                   required
                   variant="outlined"
                   margin="dense"
@@ -173,12 +185,13 @@ export default function ContactMe(props) {
             <div className={classes.margin}>
               <Grid container spacing={1} alignItems="flex-end">
                 <TextField
-                  error={!email || (email !== " " && email.length > 1 && !email.match(/(?:[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*|"(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21\x23-\x5b\x5d-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])*")@(?:(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?|\[(?:(?:(2(5[0-5]|[0-4][0-9])|1[0-9][0-9]|[1-9]?[0-9]))\.){3}(?:(2(5[0-5]|[0-4][0-9])|1[0-9][0-9]|[1-9]?[0-9])|[a-z0-9-]*[a-z0-9]:(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21-\x5a\x53-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])+)\])/))}
+                  error={(!email && touched.includes("email")) || (touched.includes("email") && email.length > 5 && !email.match(/(?:[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*|"(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21\x23-\x5b\x5d-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])*")@(?:(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?|\[(?:(?:(2(5[0-5]|[0-4][0-9])|1[0-9][0-9]|[1-9]?[0-9]))\.){3}(?:(2(5[0-5]|[0-4][0-9])|1[0-9][0-9]|[1-9]?[0-9])|[a-z0-9-]*[a-z0-9]:(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21-\x5a\x53-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])+)\])/))}
                   helperText={getErrorText('email')}
                   id="filled-required"
                   label="Email"
                   name="email"
-                  value= {email}
+                  value={email}
+                  onBlur={(e) => handleBlur(e)}
                   required
                   variant="outlined"
                   margin="dense"
@@ -191,12 +204,13 @@ export default function ContactMe(props) {
               <Grid container spacing={1} alignItems="flex-end">
                 <Grid item>
                   <TextField
-                    error={!message || (message !== ' ' && message.length <= 5)}
+                    error={(!message && touched.includes("message")) || (touched.includes("message") && message.length <= 5)}
                     helperText={getErrorText('message')}
                     id="outlined-multiline-static"
                     label="Message"
                     name="message"
-                    value= {message}
+                    value={message}
+                    onBlur={(e) => handleBlur(e)}
                     required
                     multiline
                     rows={10}
