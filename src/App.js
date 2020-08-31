@@ -6,7 +6,9 @@ import { Route } from 'react-router';
 import { Switch } from "react-router-dom";
 import NotFound from './js/not-found';
 import Experiences from './js/experiences';
+import Skills from './js/skills';
 import './App.css'
+
 
 
 
@@ -18,7 +20,8 @@ export default function App() {
         <Switch>
           <Route path="/" component={AboutMe} exact />
           <Route path="/experiences" component={Experiences} />
-          <Route path="/portfolio" component={Projects} />
+          <Route path="/projects" component={Projects} />
+          <Route path="/skills" component={Skills} />
           <Route path="/contact-me" component={ContactMe} />
           <Route component={NotFound} />
         </Switch>

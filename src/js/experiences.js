@@ -8,7 +8,7 @@ export default function Experiences() {
 
 
   return (
-    <div className="Experiences">
+    <div className="Experiences" id="experiences">
       <Container>
         <Row className="justify-content-md-center">
           <Col md="5">

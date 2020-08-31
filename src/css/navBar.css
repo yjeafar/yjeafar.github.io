@@ -1,0 +1,13 @@
+.header {
+    position:fixed; 
+    margin-left: -18%; /* Bad practice, however I couldn't get the nav bar to align to the left without the negative sign */
+    margin-top: 5%;
+}
+html {
+    scroll-behavior: smooth;
+}
+
+a { 
+    color: #0004ff;
+    text-decoration: none;
+} 

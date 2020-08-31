@@ -12,7 +12,7 @@ export default function Skills() {
     };
 
     return (
-        <div className="Skills">
+        <div className="Skills" id="skills">
             <div>
                     <Container>
                         <Row className="justify-content-md-center">

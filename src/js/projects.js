@@ -6,7 +6,7 @@ import coach from '../pictures/coach.jpg'
 export default function Projects() {
 
   return (
-    <div className="Projects">
+    <div className="Projects" id="projects">
       <Container>
         <Row className="justify-content-md-center">
           <Col md="5">

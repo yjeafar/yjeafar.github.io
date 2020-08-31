@@ -124,7 +124,7 @@ export default function ContactMe(props) {
 
 
   return (
-    <div className="ContactMe">
+    <div className="ContactMe" id="contact-me">
       <Container>
         <Row className="justify-content-md-center">
           <Col md="5">
