@@ -12,7 +12,7 @@ import { Link, useHistory } from "react-router-dom";
 import '../css/navBar.css'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import * as TabValue from '../enum';
-import { ScrollLink } from 'react-scroll';
+import * as $ from 'jquery'; 
 
 export default function NavBar() {
 
@@ -36,6 +36,23 @@ export default function NavBar() {
 
     const history = useHistory();
 
+    // $(window).scroll(
+    //     function(){
+    //         if($(this).scrollTop() == 100){
+    //             history.push("#");
+    //         } else if ($(this).scrollTop() == 250) {
+    //             history.push("#experiences");
+    //         } else if ($(this).scrollTop() == 350 && $(this).scrollTop() < 450) {
+    //             history.push("#projects");
+    //         } else if ($(this).scrollTop() > 450 && $(this).scrollTop() < 550) {
+    //             history.push("#skills");
+    //         } else if ($(this).scrollTop() > 550 && $(this).scrollTop() < 650) {
+    //             history.push("#contact-me");
+    //         }
+    //         console.log(history)
+    //     }
+    // );
+
     return (
         <div className="header">
                 <Paper square className={classes.root}>
@@ -48,11 +65,11 @@ export default function NavBar() {
                             textColor="primary"
                             aria-label="icon label tabs example"
                         >
-                            <Tab icon={<HomeIcon />} label="PORTFOLIO" href="#" onClick={() => history.push("#")}/>
-                            <Tab icon={<FaceIcon />} label="EXPERIENCES" href="#experiences" onClick={() => history.push("#experiences")}/>
-                            <Tab icon={<BusinessCenterIcon />} label="PROJECTS" href="#projects" onClick={() => history.push("#projects")} />
-                            <Tab icon={<BarChartIcon />} label="SKILLS & INTERESTS" href="#skills" onClick={() => history.push("#skills")} />
-                            <Tab icon={<ContactMailIcon />} label="CONTACT ME" href="#contact-me" onClick={() => history.push("#contact-me")} />
+                            <Tab icon={<HomeIcon />} label="PORTFOLIO" href="#" />
+                            <Tab icon={<FaceIcon />} label="EXPERIENCES" href="#experiences" />
+                            <Tab icon={<BusinessCenterIcon />} label="PROJECTS" href="#projects" />
+                            <Tab icon={<BarChartIcon />} label="SKILLS & INTERESTS" href="#skills" />
+                            <Tab icon={<ContactMailIcon />} label="CONTACT ME" href="#contact-me" />
                         </Tabs>
                 </Paper>
         </div>
