@@ -1,6 +1,7 @@
 import React from 'react';
 import { Row, Col, Container } from 'react-bootstrap';
 import Skillset from './skillBar'
+import '../css/skills.css'
 
 
 export default function Skills() {
@@ -8,7 +9,7 @@ export default function Skills() {
     var skillValues = {
         Cplusplus: 3, Java: 2, VirtualBox: 3,
         Git: 2, CSharp: 4, Bootstrap: 3, SQL: 4, AngularJs: 4,
-        React: 2, Django: 3, Python: 3, Linux: 4, FileZilla:5, 
+        React: 2, Django: 3, Python: 3, Linux: 4, FileZilla: 5,
         Apache: 3
     };
 
@@ -25,31 +26,139 @@ export default function Skills() {
                     </Row>
                 </Container>
                 <Container>
-                <h2>
-                    Skills
-                </h2>
-                <Row>
-                    <Col xs={10} md={5}>
-                        <h4>
-                            Languages & Frameworks
-                        </h4>
-                        <Row>
-                                C++
+                    <h2>
+                        Skills
+                    </h2>
+                    <Row>
+                        <Col>
+                    <h3>
+                        Languages & Frameworks
+                    </h3>
+                    <Row>
+                        <Col xs={6} md={3}>
+                            C++
+                        </Col>
+                        <Col>
                             <Skillset value={skillValues.Cplusplus} />
-                        </Row>
-                    </Col>
-                    <Col xs={4} md={3}>
-                        <h4>
-                            Tools
-                        </h4>
-                    </Col>
-                    <Col>
-                        <h4>
-                            Other Skills
-                        </h4>
-                    </Col>
-                </Row>
-                {/* <Container>
+                        </Col>
+                    </Row>
+                    <Row>
+                        <Col xs={6} md={3}>
+                            Java
+                            </Col>
+                        <Col>
+                            <Skillset value={skillValues.Java} />
+                        </Col>
+                    </Row>
+                    <Row>
+                        <Col xs={6} md={3}>
+                            Filezilla
+                            </Col>
+                        <Col>
+                            <Skillset value={skillValues.FileZilla} />
+                        </Col>
+                    </Row>
+                </Col>
+
+                <Col>
+                    <h3>
+                        Tools
+                    </h3>
+                    <Row>
+                        <Col xs={6} md={3}>
+                            C++
+                        </Col>
+                        <Col>
+                            <Skillset value={skillValues.Cplusplus} />
+                        </Col>
+                    </Row>
+                    <Row>
+                        <Col xs={6} md={3}>
+                            Java
+                        </Col>
+                        <Col>
+                            <Skillset value={skillValues.Java} />
+                        </Col>
+                    </Row>
+                    <Row>
+                        <Col xs={6} md={3}>
+                            Filezilla
+                            </Col>
+                        <Col>
+                            <Skillset value={skillValues.FileZilla} />
+                        </Col>
+                    </Row>
+                </Col>
+                    </Row>
+
+
+
+
+
+
+                    <Row>
+                        <Col>
+                    <h3>
+                        Other Skills
+                    </h3>
+                    <Row>
+                        <Col xs={6} md={3}>
+                            C++
+                        </Col>
+                        <Col>
+                            <Skillset value={skillValues.Cplusplus} />
+                        </Col>
+                    </Row>
+                    <Row>
+                        <Col xs={6} md={3}>
+                            Java
+                            </Col>
+                        <Col>
+                            <Skillset value={skillValues.Java} />
+                        </Col>
+                    </Row>
+                    <Row>
+                        <Col xs={6} md={3}>
+                            Filezilla
+                            </Col>
+                        <Col>
+                            <Skillset value={skillValues.FileZilla} />
+                        </Col>
+                    </Row>
+                </Col>
+
+                <Col>
+                    <h3>
+                        Interests
+                    </h3>
+                    <Row>
+                        <Col xs={6} md={3}>
+                            C++
+                        </Col>
+                        <Col>
+                            <Skillset value={skillValues.Cplusplus} />
+                        </Col>
+                    </Row>
+                    <Row>
+                        <Col xs={6} md={3}>
+                            Java
+                        </Col>
+                        <Col>
+                            <Skillset value={skillValues.Java} />
+                        </Col>
+                    </Row>
+                    <Row>
+                        <Col xs={6} md={3}>
+                            Filezilla
+                            </Col>
+                        <Col>
+                            <Skillset value={skillValues.FileZilla} />
+                        </Col>
+                    </Row>
+                </Col>
+                    </Row>
+
+                    {/* <Container>
                 <Row>
                     <div>
                         <Row>

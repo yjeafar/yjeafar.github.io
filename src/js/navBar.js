@@ -36,22 +36,21 @@ export default function NavBar() {
 
     const history = useHistory();
 
-    // $(window).scroll(
-    //     function(){
-    //         if($(this).scrollTop() == 100){
-    //             history.push("#");
-    //         } else if ($(this).scrollTop() == 250) {
-    //             history.push("#experiences");
-    //         } else if ($(this).scrollTop() == 350 && $(this).scrollTop() < 450) {
-    //             history.push("#projects");
-    //         } else if ($(this).scrollTop() > 450 && $(this).scrollTop() < 550) {
-    //             history.push("#skills");
-    //         } else if ($(this).scrollTop() > 550 && $(this).scrollTop() < 650) {
-    //             history.push("#contact-me");
-    //         }
-    //         console.log(history)
-    //     }
-    // );
+    $(window).scroll(
+        function(){
+            if($(this).scrollTop() > 100 && $(this).scrollTop() < 250){
+                window.location.hash.replace("#", '', "#projects");
+            } else if ($(this).scrollTop() > 250 && $(this).scrollTop() < 500 ) {
+                window.location.hash.replace("#experiences");
+            } else if ($(this).scrollTop() == 350 && $(this).scrollTop() < 450) {
+               // history.push("#projects");
+            } else if ($(this).scrollTop() > 450 && $(this).scrollTop() < 550) {
+              //  history.push("#skills");
+            } else if ($(this).scrollTop() > 550 && $(this).scrollTop() < 650) {
+              //  history.push("#contact-me");
+            }
+        }
+    );
 
     return (
         <div className="header">
