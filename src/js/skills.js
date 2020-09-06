@@ -10,10 +10,11 @@ export default function Skills() {
         Cplusplus: 3, Java: 2, VirtualBox: 3,
         Git: 2, CSharp: 4, Bootstrap: 3, SQL: 4, AngularJs: 4,
         React: 3, Django: 3, Python: 3, Linux: 4, FileZilla: 5,
-        Apache: 3, JavaScript: 5, Typescript: 5, SSMS: 5, Git: 4,
+        Apache: 2, JavaScript: 5, Typescript: 5, SSMS: 5, Git: 4,
         Docker: 2, CloneZilla: 5, SublimeText: 3, VisualStudio: 5,
         NotepadPlusPlus: 4, SSIS: 4, Bash: 5, MSOffice: 5,
-        NextCloud: 5, PiHole: 5, HomeServer: 3, RSAEncryptions: 4
+        NextCloud: 5, PiHole: 5, HomeServer: 3, RSAEncryptions: 4,
+        HTML: 5, CSS: 4, DomainDrivenDesign: 5,
     };
 
     return (
@@ -32,115 +33,151 @@ export default function Skills() {
                     <h2>
                         Skills
                     </h2>
-                    <Row>
-                        <Col>
-                            <h3 className="headerStyle">
-                                Languages & Frameworks
+                    <h3 className="headerStyle">
+                        Languages & Frameworks
                     </h3>
+                    <Row>
+                        <Col md={5}>
                             <Row>
-                                <Col xs={6} md={4}>
+                                <Col xs={6} md={5}>
                                     C++
-                        </Col>
+                                </Col>
                                 <Col>
                                     <Skillset value={skillValues.Cplusplus} />
                                 </Col>
                             </Row>
                             <Row>
-                                <Col xs={6} md={4}>
+                                <Col xs={6} md={5}>
                                     C#
-                        </Col>
+                                    </Col>
                                 <Col>
                                     <Skillset value={skillValues.CSharp} />
                                 </Col>
                             </Row>
                             <Row>
-                                <Col xs={6} md={4}>
-                                    Java
-                            </Col>
+                                <Col xs={6} md={5}>
+                                    HTML
+                                </Col>
                                 <Col>
-                                    <Skillset value={skillValues.Java} />
+                                    <Skillset value={skillValues.HTML} />
                                 </Col>
                             </Row>
                             <Row>
-                                <Col xs={6} md={4}>
-                                    Python
-                        </Col>
+                                <Col xs={6} md={5}>
+                                    CSS
+                                    </Col>
                                 <Col>
-                                    <Skillset value={skillValues.Python} />
+                                    <Skillset value={skillValues.CSS} />
                                 </Col>
                             </Row>
                             <Row>
-                                <Col xs={6} md={4}>
-                                    JavaScript
-                        </Col>
+                                <Col xs={6} md={5}>
+                                    React
+                                </Col>
                                 <Col>
-                                    <Skillset value={skillValues.JavaScript} />
+                                    <Skillset value={skillValues.React} />
                                 </Col>
                             </Row>
                             <Row>
-                                <Col xs={6} md={4}>
-                                    TypeScript
-                        </Col>
-                                <Col>
-                                    <Skillset value={skillValues.Typescript} />
-                                </Col>
-                            </Row>
-                            <Row>
-                                <Col xs={6} md={4}>
+                                <Col xs={6} md={5}>
                                     SQL
-                        </Col>
+                                    </Col>
                                 <Col>
                                     <Skillset value={skillValues.SQL} />
                                 </Col>
                             </Row>
                             <Row>
-                                <Col xs={6} md={4}>
-                                    Django
+                                <Col xs={6} md={5}>
+                                    Bootstrap
+                                </Col>
+                                <Col>
+                                    <Skillset value={skillValues.Bootstrap} />
+                                </Col>
+                            </Row>
                         </Col>
+                        <Col md={7}>
+                            <Row>
+                                <Col xs={6} md={5}>
+                                    Java
+                                </Col>
+                                <Col>
+                                    <Skillset value={skillValues.Java} />
+                                </Col>
+                            </Row>
+                            <Row>
+                                <Col xs={6} md={5}>
+                                    Python
+                                    </Col>
+                                <Col>
+                                    <Skillset value={skillValues.Python} />
+                                </Col>
+                            </Row>
+                            <Row>
+                                <Col xs={6} md={5}>
+                                    Django
+                                </Col>
                                 <Col>
                                     <Skillset value={skillValues.Django} />
                                 </Col>
                             </Row>
                             <Row>
-                                <Col xs={6} md={4}>
-                                    AngularJs
-                        </Col>
+                                <Col xs={6} md={5}>
+                                    Angular
+                                    </Col>
                                 <Col>
                                     <Skillset value={skillValues.AngularJs} />
                                 </Col>
                             </Row>
                             <Row>
-                                <Col xs={6} md={4}>
-                                    React
-                        </Col>
+                                <Col xs={6} md={5}>
+                                    JavaScript
+                                </Col>
                                 <Col>
-                                    <Skillset value={skillValues.React} />
+                                    <Skillset value={skillValues.JavaScript} />
+                                </Col>
+                            </Row>
+                            <Row>
+                                <Col xs={6} md={5}>
+                                    TypeScript
+                                    </Col>
+                                <Col>
+                                    <Skillset value={skillValues.Typescript} />
+                                </Col>
+                            </Row>
+                            <Row>
+                                <Col xs={6} md={5}>
+                                    Domain Driven Design
+                                </Col>
+                                <Col>
+                                    <Skillset value={skillValues.DomainDrivenDesign} />
                                 </Col>
                             </Row>
                         </Col>
-
-                        <Col>
-                            <h3 className="headerStyle">
+                    </Row>
+                    <br />
+                    <h3 className="headerStyle">
                                 Tools
                     </h3>
+                    <Row>
+                        <Col md={5}>
                             <Row>
-                                <Col xs={6} md={4}>
+                                <Col xs={6} md={5}>
                                     SSMS
-                        </Col>
+                                </Col>
                                 <Col>
                                     <Skillset value={skillValues.SSMS} />
                                 </Col>
                             </Row>
                             <Row>
-                                <Col xs={6} md={4}>
+                                <Col xs={6} md={5}>
                                     Git
-                        </Col>
+                                </Col>
                                 <Col>
                                     <Skillset value={skillValues.Git} />
                                 </Col>
                             </Row>
                             <Row>
-                                <Col xs={6} md={4}>
+                                <Col xs={6} md={5}>
                                     Docker
                             </Col>
                                 <Col>
@@ -148,79 +185,81 @@ export default function Skills() {
                                 </Col>
                             </Row>
                             <Row>
-                                <Col xs={6} md={4}>
+                                <Col xs={6} md={5}>
                                     FileZilla
-                        </Col>
+                                </Col>
                                 <Col>
                                     <Skillset value={skillValues.FileZilla} />
                                 </Col>
                             </Row>
                             <Row>
-                                <Col xs={6} md={4}>
+                                <Col xs={6} md={5}>
                                     CloneZilla
-                        </Col>
+                                </Col>
                                 <Col>
                                     <Skillset value={skillValues.CloneZilla} />
                                 </Col>
                             </Row>
-                            <Row>
-                                <Col xs={6} md={4}>
-                                    MS Office
-                        </Col>
-                                <Col>
-                                    <Skillset value={skillValues.MSOffice} />
+                            </Col>
+                            <Col md={7}>
+                                <Row>
+                                    <Col xs={6} md={5}>
+                                        MS Office
+                                    </Col>
+                                    <Col>
+                                        <Skillset value={skillValues.MSOffice} />
+                                    </Col>
+                                </Row>
+                                <Row>
+                                    <Col xs={6} md={5}>
+                                        Sublime Text
+                                    </Col>
+                                    <Col>
+                                        <Skillset value={skillValues.SublimeText} />
+                                    </Col>
+                                </Row>
+                                <Row>
+                                    <Col xs={6} md={5}>
+                                        Visual Studio
                                 </Col>
-                            </Row>
-                            <Row>
-                                <Col xs={6} md={4}>
-                                    Sublime Text
-                        </Col>
-                                <Col>
-                                    <Skillset value={skillValues.SublimeText} />
-                                </Col>
-                            </Row>
-                            <Row>
-                                <Col xs={6} md={4}>
-                                    Visual Studio
-                        </Col>
-                                <Col>
-                                    <Skillset value={skillValues.VisualStudio} />
-                                </Col>
-                            </Row>
-                            <Row>
-                                <Col xs={6} md={4}>
-                                    Notepad++
-                        </Col>
-                                <Col>
-                                    <Skillset value={skillValues.NotepadPlusPlus} />
-                                </Col>
-                            </Row>
-                            <Row>
-                                <Col xs={6} md={4}>
-                                    SSIS
-                        </Col>
-                                <Col>
-                                    <Skillset value={skillValues.SSIS} />
-                                </Col>
-                            </Row>
-                            <br />
-                        </Col>
+                                    <Col>
+                                        <Skillset value={skillValues.VisualStudio} />
+                                    </Col>
+                                </Row>
+                                <Row>
+                                    <Col xs={6} md={5}>
+                                        Notepad++
+                                    </Col>
+                                    <Col>
+                                        <Skillset value={skillValues.NotepadPlusPlus} />
+                                    </Col>
+                                </Row>
+                                <Row>
+                                    <Col xs={6} md={5}>
+                                        SSIS
+                                    </Col>
+                                    <Col>
+                                        <Skillset value={skillValues.SSIS} />
+                                    </Col>
+                                </Row>
+                                <br />
+                            </Col>
                     </Row>
-                    <Row>
-                        <Col>
-                            <h3 className="headerStyle">
+                    <h3 className="headerStyle">
                                 Other Skills
-                    </h3>
+                            </h3>
+                    <Row>
+                        <Col md={5}>
                             <Row>
-                                <Col xs={6} md={4}>
+                                <Col xs={6} md={5}>
                                     Apache
-                        </Col>
+                                </Col>
                                 <Col>
                                     <Skillset value={skillValues.Apache} />
                                 </Col>
                             </Row>
                             <Row>
-                                <Col xs={6} md={4}>
+                                <Col xs={6} md={5}>
                                     NextCloud
                             </Col>
                                 <Col>
@@ -228,33 +267,35 @@ export default function Skills() {
                                 </Col>
                             </Row>
                             <Row>
-                                <Col xs={6} md={4}>
+                                <Col xs={6} md={5}>
                                     PiHole
                             </Col>
                                 <Col>
                                     <Skillset value={skillValues.PiHole} />
                                 </Col>
                             </Row>
+                        </Col>
+                        <Col md={7}>
                             <Row>
-                                <Col xs={6} md={4}>
+                                <Col xs={6} md={5}>
                                     Home Server Setup
-                            </Col>
+                                </Col>
                                 <Col>
                                     <Skillset value={skillValues.HomeServer} />
                                 </Col>
                             </Row>
                             <Row>
-                                <Col xs={6} md={4}>
+                                <Col xs={6} md={5}>
                                     RSA Encryptions
-                            </Col>
+                                </Col>
                                 <Col>
                                     <Skillset value={skillValues.RSAEncryptions} />
                                 </Col>
                             </Row>
                             <Row>
-                                <Col xs={6} md={4}>
+                                <Col xs={6} md={5}>
                                     Bash
-                            </Col>
+                                </Col>
                                 <Col>
                                     <Skillset value={skillValues.Bash} />
                                 </Col>

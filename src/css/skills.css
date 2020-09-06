@@ -1,3 +1,7 @@
 .headerStyle { /* Used to set the same height since height has multiple lines*/
     padding-bottom:10px;
 }
+
+.SkillSet {
+    max-width: 150px;
+}
