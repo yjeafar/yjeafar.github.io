@@ -50,5 +50,11 @@
 .horizontalLine {
   color: black;
   background-color: black;
-  height: 0.4px;
+  height: 1x;
+}
+
+.sectionLine {
+  color: silver;
+  background-color:silver;
+  height: 1px;
 }

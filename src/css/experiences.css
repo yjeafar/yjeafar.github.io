@@ -1,5 +1,6 @@
 .companyName {
     font-weight: bold;
+    padding-left: 15px;
 }
 
 .positionName {
@@ -8,4 +9,19 @@
 
 #downloadResume {
     margin-left: 20%;
+}
+
+.Experiences {
+    min-height: 1000px;
+}
+
+.boxBorder {
+    border: 10px silver double;
+    border-radius: 15px;
+    padding: 5px;
+}
+
+.experienceSpacing {
+    padding-top: 5%;
+    
 }

@@ -5,3 +5,7 @@
 .SkillSet {
     max-width: 150px;
 }
+
+#skillsPadding {
+    padding-bottom: 3%;
+}

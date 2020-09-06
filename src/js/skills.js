@@ -30,7 +30,7 @@ export default function Skills() {
                     </Row>
                 </Container>
                 <Container>
-                    <h2>
+                    <h2 id="skillsPadding">
                         Skills
                     </h2>
                     <h3 className="headerStyle">
@@ -155,6 +155,7 @@ export default function Skills() {
                         </Col>
                     </Row>
                     <br />
+                    <hr className="sectionLine"/>
                     <h3 className="headerStyle">
                                 Tools
                     </h3>
@@ -245,6 +246,9 @@ export default function Skills() {
                                 <br />
                             </Col>
                     </Row>
+                    <br/>
+                    <hr className="sectionLine"/>
+
                     <h3 className="headerStyle">
                                 Other Skills
                             </h3>
@@ -277,7 +281,7 @@ export default function Skills() {
                         </Col>
                         <Col md={7}>
                             <Row>
-                                <Col xs={6} md={5}>
+                                <Col  sm={6} md={5}>
                                     Home Server Setup
                                 </Col>
                                 <Col>
@@ -285,7 +289,7 @@ export default function Skills() {
                                 </Col>
                             </Row>
                             <Row>
-                                <Col xs={6} md={5}>
+                                <Col  sm={6} md={5}>
                                     RSA Encryptions
                                 </Col>
                                 <Col>
@@ -293,7 +297,7 @@ export default function Skills() {
                                 </Col>
                             </Row>
                             <Row>
-                                <Col xs={6} md={5}>
+                                <Col  sm={6} md={5}>
                                     Bash
                                 </Col>
                                 <Col>
