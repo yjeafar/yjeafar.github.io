@@ -16,7 +16,7 @@
 }
 
 .boxBorder {
-    border: 10px silver double;
+    border: 10px silver ridge;
     border-radius: 15px;
     padding: 5px;
 }

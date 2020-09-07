@@ -34,18 +34,18 @@ export default function Experiences() {
           </Row>
           <Box m={1} className="boxBorder">
           <Row className='positionName'>
-            <Col xs={12} md={6}>
+            <Col xs={12} md={12}>
               Bachelor of Science in Software Engineering
             </Col>
           </Row>
-          <div>
+          <p>
             I started school knowiong I would do engineering but not knowing what exactly. Coming from a Middle Eastern background and with my
             parents being first generation immigrants without a whole lot of knowledge about computers, I didn't consider Software Engineering
             at first. After some time, I came across the field and was curious. After my first CIS class, I knew this was what I wanted to do for
             the rest of my life. I joined the Insitute of Software Engineers and volunteered to help at Hackathons and taught kids in low
             privillage areas to code through Google Code Corps. I graduated with a 3.80 GPA and was on the dean's list for multiple consecutive 
             semesters. 
-          </div>
+          </p>
           </Box>
         </Container>
       <hr className='horizontalLine' style={{marginTop: 50}}/>

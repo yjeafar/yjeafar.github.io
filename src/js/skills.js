@@ -10,7 +10,7 @@ export default function Skills() {
         Cplusplus: 3, Java: 2, VirtualBox: 3,
         Git: 2, CSharp: 4, Bootstrap: 3, SQL: 4, AngularJs: 4,
         React: 3, Django: 3, Python: 3, Linux: 4, FileZilla: 5,
-        Apache: 2, JavaScript: 5, Typescript: 5, SSMS: 5, Git: 4,
+        Apache: 2, JavaScript: 5, Typescript: 5, SSMS: 5,
         Docker: 2, CloneZilla: 5, SublimeText: 3, VisualStudio: 5,
         NotepadPlusPlus: 4, SSIS: 4, Bash: 5, MSOffice: 5,
         NextCloud: 5, PiHole: 5, HomeServer: 3, RSAEncryptions: 4,
@@ -251,7 +251,7 @@ export default function Skills() {
 
                     <h3 className="headerStyle">
                                 Other Skills
-                            </h3>
+                     </h3>
                     <Row>
                         <Col md={5}>
                             <Row>
