@@ -3,3 +3,9 @@
     padding-left: 10px;
     padding-right: 10px;
 }
+
+.projectBorder {
+    border: 10px silver ridge;
+    border-radius: 15px;
+    padding: 5px;
+}

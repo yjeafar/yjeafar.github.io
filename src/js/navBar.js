@@ -42,7 +42,7 @@ export default function NavBar() {
                 window.location.hash.replace("#", '', "#projects");
             } else if ($(this).scrollTop() > 250 && $(this).scrollTop() < 500 ) {
                 window.location.hash.replace("#experiences");
-            } else if ($(this).scrollTop() == 350 && $(this).scrollTop() < 450) {
+            } else if ($(this).scrollTop() > 350 && $(this).scrollTop() < 450) {
                // history.push("#projects");
             } else if ($(this).scrollTop() > 450 && $(this).scrollTop() < 550) {
               //  history.push("#skills");

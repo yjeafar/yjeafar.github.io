@@ -1,58 +1,3 @@
-// import React from 'react';
-// import { Container, Col, Row } from 'react-bootstrap';
-// import '../css/projects.css'
-// import coach from '../pictures/coach.jpg'
-
-// export default function Projects() {
-
-//   return (
-//     <div className="Projects" id="projects">
-//       <Container>
-//         <Row className="justify-content-md-center">
-//           <Col md="5">
-//             <h1 className="sectionTitle">Projects</h1>
-//             <div className="sectionTitle">The projects from my life </div>
-//             <hr className='horizontalLine' />
-//           </Col>
-//         </Row>
-//       </Container>
-//       <Container>
-//         <Row className="justify-content-md-center">
-//           <div className="imageSpacing">
-//             <a href="project1">
-//             <img height="180" width="250" src={coach}
-//               alt="Basketball Coach looking at players on court" />
-//             </a>
-//           </div>
-//           <div  className="imageSpacing">
-//             <img height="180" width="250" src={coach}
-//               alt="Basketball Coach looking at players on court" />
-//               </div>
-//           <div  className="imageSpacing">
-//             <img height="180" width="250" src={coach}
-//               alt="Basketball Coach looking at players on court" />
-//               </div>
-//         </Row>
-//         <Row className="justify-content-md-center">
-//           <div className="imageSpacing">
-//             <img height="180" width="250" src={coach}
-//               alt="Basketball Coach looking at players on court" />
-//           </div>
-//           <div  className="imageSpacing">
-//             <img height="180" width="250" src={coach}
-//               alt="Basketball Coach looking at players on court" />
-//               </div>
-//           <div  className="imageSpacing">
-//             <img height="180" width="250" src={coach}
-//               alt="Basketball Coach looking at players on court" />
-//               </div>
-//         </Row>
-//       </Container>
-//     </div>
-//   );
-// }
-
-
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import ButtonBase from '@material-ui/core/ButtonBase';
@@ -62,22 +7,32 @@ import '../css/projects.css';
 import coach from '../pictures/coach.jpg';
 import pc from '../pictures/pc.jpg';
 import urlShortener from  '../pictures/urlshortener.jpg'; 
+import { Collapse } from '@material-ui/core';
+import BasketballCoaches from './projects/basketballCoach';
 
-const images = [
+const images = [ //Holds values for first row images
   {
     url: coach,
     title: 'Coaching Skill with Age',
-    width: '30%',
+    width: '33%',
   },
   {
     url: pc,
     title: 'Home Server',
-    width: '30%',
+    width: '33%',
   },
   {
     url: urlShortener,
     title: 'URL Shortener',
-    width: '30%',
+    width: '33%',
+  },
+];
+
+const images2 = [ // Holds values for second row imgaes
+  {
+    url: coach,
+    title: 'This Website',
+    width: '99%',
   },
 ];
 
@@ -86,12 +41,11 @@ const useStyles = makeStyles((theme) => ({
     display: 'flex',
     flexWrap: 'wrap',
     minWidth: 300,
-    width: '100%',
-    paddingLeft: "7%",
+    width: '100%'
   },
   image: {
     position: 'relative',
-    height: 200,
+    height: 300,
     [theme.breakpoints.down('xs')]: {
       width: '100% !important', // Overrides inline-style
       height: 100,
@@ -159,8 +113,53 @@ export default function Projects() {
   const classes = useStyles();
 
   return (
-    <div className={classes.root}>
+    <div className={classes.root} id="projects">
+      <Container>
+         <Row className="justify-content-md-center">
+           <Col md="5">
+             <h1 className="sectionTitle">Projects</h1>
+             <div className="sectionTitle">The projects from my life </div>
+             <hr className='horizontalLine' />
+           </Col>
+         </Row>
+       </Container>
       {images.map((image) => (
+        <ButtonBase
+          focusRipple
+          key={image.title}
+          className={classes.image}
+          focusVisibleClassName={classes.focusVisible}
+          style={{
+            width: image.width,
+          }}
+        
+        >
+          <span
+            className={classes.imageSrc}
+            style={{
+              backgroundImage: `url(${image.url})`,
+            }}
+          />
+          <span className={classes.imageBackdrop} />
+          <span className={classes.imageButton}>
+            <Typography
+              component="span"
+              variant="subtitle1"
+              color="inherit"
+              className={classes.imageTitle}
+              onClick={(e) => e.target.style="opacity: 1" }
+            >
+              {image.title}
+              <span className={classes.imageMarked} />
+            </Typography>
+          </span>
+        </ButtonBase>
+      ))}
+      <span style={{width:"100%"}}>Photo by <a href="https://unsplash.com/@markusspiske?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Markus Spiske</a> on <a href="https://unsplash.com/s/photos/basketball-coach?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Unsplash</a></span>
+            <Collapse>
+                <BasketballCoaches/>
+            </Collapse>
+      {images2.map((image) => (
         <ButtonBase
           focusRipple
           key={image.title}
@@ -190,7 +189,6 @@ export default function Projects() {
           </span>
         </ButtonBase>
       ))}
-      <span>Photo by <a href="https://unsplash.com/@markusspiske?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Markus Spiske</a> on <a href="https://unsplash.com/s/photos/basketball-coach?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Unsplash</a></span>
-    </div>
+      </div>
   );
 }
