@@ -3,11 +3,11 @@ import { Row, Container, Col } from 'react-bootstrap';
 import '../../css/projects.css';
 
 
-export default function BasketballCoaches() {
+export default function URLShortener() {
 
   return (
-    <div id="coach-age-skills">
-        Basketball Coach
+    <div id="url-shortener">
+        Shortner URL
     </div>
   );
 }

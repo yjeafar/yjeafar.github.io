@@ -9,22 +9,30 @@ import pc from '../pictures/pc.jpg';
 import urlShortener from  '../pictures/urlshortener.jpg'; 
 import { Collapse } from '@material-ui/core';
 import BasketballCoaches from './projects/basketballCoach';
+import HomeServer from './projects/homeServer';
+import URLShortener from './projects/urlShortener';
+import OnlineResume from './projects/onlineResume';
+
+
 
 const images = [ //Holds values for first row images
   {
     url: coach,
     title: 'Coaching Skill with Age',
     width: '33%',
+    id: 1
   },
   {
     url: pc,
     title: 'Home Server',
     width: '33%',
+    id: 2
   },
   {
     url: urlShortener,
     title: 'URL Shortener',
     width: '33%',
+    id: 3
   },
 ];
 
@@ -33,6 +41,7 @@ const images2 = [ // Holds values for second row imgaes
     url: coach,
     title: 'This Website',
     width: '99%',
+    id: 4
   },
 ];
 
@@ -109,7 +118,41 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
+
+const projects = [
+  { id: 1, project: <BasketballCoaches/> },
+  { id: 2, project: <HomeServer/>},
+  { id: 3, project: <URLShortener/>},
+  { id: 4, project: <OnlineResume/>}
+];
+
+
 export default function Projects() {
+
+  const [selected, setSelected] = React.useState(0); // 0 is not a key in projects object
+
+  const [showProject, setShow] = React.useState(false);
+
+  const [projectSelected, setProject] = React.useState([]);
+
+  const handleSelect = (projectId) => {
+    setSelected(projectId);
+    renderProjectComponent(projectId);
+  };
+
+  function renderProjectComponent(projectId) {
+
+  let temp = projects.filter(e => e.id === projectId) 
+
+  setProject(temp); // State hook sets after method is complete. This causes an error because I need it set right away, workaround is a temp var
+    console.log(selected, projectId);
+    if (temp[0]) { // There is a value in array, meaning image was clicked
+        if (selected === projectId || (!showProject && selected !== projectId) || (selected === 0)) // If the old id is the same as current id, show/hide element. 
+                                                                                                    // If not, keep showing element. If old value is not the same as the
+          setShow((prev => !prev));                                                                 // current value and it is not shown, then show it. Captures all clicks
+        }
+  }
+
   const classes = useStyles();
 
   return (
@@ -126,13 +169,13 @@ export default function Projects() {
       {images.map((image) => (
         <ButtonBase
           focusRipple
+          onClick={() => handleSelect(image.id)}
           key={image.title}
           className={classes.image}
           focusVisibleClassName={classes.focusVisible}
           style={{
             width: image.width,
           }}
-        
         >
           <span
             className={classes.imageSrc}
@@ -147,7 +190,7 @@ export default function Projects() {
               variant="subtitle1"
               color="inherit"
               className={classes.imageTitle}
-              onClick={(e) => e.target.style="opacity: 1" }
+              // onClick={(e) => e.target.style="opacity: 1" }
             >
               {image.title}
               <span className={classes.imageMarked} />
@@ -155,13 +198,19 @@ export default function Projects() {
           </span>
         </ButtonBase>
       ))}
+      
       <span style={{width:"100%"}}>Photo by <a href="https://unsplash.com/@markusspiske?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Markus Spiske</a> on <a href="https://unsplash.com/s/photos/basketball-coach?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Unsplash</a></span>
-            <Collapse>
-                <BasketballCoaches/>
-            </Collapse>
+      
+      <div style={{width: "100%"}}>
+          <Collapse in = {showProject}> 
+            { projectSelected[0]?.project } 
+          </Collapse>
+      </div>
+
       {images2.map((image) => (
         <ButtonBase
           focusRipple
+          onClick={() => handleSelect(image.id)}
           key={image.title}
           className={classes.image}
           focusVisibleClassName={classes.focusVisible}

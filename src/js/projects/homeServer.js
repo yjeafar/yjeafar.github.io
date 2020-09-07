@@ -3,11 +3,11 @@ import { Row, Container, Col } from 'react-bootstrap';
 import '../../css/projects.css';
 
 
-export default function BasketballCoaches() {
+export default function HomeServer() {
 
   return (
-    <div id="coach-age-skills">
-        Basketball Coach
+    <div id="home-server">
+        Home Server
     </div>
   );
 }
