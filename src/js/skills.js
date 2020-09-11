@@ -23,16 +23,13 @@ export default function Skills() {
                 <Container>
                     <Row className="justify-content-md-center">
                         <Col md="5">
-                            <h1 className="sectionTitle">Skills and Interests</h1>
-                            <div className="sectionTitle">Skills: Things I have learned <br />  Interests: Things I do in my free time </div>
+                            <h1 className="sectionTitle">Skills</h1>
+                            <div className="sectionTitle">Skills from my life </div>
                             <hr className='horizontalLine' />
                         </Col>
                     </Row>
                 </Container>
                 <Container>
-                    <h2 id="skillsPadding">
-                        Skills
-                    </h2>
                     <h3 className="headerStyle">
                         Languages & Frameworks
                     </h3>

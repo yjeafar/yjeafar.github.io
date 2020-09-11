@@ -9,3 +9,16 @@
     border-radius: 15px;
     padding: 5px;
 }
+
+.projectSpacing {
+    width: 60%;
+    margin-Left: auto;
+    margin-right: auto;
+}
+
+
+.projectBorder {
+    border: 6px black inset ;
+    border-radius: 15px;
+    padding: 5px;
+}

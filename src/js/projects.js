@@ -4,7 +4,7 @@ import ButtonBase from '@material-ui/core/ButtonBase';
 import Typography from '@material-ui/core/Typography';
 import { Container, Col, Row } from 'react-bootstrap';
 import '../css/projects.css';
-import coach from '../pictures/coach.jpg';
+import bell from '../pictures/bellGraph.jpg';
 import pc from '../pictures/pc.jpg';
 import urlShortener from  '../pictures/urlshortener.jpg'; 
 import { Collapse } from '@material-ui/core';
@@ -17,7 +17,7 @@ import OnlineResume from './projects/onlineResume';
 
 const images = [ //Holds values for first row images
   {
-    url: coach,
+    url: bell,
     title: 'Coaching Skill with Age',
     width: '33%',
     id: 1
@@ -38,7 +38,7 @@ const images = [ //Holds values for first row images
 
 const images2 = [ // Holds values for second row imgaes
   {
-    url: coach,
+    url: bell,
     title: 'This Website',
     width: '99%',
     id: 4
@@ -120,10 +120,10 @@ const useStyles = makeStyles((theme) => ({
 
 
 const projects = [
-  { id: 1, project: <BasketballCoaches/> },
-  { id: 2, project: <HomeServer/>},
-  { id: 3, project: <URLShortener/>},
-  { id: 4, project: <OnlineResume/>}
+  { id: 1, project: <BasketballCoaches/> }, // Object to hold speicfic id and comnponent, for project. This is to make sure I only have one 
+  { id: 2, project: <HomeServer/> },        // collapse component below, making it dynamic.
+  { id: 3, project: <URLShortener/> },
+  { id: 4, project: <OnlineResume/> }
 ];
 
 
@@ -148,9 +148,10 @@ export default function Projects() {
     console.log(selected, projectId);
     if (temp[0]) { // There is a value in array, meaning image was clicked
         if (selected === projectId || (!showProject && selected !== projectId) || (selected === 0)) // If the old id is the same as current id, show/hide element. 
-                                                                                                    // If not, keep showing element. If old value is not the same as the
+         {                                                                                           // If not, keep showing element. If old value is not the same as the
           setShow((prev => !prev));                                                                 // current value and it is not shown, then show it. Captures all clicks
         }
+      }
   }
 
   const classes = useStyles();
@@ -199,13 +200,12 @@ export default function Projects() {
         </ButtonBase>
       ))}
       
-      <span style={{width:"100%"}}>Photo by <a href="https://unsplash.com/@markusspiske?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Markus Spiske</a> on <a href="https://unsplash.com/s/photos/basketball-coach?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Unsplash</a></span>
-      
-      <div style={{width: "100%"}}>
-          <Collapse in = {showProject}> 
+      <div className="projectSpacing">
+          <Collapse in = {showProject && projectSelected[0].id <= 3}> 
             { projectSelected[0]?.project } 
           </Collapse>
       </div>
+
 
       {images2.map((image) => (
         <ButtonBase
@@ -238,6 +238,11 @@ export default function Projects() {
           </span>
         </ButtonBase>
       ))}
+      <div className="projectSpacing">
+          <Collapse in = {showProject && projectSelected[0].id >= 4}> 
+            { projectSelected[0]?.project } 
+          </Collapse>
+      </div>
       </div>
   );
 }

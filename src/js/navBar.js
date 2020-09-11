@@ -67,7 +67,7 @@ export default function NavBar() {
                             <Tab icon={<HomeIcon />} label="PORTFOLIO" href="#" />
                             <Tab icon={<FaceIcon />} label="EXPERIENCES" href="#experiences" />
                             <Tab icon={<BusinessCenterIcon />} label="PROJECTS" href="#projects" />
-                            <Tab icon={<BarChartIcon />} label="SKILLS & INTERESTS" href="#skills" />
+                            <Tab icon={<BarChartIcon />} label="SKILLS" href="#skills" />
                             <Tab icon={<ContactMailIcon />} label="CONTACT ME" href="#contact-me" />
                         </Tabs>
                 </Paper>
