@@ -4,11 +4,6 @@
     padding-right: 10px;
 }
 
-.projectBorder {
-    border: 10px silver ridge;
-    border-radius: 15px;
-    padding: 5px;
-}
 
 .projectSpacing {
     width: 60%;
@@ -18,7 +13,14 @@
 
 
 .projectBorder {
-    border: 6px black inset ;
-    border-radius: 15px;
+    border: 1px black solid ;
     padding: 5px;
+}
+
+.Projects {
+    padding-top: 5%;
+    display: 'flex';
+    min-width: 300;
+    flex-wrap: wrap;
+    width: 100%;
 }

@@ -33,7 +33,7 @@ export default function Skills() {
                     <h3 className="headerStyle">
                         Languages & Frameworks
                     </h3>
-                    <Row>
+                    <Row className="alignSkills">
                         <Col md={5}>
                             <Row>
                                 <Col xs={6} md={5}>
@@ -156,7 +156,7 @@ export default function Skills() {
                     <h3 className="headerStyle">
                                 Tools
                     </h3>
-                    <Row>
+                    <Row className="alignSkills">
                         <Col md={5}>
                             <Row>
                                 <Col xs={6} md={5}>
@@ -240,7 +240,6 @@ export default function Skills() {
                                         <Skillset value={skillValues.SSIS} />
                                     </Col>
                                 </Row>
-                                <br />
                             </Col>
                     </Row>
                     <br/>
@@ -249,7 +248,7 @@ export default function Skills() {
                     <h3 className="headerStyle">
                                 Other Skills
                      </h3>
-                    <Row>
+                    <Row className="alignSkills">
                         <Col md={5}>
                             <Row>
                                 <Col xs={6} md={5}>
@@ -303,6 +302,8 @@ export default function Skills() {
                             </Row>
                         </Col>
                     </Row>
+                    <br/>
+                    <hr className="sectionLine"/>
                 </Container>
                 <br />
             </div>

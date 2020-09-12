@@ -46,12 +46,6 @@ const images2 = [ // Holds values for second row imgaes
 ];
 
 const useStyles = makeStyles((theme) => ({
-  root: {
-    display: 'flex',
-    flexWrap: 'wrap',
-    minWidth: 300,
-    width: '100%'
-  },
   image: {
     position: 'relative',
     height: 300,
@@ -157,7 +151,7 @@ export default function Projects() {
   const classes = useStyles();
 
   return (
-    <div className={classes.root} id="projects">
+    <div className="Projects" id="projects">
       <Container>
          <Row className="justify-content-md-center">
            <Col md="5">

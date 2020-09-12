@@ -1,7 +1,7 @@
 .header {
     position:fixed; 
-    margin-left: -18%; /* Bad practice, however I couldn't get the nav bar to align to the left without the negative sign */
-    margin-top: 5%;
+    margin-left: -17%; /* Bad practice, however I couldn't get the nav bar to align to the left without the negative sign */
+    margin-top: 20%;
 }
 html {
     scroll-behavior: smooth;
