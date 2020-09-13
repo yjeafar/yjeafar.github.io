@@ -6,6 +6,9 @@ import Button from '@material-ui/core/Button';
 import { Card, CardContent } from '@material-ui/core';
 import '../css/contact-me.css'
 import { Container, Row, Col, Alert, Spinner } from 'react-bootstrap';
+import AlternateEmailIcon from '@material-ui/icons/AlternateEmail';
+import GitHubIcon from '@material-ui/icons/GitHub';
+import LinkedInIcon from '@material-ui/icons/LinkedIn';
 
 
 const useStyles = makeStyles((theme) => ({
@@ -124,7 +127,8 @@ export default function ContactMe(props) {
 
 
   return (
-    <div className="ContactMe" id="contact-me">
+    <div id="contact-me">
+      <Container className="ContactMe">
       <Container>
         <Row className="justify-content-md-center">
           <Col md="5">
@@ -242,6 +246,36 @@ export default function ContactMe(props) {
           </form>
         </CardContent>
       </Card>
+      <h2 style={{textAlign:"center"}}>My Internet Presence</h2>
+      <hr className="sectionLine, contactMeLine" />
+      <Row className="otherContactRow">
+        <a href="https://github.com/yjeafar" className="linkStyle">
+          <Row style={{marginRight: 10}}>
+              <Col>
+                <GitHubIcon style={{marginRight: 10}}/>
+                https://github.com/yjeafar
+            </Col>
+          </Row>
+        </a>
+        <a href="https://linkedin.com/in/yjeafar" className="linkStyle">
+          <Row style={{marginRight: 10}}>
+              <Col>
+              <LinkedInIcon style={{marginRight: 10}}/>
+                https://linkedin.com/yjeafar
+            </Col>
+          </Row>
+        </a>
+        <a href="mailto: test@email.com" className="linkStyle">
+          <Row>
+              <Col>
+                <AlternateEmailIcon style={{marginRight: 10}}/>
+                  test@email.com
+            </Col>
+          </Row>
+        </a>
+      </Row>
+      <hr className="sectionLine, contactMeLine" />
+      </Container>
     </div>
   );
 }

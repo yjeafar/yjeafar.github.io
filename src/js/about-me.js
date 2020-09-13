@@ -14,21 +14,22 @@ export default function AboutMe() {
     <div className="AboutMe">
       <NavBar/> 
       <Container style={{paddingTop: "5%"}}>
-        <Row>
-          <Col style={{paddingLeft: "25%"}}>
-            <img src={me} alt="Picture of me"/>
-          </Col>
-          <Col >
+        <Row className="justify-content-md-center">
+          <Col style={{paddingLeft: "15%"}} >
             <h1>Hello! I'm Yasser. </h1>
             <div>
-              I work as a software developer that has full stack developer experience. Check out my ever-exapnding portfolio page to see some of my work!
+              I'm a Software Engineer that has professional full stack developer experience. Check out my ever-exapnding portfolio page to see some of my work!
             </div>
             <br/>
+            <br/>
+            <h3>About Me</h3>
           <p>
             I love learning new technologies, Linux, and FOSS. In my spare time, I enjoy fishing, amateur star gazing
-            (when I can actually setup my telescope properly), hiking, and Game of Thrones (except the last season)   :smile:
-
+            (when I can actually setup my telescope properly), hiking, and Game of Thrones (excluding the last season) 😄
           </p>
+          </Col>
+          <Col>
+            <img src={me} alt="Picture of me" style={{ marginRight:100 }}/>
           </Col>
         </Row>
       </Container>
