@@ -36,7 +36,6 @@ export default function AboutMe() {
       <Element id='example-destination' name='example-destination'>
         <Experiences/>
       </Element>
-      {/* <Experiences /> */}
       <Projects/>
       <Skills/>
       <ContactMe/>
