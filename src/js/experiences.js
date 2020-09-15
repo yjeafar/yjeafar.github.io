@@ -6,10 +6,9 @@ import { Box } from '@material-ui/core';
 
 export default function Experiences() {
 
-
-
   return (
-    <div className="Experiences" id="experiences">
+    <div className="grayBackground" id="experiences">
+      <Container className="containerStyle">
       <Container>
         <Row className="justify-content-md-center">
           <Col md="5">
@@ -19,11 +18,10 @@ export default function Experiences() {
           </Col>
         </Row>
       </Container>
-      <br /> 
+      <br/> 
         <h2>
           Education
         </h2>
-        <Container fluid>
           <Row className='companyName'>
             <Col xs={6} md={8}>
               University of Michigan - Dearborn
@@ -47,17 +45,13 @@ export default function Experiences() {
             semesters. 
           </p>
           </Box>
-        </Container>
       <hr className='horizontalLine' style={{marginTop: 50}}/>
       <br />
-
-
-
       <div>
         <h2>
           Work Experience
         </h2>
-        <Container fluid className="experienceSpacing"> 
+        <div className="experienceSpacing"> 
           <Row className='companyName'>
             <Col xs={6} md={6}>
               Blue Cross Blue Shield of Michigan
@@ -102,8 +96,8 @@ export default function Experiences() {
               </ul>
           </p>
           </Box>
-        </Container>
-        <Container fluid className="experienceSpacing"> 
+        </div>
+        <div className="experienceSpacing"> 
           <Row className='companyName'>
             <Col xs={6}>
               DTE Energy
@@ -148,8 +142,8 @@ export default function Experiences() {
             </ul>
           </p>
               </Box>
-        </Container>
-        <Container fluid className="experienceSpacing">
+        </div>
+        <div className="experienceSpacing">
           <Row className='companyName'>
             <Col xs={6} md={9}>
               Epitec
@@ -190,11 +184,10 @@ export default function Experiences() {
             </ul>
           </div>
             </Box>
-        </Container>
+        </div>
       </div>
-
       <br />
-
+      </Container>
     </div>
   );
 }

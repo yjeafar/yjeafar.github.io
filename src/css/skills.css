@@ -10,10 +10,31 @@
     padding-bottom: 3%;
 }
 
-.Skills {
-    padding-top: 10%;
-}
-
 .alignSkills {
     padding-left: 10%;
 }
+
+.noBullets {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.skill {
+    float: right;
+    width: 50%;
+}
+
+.skillTitle {
+}
+
+.listStyle {
+    width: 100%;
+    display: inline-block;
+}
+
+
+/* .skill ul > li .skillTitle {
+    display: inline-block;
+    width: 60%;
+} */

@@ -141,9 +141,9 @@ export default function Projects() {
   setProject(temp); // State hook sets after method is complete. This causes an error because I need it set right away, workaround is a temp var
     console.log(selected, projectId);
     if (temp[0]) { // There is a value in array, meaning image was clicked
-        if (selected === projectId || (!showProject && selected !== projectId) || (selected === 0)) // If the old id is the same as current id, show/hide element. 
+        if (selected === projectId || (!showProject && selected !== projectId) || (selected === 0))  // If the old id is the same as current id, show/hide element. 
          {                                                                                           // If not, keep showing element. If old value is not the same as the
-          setShow((prev => !prev));                                                                 // current value and it is not shown, then show it. Captures all clicks
+          setShow((prev => !prev));                                                                  // current value and it is not shown, then show it. Captures all clicks
         }
       }
   }
@@ -151,7 +151,8 @@ export default function Projects() {
   const classes = useStyles();
 
   return (
-    <div className="Projects" id="projects">
+    <div className="lightBackground" id="projects">
+      <Container  className="Projects"id="containerStyle">
       <Container>
          <Row className="justify-content-md-center">
            <Col md="5">
@@ -237,6 +238,7 @@ export default function Projects() {
             { projectSelected[0]?.project } 
           </Collapse>
       </div>
+      </Container>
       </div>
   );
 }

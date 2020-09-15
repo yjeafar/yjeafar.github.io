@@ -7,7 +7,7 @@ export default function SkillSet(skills) {
 
     var skillVal = [] // Holds filled in circles
 
-    var totalVal = [] // Holds empty circles (5 minus filled in circles)
+    var totalVal = [] // Holds empty circles (5 minus # of filled in circles)
 
     for (let i = 0; i < skills.value; i++) {
         skillVal.push(' ');
@@ -18,9 +18,9 @@ export default function SkillSet(skills) {
     }
 
     return (
-        <div className="SkillSet">
-            { skillVal.map((value, i) => <FiberManualRecordIcon color="primary" key={i} value={value} />)}
+        <span className="SkillSet">
+            { skillVal.map((value, i) => <FiberManualRecordIcon color="black" key={i} value={value} />)}
             { totalVal.map((value, i) => <FiberManualRecordOutlinedIcon key = {i} value={value}/>)}
-        </div>
+        </span>
     );
 }

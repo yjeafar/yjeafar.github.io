@@ -37,11 +37,11 @@
   }
 } */
 
-
+/* 
 .App {
   margin: 0 auto;
   width: 50%;
-}
+} */
 
 .sectionTitle {
   text-align: center;
@@ -57,4 +57,27 @@
   color: silver;
   background-color:silver;
   height: 1px;
+}
+
+.lightBackground {
+  width: 100%;
+  background-color: #f2ebe5;
+}
+
+.grayBackground {
+  width: 100%;
+  background-color: #647295;
+}
+
+.randomBackground {
+  width: 100%;
+  background-color: #9f496e;
+}
+
+.containerStyle {
+  margin-right: auto;
+  margin-left: auto;
+  width: 65%;
+  max-width: 1200px;
+  padding: 40px 180px;
 }

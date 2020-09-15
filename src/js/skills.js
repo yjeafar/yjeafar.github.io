@@ -19,7 +19,8 @@ export default function Skills() {
 
     return (
         <div className="Skills" id="skills">
-            <div>
+            <div className="randomBackground">
+            <Container fluid="md" className="containerStyle">
                 <Container>
                     <Row className="justify-content-md-center">
                         <Col md="5">
@@ -33,10 +34,10 @@ export default function Skills() {
                     <h3 className="headerStyle">
                         Languages & Frameworks
                     </h3>
-                    <Row className="alignSkills">
+                    {/* <Row className="alignSkills">
                         <Col md={5}>
                             <Row>
-                                <Col xs={6} md={5}>
+                                <Col>
                                     C++
                                 </Col>
                                 <Col>
@@ -44,7 +45,7 @@ export default function Skills() {
                                 </Col>
                             </Row>
                             <Row>
-                                <Col xs={6} md={5}>
+                                <Col >
                                     C#
                                     </Col>
                                 <Col>
@@ -52,7 +53,7 @@ export default function Skills() {
                                 </Col>
                             </Row>
                             <Row>
-                                <Col xs={6} md={5}>
+                                <Col >
                                     HTML
                                 </Col>
                                 <Col>
@@ -60,7 +61,7 @@ export default function Skills() {
                                 </Col>
                             </Row>
                             <Row>
-                                <Col xs={6} md={5}>
+                                <Col >
                                     CSS
                                     </Col>
                                 <Col>
@@ -68,7 +69,7 @@ export default function Skills() {
                                 </Col>
                             </Row>
                             <Row>
-                                <Col xs={6} md={5}>
+                                <Col >
                                     React
                                 </Col>
                                 <Col>
@@ -76,7 +77,7 @@ export default function Skills() {
                                 </Col>
                             </Row>
                             <Row>
-                                <Col xs={6} md={5}>
+                                <Col >
                                     SQL
                                     </Col>
                                 <Col>
@@ -84,7 +85,7 @@ export default function Skills() {
                                 </Col>
                             </Row>
                             <Row>
-                                <Col xs={6} md={5}>
+                                <Col >
                                     Bootstrap
                                 </Col>
                                 <Col>
@@ -94,7 +95,7 @@ export default function Skills() {
                         </Col>
                         <Col md={7}>
                             <Row>
-                                <Col xs={6} md={5}>
+                                <Col >
                                     Java
                                 </Col>
                                 <Col>
@@ -102,7 +103,7 @@ export default function Skills() {
                                 </Col>
                             </Row>
                             <Row>
-                                <Col xs={6} md={5}>
+                                <Col >
                                     Python
                                     </Col>
                                 <Col>
@@ -110,7 +111,7 @@ export default function Skills() {
                                 </Col>
                             </Row>
                             <Row>
-                                <Col xs={6} md={5}>
+                                <Col >
                                     Django
                                 </Col>
                                 <Col>
@@ -118,7 +119,7 @@ export default function Skills() {
                                 </Col>
                             </Row>
                             <Row>
-                                <Col xs={6} md={5}>
+                                <Col >
                                     Angular
                                     </Col>
                                 <Col>
@@ -126,7 +127,7 @@ export default function Skills() {
                                 </Col>
                             </Row>
                             <Row>
-                                <Col xs={6} md={5}>
+                                <Col >
                                     JavaScript
                                 </Col>
                                 <Col>
@@ -134,7 +135,7 @@ export default function Skills() {
                                 </Col>
                             </Row>
                             <Row>
-                                <Col xs={6} md={5}>
+                                <Col >
                                     TypeScript
                                     </Col>
                                 <Col>
@@ -142,7 +143,7 @@ export default function Skills() {
                                 </Col>
                             </Row>
                             <Row>
-                                <Col xs={6} md={5}>
+                                <Col >
                                     Domain Driven Design
                                 </Col>
                                 <Col>
@@ -159,7 +160,7 @@ export default function Skills() {
                     <Row className="alignSkills">
                         <Col md={5}>
                             <Row>
-                                <Col xs={6} md={5}>
+                                <Col >
                                     SSMS
                                 </Col>
                                 <Col>
@@ -167,7 +168,7 @@ export default function Skills() {
                                 </Col>
                             </Row>
                             <Row>
-                                <Col xs={6} md={5}>
+                                <Col>
                                     Git
                                 </Col>
                                 <Col>
@@ -175,7 +176,7 @@ export default function Skills() {
                                 </Col>
                             </Row>
                             <Row>
-                                <Col xs={6} md={5}>
+                                <Col>
                                     Docker
                             </Col>
                                 <Col>
@@ -183,7 +184,7 @@ export default function Skills() {
                                 </Col>
                             </Row>
                             <Row>
-                                <Col xs={6} md={5}>
+                                <Col>
                                     FileZilla
                                 </Col>
                                 <Col>
@@ -191,7 +192,7 @@ export default function Skills() {
                                 </Col>
                             </Row>
                             <Row>
-                                <Col xs={6} md={5}>
+                                <Col>
                                     CloneZilla
                                 </Col>
                                 <Col>
@@ -201,7 +202,7 @@ export default function Skills() {
                             </Col>
                             <Col md={7}>
                                 <Row>
-                                    <Col xs={6} md={5}>
+                                    <Col>
                                         MS Office
                                     </Col>
                                     <Col>
@@ -209,7 +210,7 @@ export default function Skills() {
                                     </Col>
                                 </Row>
                                 <Row>
-                                    <Col xs={6} md={5}>
+                                    <Col>
                                         Sublime Text
                                     </Col>
                                     <Col>
@@ -217,7 +218,7 @@ export default function Skills() {
                                     </Col>
                                 </Row>
                                 <Row>
-                                    <Col xs={6} md={5}>
+                                    <Col>
                                         Visual Studio
                                 </Col>
                                     <Col>
@@ -225,7 +226,7 @@ export default function Skills() {
                                     </Col>
                                 </Row>
                                 <Row>
-                                    <Col xs={6} md={5}>
+                                    <Col>
                                         Notepad++
                                     </Col>
                                     <Col>
@@ -233,7 +234,7 @@ export default function Skills() {
                                     </Col>
                                 </Row>
                                 <Row>
-                                    <Col xs={6} md={5}>
+                                    <Col>
                                         SSIS
                                     </Col>
                                     <Col>
@@ -251,7 +252,7 @@ export default function Skills() {
                     <Row className="alignSkills">
                         <Col md={5}>
                             <Row>
-                                <Col xs={6} md={5}>
+                                <Col >
                                     Apache
                                 </Col>
                                 <Col>
@@ -259,7 +260,7 @@ export default function Skills() {
                                 </Col>
                             </Row>
                             <Row>
-                                <Col xs={6} md={5}>
+                                <Col >
                                     NextCloud
                             </Col>
                                 <Col>
@@ -267,7 +268,7 @@ export default function Skills() {
                                 </Col>
                             </Row>
                             <Row>
-                                <Col xs={6} md={5}>
+                                <Col >
                                     PiHole
                             </Col>
                                 <Col>
@@ -277,7 +278,7 @@ export default function Skills() {
                         </Col>
                         <Col md={7}>
                             <Row>
-                                <Col  sm={6} md={5}>
+                                <Col  >
                                     Home Server Setup
                                 </Col>
                                 <Col>
@@ -285,7 +286,7 @@ export default function Skills() {
                                 </Col>
                             </Row>
                             <Row>
-                                <Col  sm={6} md={5}>
+                                <Col >
                                     RSA Encryptions
                                 </Col>
                                 <Col>
@@ -293,7 +294,7 @@ export default function Skills() {
                                 </Col>
                             </Row>
                             <Row>
-                                <Col  sm={6} md={5}>
+                                <Col>
                                     Bash
                                 </Col>
                                 <Col>
@@ -301,11 +302,54 @@ export default function Skills() {
                                 </Col>
                             </Row>
                         </Col>
+                    </Row> */}
+                    <Row>
+                        <Col xs={12} sm={12} md={6} style={{width: "50%"}}>
+                            <ul className="noBullets">
+                                <li className="listStyle">
+                                    <span> C++</span>
+                                    <span className="skill"> <Skillset value={skillValues.Cplusplus} /></span>
+                                </li>
+                                <li className="listStyle">
+                                    <span> C#</span>
+                                    <span className="skill"> <Skillset value={skillValues.CSharp} /></span>
+                                </li>
+                                <li className="listStyle">
+                                    <span> Python</span>
+                                    <span className="skill"> <Skillset value={skillValues.Python} /></span>
+                                </li>
+                                <li className="listStyle">
+                                    <span> JavaScript</span>
+                                    <span className="skill"> <Skillset value={skillValues.JavaScript} /></span>
+                                </li>
+                            </ul>
+                        </Col>
+                        <Col xs={12} sm ={0} md={6} style={{width: "50%"}}>
+                            <ul className="noBullets">
+                                <li className="listStyle">
+                                    <span> AngularJS</span>
+                                    <span className="skill"> <Skillset value={skillValues.AngularJs} /></span>
+                                </li>
+                                <li className="listStyle">
+                                    <span> React </span>
+                                    <span className="skill"> <Skillset value={skillValues.React} /></span>
+                                </li>
+                                <li className="listStyle">
+                                    <span> Django </span>
+                                    <span className="skill"> <Skillset value={skillValues.Django} /></span>
+                                </li>
+                                <li className="listStyle">
+                                    <span> SQL </span>
+                                    <span className="skill"> <Skillset value={skillValues.SQL} /></span>
+                                </li>
+                            </ul>
+                        </Col>
                     </Row>
                     <br/>
                     <hr className="sectionLine"/>
                 </Container>
                 <br />
+            </Container>
             </div>
         </div>
     );

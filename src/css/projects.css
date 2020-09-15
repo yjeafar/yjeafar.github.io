@@ -9,6 +9,7 @@
     width: 60%;
     margin-Left: auto;
     margin-right: auto;
+    padding-bottom: 3%;
 }
 
 
@@ -18,9 +19,7 @@
 }
 
 .Projects {
-    padding-top: 5%;
+    padding-top: 2%;
     display: 'flex';
-    min-width: 300;
     flex-wrap: wrap;
-    width: 100%;
 }

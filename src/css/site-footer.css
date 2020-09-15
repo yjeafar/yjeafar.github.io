@@ -1,0 +1,10 @@
+#footerStyle {
+    margin-right: auto;
+    margin-left: auto;
+    padding: 25px;
+    text-align: center;
+    width: 100%;
+    color: black;
+    background-color: #2b262d;
+    height: 150px;
+  }
