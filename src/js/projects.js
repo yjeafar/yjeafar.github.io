@@ -153,7 +153,6 @@ export default function Projects() {
   return (
     <div className="lightBackground" id="projects">
       <Container  className="Projects"id="containerStyle">
-      <Container>
          <Row className="justify-content-md-center">
            <Col md="5">
              <h1 className="sectionTitle">Projects</h1>
@@ -161,7 +160,6 @@ export default function Projects() {
              <hr className='horizontalLine' />
            </Col>
          </Row>
-       </Container>
       {images.map((image) => (
         <ButtonBase
           focusRipple

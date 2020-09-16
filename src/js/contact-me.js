@@ -126,7 +126,6 @@ export default function ContactMe(props) {
   return (
     <div className="lightBackground" id="contact-me">
       <Container className="containerStyle">
-        <Container>
           <Row className="justify-content-md-center">
             <Col md="5">
               <h1 className="sectionTitle">Contact Me</h1>
@@ -134,7 +133,6 @@ export default function ContactMe(props) {
               <hr className='horizontalLine' />
             </Col>
           </Row>
-        </Container>
         <div className="d-flex justify-content-center">
           {progress && <Spinner animation="border" variant="primary" className={classes.spinner} size="lg" />}
         </div>

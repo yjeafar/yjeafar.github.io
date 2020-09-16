@@ -9,7 +9,6 @@ export default function Experiences() {
   return (
     <div className="grayBackground" id="experiences">
       <Container className="containerStyle">
-        <Container>
           <Row className="justify-content-md-center">
             <Col md="5">
               <h1 className="sectionTitle">Experiences</h1>
@@ -17,7 +16,6 @@ export default function Experiences() {
               <hr className="horizontalLine" />
             </Col>
           </Row>
-        </Container>
         <br />
         <h2>
           Education
@@ -38,13 +36,13 @@ export default function Experiences() {
               Bachelor of Science in Software Engineering
             </Col>
           </Row>
-          <Container className="experienceContainer">
+          <div className="experienceContainer">
             I started school knowing I would do engineering but not knowing what exactly. Coming from a Middle Eastern background and with my
             parents being first generation immigrants without a whole lot of knowledge about computers, I didn't consider Software Engineering
             at first. After some time, I took a CIS class, and knew this was what I wanted to do for the rest of my life. I joined the Insitute
             of Software Engineers and volunteered to help at Hackathons and taught kids in low privillage areas to code through Google Code Corps.
             I graduated with a 3.80 GPA and was on the dean's list for multiple consecutive semesters.
-            </Container>
+            </div>
         </Box>
         <hr className='horizontalLine' style={{ marginTop: 50 }} />
         <br />
@@ -64,7 +62,7 @@ export default function Experiences() {
               </Col>
             </Row>
             <Box m={1} className="boxBorder">
-              <Container className="experienceContainer">
+              <div className="experienceContainer">
               <Row className='positionName'>
                 <Col xs={12} md={6}>
                   Business Application Developer
@@ -109,7 +107,7 @@ export default function Experiences() {
                   </li>
                 </ul>
                 </div>
-              </Container>
+              </div>
             </Box>
           </div>
           <div className="experienceSpacing">
@@ -124,7 +122,7 @@ export default function Experiences() {
               </Col>
             </Row>
             <Box m={1} className="boxBorder">
-            <Container className="experienceContainer">
+            <div className="experienceContainer">
               <Row className='positionName'>
                 <Col xs={12} md={6}>
                   Business Application Intern
@@ -164,7 +162,7 @@ export default function Experiences() {
                   </li>
                 </ul>
                 </div>
-              </Container>
+              </div>
             </Box>
           </div>
           <div className="experienceSpacing">
@@ -179,7 +177,7 @@ export default function Experiences() {
               </Col>
             </Row>
             <Box m={1} className="boxBorder">
-            <Container className="experienceContainer">
+            <div className="experienceContainer">
               <Row className='positionName'>
                 <Col xs={12} md={6}>
                   Software Engineering Intern
@@ -210,7 +208,7 @@ export default function Experiences() {
                   </li>
                 </ul>
                 </div>
-              </Container>
+              </div>
             </Box>
           </div>
         </div>

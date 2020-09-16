@@ -4,11 +4,12 @@ import Projects from './projects';
 import ContactMe from './contact-me';
 import Skills from './skills'
 import NavBar from './navBar';
+import SiteFooter from './site-footer';
 import { Element } from 'react-scroll';
 import me from '../pictures/me.jpg';
 import { Row, Col, Container } from 'react-bootstrap';
 import '../css/about-me.css';
-import SiteFooter from './site-footer';
+
 
 export default function AboutMe() {
 
@@ -38,7 +39,7 @@ export default function AboutMe() {
         </Container>
       </div>
       <Element id='example-destination' name='example-destination'>
-        <Experiences />
+        {/* <Experiences /> */}
       </Element>
       <Projects />
       <Skills />

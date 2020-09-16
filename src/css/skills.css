@@ -20,16 +20,16 @@
     margin: 0;
 }
 
-.skill {
-    float: right;
-    width: 50%;
+.skillTitle {
+    width: 60%;
 }
 
-.skillTitle {
+.skill {
+    float: right;
 }
 
 .listStyle {
-    width: 100%;
+    width: 80%;
     display: inline-block;
 }
 

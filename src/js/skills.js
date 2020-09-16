@@ -6,22 +6,28 @@ import '../css/skills.css';
 
 export default function Skills() {
 
-    var skillValues = {
-        Cplusplus: 3, Java: 2, VirtualBox: 3,
-        Git: 2, CSharp: 4, Bootstrap: 3, SQL: 4, AngularJs: 4,
-        React: 3, Django: 3, Python: 3, Linux: 4, FileZilla: 5,
-        Apache: 2, JavaScript: 5, Typescript: 5, SSMS: 5,
-        Docker: 2, CloneZilla: 5, SublimeText: 3, VisualStudio: 5,
-        NotepadPlusPlus: 4, SSIS: 4, Bash: 5, MSOffice: 5,
-        NextCloud: 5, PiHole: 5, HomeServer: 3, RSAEncryptions: 4,
-        HTML: 5, CSS: 4, DomainDrivenDesign: 5,
+    var languageValues = {
+        Cplusplus: 3, Java: 2, CSharp: 4, Bootstrap: 3,
+        SQL: 4, AngularJs: 4, React: 3, Django: 3,
+        Python: 3, JavaScript: 5, Typescript: 5, HTML: 5,
+        CSS: 4, DomainDrivenDesign: 5, MVC: 4
+    };
+
+    var toolValues = {
+        VirtualBox: 4, Git: 3, FileZilla: 5,
+        SSMS: 5, Docker: 2, CloneZilla: 5, SublimeText: 3,
+        VisualStudio: 5, NotepadPlusPlus: 4, SSIS: 4, MSOffice: 5,
+    };
+
+    var otherSkillValues = {
+        Linux: 4, Apache: 2, Bash: 5, NextCloud: 5,
+        PiHole: 5, HomeServer: 3, RSAEncryptions: 4,
     };
 
     return (
         <div className="Skills" id="skills">
             <div className="randomBackground">
-            <Container fluid="md" className="containerStyle">
-                <Container>
+                <Container className="containerStyle">
                     <Row className="justify-content-md-center">
                         <Col md="5">
                             <h1 className="sectionTitle">Skills</h1>
@@ -29,328 +35,186 @@ export default function Skills() {
                             <hr className='horizontalLine' />
                         </Col>
                     </Row>
-                </Container>
-                <Container>
                     <h3 className="headerStyle">
                         Languages & Frameworks
                     </h3>
-                    {/* <Row className="alignSkills">
-                        <Col md={5}>
-                            <Row>
-                                <Col>
-                                    C++
-                                </Col>
-                                <Col>
-                                    <Skillset value={skillValues.Cplusplus} />
-                                </Col>
-                            </Row>
-                            <Row>
-                                <Col >
-                                    C#
-                                    </Col>
-                                <Col>
-                                    <Skillset value={skillValues.CSharp} />
-                                </Col>
-                            </Row>
-                            <Row>
-                                <Col >
-                                    HTML
-                                </Col>
-                                <Col>
-                                    <Skillset value={skillValues.HTML} />
-                                </Col>
-                            </Row>
-                            <Row>
-                                <Col >
-                                    CSS
-                                    </Col>
-                                <Col>
-                                    <Skillset value={skillValues.CSS} />
-                                </Col>
-                            </Row>
-                            <Row>
-                                <Col >
-                                    React
-                                </Col>
-                                <Col>
-                                    <Skillset value={skillValues.React} />
-                                </Col>
-                            </Row>
-                            <Row>
-                                <Col >
-                                    SQL
-                                    </Col>
-                                <Col>
-                                    <Skillset value={skillValues.SQL} />
-                                </Col>
-                            </Row>
-                            <Row>
-                                <Col >
-                                    Bootstrap
-                                </Col>
-                                <Col>
-                                    <Skillset value={skillValues.Bootstrap} />
-                                </Col>
-                            </Row>
-                        </Col>
-                        <Col md={7}>
-                            <Row>
-                                <Col >
-                                    Java
-                                </Col>
-                                <Col>
-                                    <Skillset value={skillValues.Java} />
-                                </Col>
-                            </Row>
-                            <Row>
-                                <Col >
-                                    Python
-                                    </Col>
-                                <Col>
-                                    <Skillset value={skillValues.Python} />
-                                </Col>
-                            </Row>
-                            <Row>
-                                <Col >
-                                    Django
-                                </Col>
-                                <Col>
-                                    <Skillset value={skillValues.Django} />
-                                </Col>
-                            </Row>
-                            <Row>
-                                <Col >
-                                    Angular
-                                    </Col>
-                                <Col>
-                                    <Skillset value={skillValues.AngularJs} />
-                                </Col>
-                            </Row>
-                            <Row>
-                                <Col >
-                                    JavaScript
-                                </Col>
-                                <Col>
-                                    <Skillset value={skillValues.JavaScript} />
-                                </Col>
-                            </Row>
-                            <Row>
-                                <Col >
-                                    TypeScript
-                                    </Col>
-                                <Col>
-                                    <Skillset value={skillValues.Typescript} />
-                                </Col>
-                            </Row>
-                            <Row>
-                                <Col >
-                                    Domain Driven Design
-                                </Col>
-                                <Col>
-                                    <Skillset value={skillValues.DomainDrivenDesign} />
-                                </Col>
-                            </Row>
-                        </Col>
-                    </Row>
+                    <div className="row">
+                        <div className="col-md-6" style={{ minWidth: 300 /* Starts wrapping the skill bar if this isn't here */ }}>
+                            <ul className="noBullets">
+                                <li className="listStyle">
+                                    <span className="skillTitle"> C++</span>
+                                    <span className="skill"> <Skillset value={languageValues.Cplusplus} /></span>
+                                </li>
+                                <li className="listStyle">
+                                    <span className="skillTitle"> Java </span>
+                                    <span className="skill"> <Skillset value={languageValues.Java} /></span>
+                                </li>
+                                <li className="listStyle">
+                                    <span className="skillTitle"> AngularJS</span>
+                                    <span className="skill"> <Skillset value={languageValues.AngularJs} /></span>
+                                </li>
+                                <li className="listStyle">
+                                    <span className="skillTitle"> Python</span>
+                                    <span className="skill"> <Skillset value={languageValues.Python} /></span>
+                                </li>
+                                <li className="listStyle">
+                                    <span className="skillTitle"> JavaScript</span>
+                                    <span className="skill"> <Skillset value={languageValues.JavaScript} /></span>
+                                </li>
+                                <li className="listStyle">
+                                    <span className="skillTitle"> HTML</span>
+                                    <span className="skill"> <Skillset value={languageValues.HTML} /></span>
+                                </li>
+                                <li className="listStyle">
+                                    <span className="skillTitle"> Bootstrap </span>
+                                    <span className="skill"> <Skillset value={languageValues.Bootstrap} /></span>
+                                </li>
+                                <li className="listStyle">
+                                    <span> MVC  </span>
+                                    <span className="skill"> <Skillset value={languageValues.MVC} /></span>
+                                </li>
+                            </ul>
+                        </div>
+                        <div className="col-md-6" style={{ minWidth: 300 /* Starts wrapping the skill bar if this isn't here */ }} >
+                            <ul className="noBullets">
+                                <li className="listStyle">
+                                    <span className="skillTitle"> C# </span>
+                                    <span className="skill"> <Skillset value={languageValues.CSharp} /></span>
+                                </li>
+                                <li className="listStyle">
+                                    <span className="skillTitle"> React </span>
+                                    <span className="skill"> <Skillset value={languageValues.React} /></span>
+                                </li>
+                                <li className="listStyle">
+                                    <span className="skillTitle"> Django </span>
+                                    <span className="skill"> <Skillset value={languageValues.Django} /></span>
+                                </li>
+                                <li className="listStyle">
+                                    <span className="skillTitle"> Typescript </span>
+                                    <span className="skill"> <Skillset value={languageValues.Typescript} /></span>
+                                </li>
+                                <li className="listStyle">
+                                    <span className="skillTitle"> CSS </span>
+                                    <span className="skill"> <Skillset value={languageValues.CSS} /></span>
+                                </li>
+                                <li className="listStyle">
+                                    <span className="skillTitle"> SQL </span>
+                                    <span className="skill"> <Skillset value={languageValues.SQL} /></span>
+                                </li>
+                                <li className="listStyle">
+                                    <span className="skillTitle"> Domain Driven Design </span>
+                                    <span className="skill"> <Skillset value={languageValues.DomainDrivenDesign} /></span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
                     <br />
-                    <hr className="sectionLine"/>
+                    <hr className="sectionLine" />
+                    <br />
                     <h3 className="headerStyle">
-                                Tools
+                        Tools
                     </h3>
-                    <Row className="alignSkills">
-                        <Col md={5}>
-                            <Row>
-                                <Col >
-                                    SSMS
-                                </Col>
-                                <Col>
-                                    <Skillset value={skillValues.SSMS} />
-                                </Col>
-                            </Row>
-                            <Row>
-                                <Col>
-                                    Git
-                                </Col>
-                                <Col>
-                                    <Skillset value={skillValues.Git} />
-                                </Col>
-                            </Row>
-                            <Row>
-                                <Col>
-                                    Docker
-                            </Col>
-                                <Col>
-                                    <Skillset value={skillValues.Docker} />
-                                </Col>
-                            </Row>
-                            <Row>
-                                <Col>
-                                    FileZilla
-                                </Col>
-                                <Col>
-                                    <Skillset value={skillValues.FileZilla} />
-                                </Col>
-                            </Row>
-                            <Row>
-                                <Col>
-                                    CloneZilla
-                                </Col>
-                                <Col>
-                                    <Skillset value={skillValues.CloneZilla} />
-                                </Col>
-                            </Row>
-                            </Col>
-                            <Col md={7}>
-                                <Row>
-                                    <Col>
-                                        MS Office
-                                    </Col>
-                                    <Col>
-                                        <Skillset value={skillValues.MSOffice} />
-                                    </Col>
-                                </Row>
-                                <Row>
-                                    <Col>
-                                        Sublime Text
-                                    </Col>
-                                    <Col>
-                                        <Skillset value={skillValues.SublimeText} />
-                                    </Col>
-                                </Row>
-                                <Row>
-                                    <Col>
-                                        Visual Studio
-                                </Col>
-                                    <Col>
-                                        <Skillset value={skillValues.VisualStudio} />
-                                    </Col>
-                                </Row>
-                                <Row>
-                                    <Col>
-                                        Notepad++
-                                    </Col>
-                                    <Col>
-                                        <Skillset value={skillValues.NotepadPlusPlus} />
-                                    </Col>
-                                </Row>
-                                <Row>
-                                    <Col>
-                                        SSIS
-                                    </Col>
-                                    <Col>
-                                        <Skillset value={skillValues.SSIS} />
-                                    </Col>
-                                </Row>
-                            </Col>
-                    </Row>
-                    <br/>
-                    <hr className="sectionLine"/>
-
+                    <div className="row">
+                        <div className="col-xs-9 col-sm-9 col-md-6 col-lg-6 col-xl-6" style={{ minWidth: 275 /* Strarts wrapping the skill bar if this isn't here */ }}>
+                            <ul className="noBullets">
+                                <li className="listStyle">
+                                    <span> Git </span>
+                                    <span className="skill"> <Skillset value={toolValues.Git} /></span>
+                                </li>
+                                <li className="listStyle">
+                                    <span> CloneZilla </span>
+                                    <span className="skill"> <Skillset value={toolValues.CloneZilla} /></span>
+                                </li>
+                                <li className="listStyle">
+                                    <span> SSIS </span>
+                                    <span className="skill"> <Skillset value={toolValues.SSIS} /></span>
+                                </li>
+                                <li className="listStyle">
+                                    <span> MS Office </span>
+                                    <span className="skill"> <Skillset value={toolValues.MSOffice} /></span>
+                                </li>
+                                <li className="listStyle">
+                                    <span> Sublime Text </span>
+                                    <span className="skill"> <Skillset value={toolValues.SublimeText} /></span>
+                                </li>
+                                <li className="listStyle">
+                                    <span> Virtual Box </span>
+                                    <span className="skill"> <Skillset value={toolValues.VirtualBox} /></span>
+                                </li>
+                            </ul>
+                        </div>
+                        <div className="col-xs-3 col-sm-3 col-md-6 col-lg-6 col-xl-6" style={{ minWidth: 275 /* Strarts wrapping the skill bar if this isn't here */ }} >
+                            <ul className="noBullets">
+                                <li className="listStyle">
+                                    <span> Docker </span>
+                                    <span className="skill"> <Skillset value={toolValues.Docker} /></span>
+                                </li>
+                                <li className="listStyle">
+                                    <span> FileZilla </span>
+                                    <span className="skill"> <Skillset value={toolValues.FileZilla} /></span>
+                                </li>
+                                <li className="listStyle">
+                                    <span> SSMS </span>
+                                    <span className="skill"> <Skillset value={toolValues.SSMS} /></span>
+                                </li>
+                                <li className="listStyle">
+                                    <span> Notepad++ </span>
+                                    <span className="skill"> <Skillset value={toolValues.NotepadPlusPlus} /></span>
+                                </li>
+                                <li className="listStyle">
+                                    <span> Visual Studio </span>
+                                    <span className="skill"> <Skillset value={toolValues.VisualStudio} /></span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <br />
+                    <hr className="sectionLine" />
+                    <br />
                     <h3 className="headerStyle">
-                                Other Skills
-                     </h3>
-                    <Row className="alignSkills">
-                        <Col md={5}>
-                            <Row>
-                                <Col >
-                                    Apache
-                                </Col>
-                                <Col>
-                                    <Skillset value={skillValues.Apache} />
-                                </Col>
-                            </Row>
-                            <Row>
-                                <Col >
-                                    NextCloud
-                            </Col>
-                                <Col>
-                                    <Skillset value={skillValues.NextCloud} />
-                                </Col>
-                            </Row>
-                            <Row>
-                                <Col >
-                                    PiHole
-                            </Col>
-                                <Col>
-                                    <Skillset value={skillValues.PiHole} />
-                                </Col>
-                            </Row>
-                        </Col>
-                        <Col md={7}>
-                            <Row>
-                                <Col  >
-                                    Home Server Setup
-                                </Col>
-                                <Col>
-                                    <Skillset value={skillValues.HomeServer} />
-                                </Col>
-                            </Row>
-                            <Row>
-                                <Col >
-                                    RSA Encryptions
-                                </Col>
-                                <Col>
-                                    <Skillset value={skillValues.RSAEncryptions} />
-                                </Col>
-                            </Row>
-                            <Row>
-                                <Col>
-                                    Bash
-                                </Col>
-                                <Col>
-                                    <Skillset value={skillValues.Bash} />
-                                </Col>
-                            </Row>
-                        </Col>
-                    </Row> */}
-                    <Row>
-                        <Col xs={12} sm={12} md={6} style={{width: "50%"}}>
+                        Other Skills
+                    </h3>
+                    <div className="row">
+                        <div className="col-xs-9 col-sm-9 col-md-6 col-lg-6 col-xl-6" style={{ minWidth: 275 }} /* Strarts wrapping the skill bar if this isn't here */>
                             <ul className="noBullets">
                                 <li className="listStyle">
-                                    <span> C++</span>
-                                    <span className="skill"> <Skillset value={skillValues.Cplusplus} /></span>
+                                    <span> Linux </span>
+                                    <span className="skill"> <Skillset value={otherSkillValues.Linux} /></span>
                                 </li>
                                 <li className="listStyle">
-                                    <span> C#</span>
-                                    <span className="skill"> <Skillset value={skillValues.CSharp} /></span>
+                                    <span> Apache </span>
+                                    <span className="skill"> <Skillset value={otherSkillValues.Apache } /></span>
                                 </li>
                                 <li className="listStyle">
-                                    <span> Python</span>
-                                    <span className="skill"> <Skillset value={skillValues.Python} /></span>
+                                    <span> PiHole </span>
+                                    <span className="skill"> <Skillset value={otherSkillValues.PiHole} /></span>
                                 </li>
                                 <li className="listStyle">
-                                    <span> JavaScript</span>
-                                    <span className="skill"> <Skillset value={skillValues.JavaScript} /></span>
+                                    <span> NextCloud </span>
+                                    <span className="skill"> <Skillset value={otherSkillValues.NextCloud} /></span>
                                 </li>
                             </ul>
-                        </Col>
-                        <Col xs={12} sm ={0} md={6} style={{width: "50%"}}>
+                        </div>
+                        <div className="col-xs-3 col-sm-3 col-md-6 col-lg-6 col-xl-6" style={{ minWidth: 275 /* Strarts wrapping the skill bar if this isn't here */ }} >
                             <ul className="noBullets">
                                 <li className="listStyle">
-                                    <span> AngularJS</span>
-                                    <span className="skill"> <Skillset value={skillValues.AngularJs} /></span>
+                                    <span> Bash </span>
+                                    <span className="skill"> <Skillset value={otherSkillValues.Bash} /></span>
                                 </li>
                                 <li className="listStyle">
-                                    <span> React </span>
-                                    <span className="skill"> <Skillset value={skillValues.React} /></span>
+                                    <span> Home Server </span>
+                                    <span className="skill"> <Skillset value={otherSkillValues.HomeServer} /></span>
                                 </li>
                                 <li className="listStyle">
-                                    <span> Django </span>
-                                    <span className="skill"> <Skillset value={skillValues.Django} /></span>
-                                </li>
-                                <li className="listStyle">
-                                    <span> SQL </span>
-                                    <span className="skill"> <Skillset value={skillValues.SQL} /></span>
+                                    <span> RSA Encryptions </span>
+                                    <span className="skill"> <Skillset value={otherSkillValues.RSAEncryptions} /></span>
                                 </li>
                             </ul>
-                        </Col>
-                    </Row>
-                    <br/>
-                    <hr className="sectionLine"/>
+                        </div>
+                    </div>
                 </Container>
-                <br />
-            </Container>
             </div>
+
         </div>
     );
 }
