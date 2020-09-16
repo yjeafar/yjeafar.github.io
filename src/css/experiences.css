@@ -16,7 +16,7 @@
 }
 
 .boxBorder {
-    border: 10px silver ridge;
+    border:3px silver ridge;
     border-radius: 15px;
     padding: 5px;
 }
@@ -24,3 +24,23 @@
 .experienceSpacing {
     padding-top: 5%;
 }
+
+.experienceContainer {
+    padding: 5px;
+}
+
+ul {
+    list-style: none;
+ }
+ 
+.bulletStyle > ul li:before {
+    content: "•";
+    font-size: 150%;
+    padding-right: 5px;
+ }
+
+ .bulletStyle > ul li ul li:before {
+    content: "○";
+    font-size: 60%;
+    padding-right: 5px;
+ }
