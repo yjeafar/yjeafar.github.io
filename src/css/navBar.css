@@ -1,6 +1,6 @@
 .header {
     position:fixed; 
-    margin-left: 6%; /* Bad practice, however I couldn't get the nav bar to align to the left without the negative sign */
+    margin-left: 6%;
     margin-top: 17%;
     background-color:black
 }

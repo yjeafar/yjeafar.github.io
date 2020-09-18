@@ -22,6 +22,7 @@
 
 .skillTitle {
     width: 60%;
+    display: inline-block;
 }
 
 .skill {
@@ -29,8 +30,8 @@
 }
 
 .listStyle {
-    width: 80%;
-    display: inline-block;
+    min-height: 30px;
+    min-width: 350px;
 }
 
 

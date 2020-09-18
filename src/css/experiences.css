@@ -7,16 +7,12 @@
     font-style: italic;
 }
 
-#downloadResume {
-    margin-left: 20%;
-}
-
 .Experiences {
     min-height: 1000px;
 }
 
 .boxBorder {
-    border:3px silver ridge;
+    border:3px ridge silver;
     border-radius: 15px;
     padding: 5px;
 }
