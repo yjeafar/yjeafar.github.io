@@ -60,15 +60,14 @@ export default function NavBar() {
                             orientation = "vertical"
                             onChange={handleChange}
                             variant="fullWidth"
-                            indicatorColor="primary"
-                            textColor="primary"
-                            aria-label="icon label tabs example"
+                            indicatorColor="secondary"
+                            style={{backgroundColor: "#2b262d", color: "#f2ebe5" }}
                         >
-                            <Tab icon={<HomeIcon />} label="PORTFOLIO" href="#" />
-                            <Tab icon={<FaceIcon />} label="EXPERIENCES" href="#experiences" />
-                            <Tab icon={<BusinessCenterIcon />} label="PROJECTS" href="#projects" />
-                            <Tab icon={<BarChartIcon />} label="SKILLS" href="#skills" />
-                            <Tab icon={<ContactMailIcon />} label="CONTACT ME" href="#contact-me" />
+                            <Tab icon={<HomeIcon />} aria-label="PORTFOLIO" label="PORTFOLIO" href="#" />
+                            <Tab icon={<FaceIcon />} aria-label="EXPERIENCES" label="EXPERIENCES" href="#experiences" />
+                            <Tab icon={<BusinessCenterIcon />} aria-label="PROJECTS" label="PROJECTS" href="#projects" />
+                            <Tab icon={<BarChartIcon />} aria-label="SKILLS" label="SKILLS" href="#skills" />
+                            <Tab icon={<ContactMailIcon />} aria-label="CONTACT ME" label="CONTACT ME" href="#contact-me" />
                         </Tabs>
                 </Paper>
         </div>

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Row, Col } from 'react-bootstrap';
+import { Row } from 'react-bootstrap';
 import ExternalLinkIcons from './external-link-icons';
 import '../css/site-footer.css';
 import reactFooter from '../pictures/reactFooter.png';

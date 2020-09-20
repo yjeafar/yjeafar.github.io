@@ -33,7 +33,7 @@ export default function AboutMe() {
             <Col>
               <div id="pictureBorder">
                 <img src={me} alt="me" />
-                <div style={{ paddingRight: "15%", paddingTop: "10%" }}>
+                <div style={{ paddingRight: "5%", paddingTop: "10%" }}>
                   <ExternalLinkIcons />
                 </div>
               </div>

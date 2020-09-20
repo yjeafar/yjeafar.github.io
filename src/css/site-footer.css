@@ -1,10 +1,10 @@
 #footerStyle {
     margin-right: auto;
     margin-left: auto;
-    padding: 25px;
+    padding: 20px;
     text-align: center;
     width: 100%;
-    color: black;
+    color: #f2ebe5;
     background-color: #2b262d;
     height: 150px;
   }

@@ -19,7 +19,7 @@ export default function SkillSet(skills) {
 
     return (
         <span className="SkillSet">
-            { skillVal.map((value, i) => <FiberManualRecordIcon color="black" key={i} value={value} />)}
+            { skillVal.map((value, i) => <FiberManualRecordIcon key={i} value={value} />)}
             { totalVal.map((value, i) => <FiberManualRecordOutlinedIcon key = {i} value={value}/>)}
         </span>
     );
