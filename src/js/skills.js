@@ -3,7 +3,6 @@ import { Row, Col, Container } from 'react-bootstrap';
 import Skillset from './skillBar';
 import '../css/skills.css';
 
-
 export default function Skills() {
 
     var languageValues = {
@@ -190,7 +189,7 @@ export default function Skills() {
                                 </li>
                                 <li className="listStyle">
                                     <span className="skillTitle"> NextCloud </span>
-                                    <Skillset className="skill" className="skill" value={otherSkillValues.NextCloud} />
+                                    <Skillset className="skill" value={otherSkillValues.NextCloud} />
                                 </li>
                             </ul>
                         </Col>

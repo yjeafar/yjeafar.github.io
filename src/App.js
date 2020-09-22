@@ -9,23 +9,20 @@ import Experiences from './js/experiences';
 import Skills from './js/skills';
 import './App.css'
 
-
-
-
 export default function App() {
 
   return (
     <main>
-      <div className="App">
-        <Switch>
-          <Route path="/" component={AboutMe} exact />
-          <Route path="/experiences" component={Experiences} />
-          <Route path="/projects" component={Projects} />
-          <Route path="/skills" component={Skills} />
-          <Route path="/contact-me" component={ContactMe} />
-          <Route component={NotFound} />
-        </Switch>
-      </div>
+        <div className="App">
+          <Switch>
+            <Route path="/" component={AboutMe} exact />
+            <Route path="/experiences" component={Experiences} />
+            <Route path="/projects" component={Projects} />
+            <Route path="/skills" component={Skills} />
+            <Route path="/contact-me" component={ContactMe} />
+            <Route component={NotFound} />
+          </Switch>
+        </div>
     </main>
   );
 

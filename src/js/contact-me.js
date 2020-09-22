@@ -17,7 +17,7 @@ const useStyles = makeStyles((theme) => ({
     marginTop: 50,
     marginLeft: "auto",
     marginRight: "auto",
-    marginBottom: 50
+    marginBottom: 50,
   },
   submitButton: {
     marginTop: 10,
@@ -122,6 +122,7 @@ export default function ContactMe(props) {
     }
   }
 
+  
 
   return (
     <div className="lightBackground" id="contact-me">

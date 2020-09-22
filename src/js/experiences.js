@@ -3,9 +3,13 @@ import { Row, Container, Col } from 'react-bootstrap';
 import '../css/experiences.css';
 import { Box } from '@material-ui/core';
 
+function setState(){
+  window.history.pushState("", "Experiences", "/#experiences");
+  
+}
 
 export default function Experiences() {
-
+  // setState();
   return (
     <div className="grayBackground" id="experiences">
       <Container className="containerStyle">
@@ -16,7 +20,7 @@ export default function Experiences() {
               <hr className="horizontalLine" />
             </Col>
           </Row>
-        <br />
+        <br/>
         <h2>
           Education
         </h2>
@@ -27,7 +31,7 @@ export default function Experiences() {
           <Col xs={6} md={5} >
             <span style={{ float: "right" }}>
               September 2016 - December 2019
-              </span>
+            </span>
           </Col>
         </Row>
         <Box m={1} className="boxBorder">

@@ -8,11 +8,10 @@ import FaceIcon from '@material-ui/icons/Face';
 import BusinessCenterIcon from '@material-ui/icons/BusinessCenterSharp';
 import ContactMailIcon from '@material-ui/icons/ContactMail';
 import BarChartIcon from '@material-ui/icons/BarChart';
-import { Link, useHistory } from "react-router-dom";
 import '../css/navBar.css'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import * as TabValue from '../enum';
-import * as $ from 'jquery'; 
+import Scrollspy from 'react-scrollspy';
 
 export default function NavBar() {
 
@@ -34,42 +33,26 @@ export default function NavBar() {
         setValue(newValue);
     };
 
-    const history = useHistory();
-
-    $(window).scroll(
-        function(){
-            if($(this).scrollTop() > 100 && $(this).scrollTop() < 250){
-                window.location.hash.replace("#", '', "#projects");
-            } else if ($(this).scrollTop() > 250 && $(this).scrollTop() < 500 ) {
-                window.location.hash.replace("#experiences");
-            } else if ($(this).scrollTop() > 350 && $(this).scrollTop() < 450) {
-               // history.push("#projects");
-            } else if ($(this).scrollTop() > 450 && $(this).scrollTop() < 550) {
-              //  history.push("#skills");
-            } else if ($(this).scrollTop() > 550 && $(this).scrollTop() < 650) {
-              //  history.push("#contact-me");
-            }
-        }
-    );
-
     return (
         <div className="header">
+            <Scrollspy items={['', 'experiences', 'projects', 'skills', 'contact-me']} currentClassName="is-current">
                 <Paper square className={classes.root}>
-                        <Tabs
-                            value={value}
-                            orientation = "vertical"
-                            onChange={handleChange}
-                            variant="fullWidth"
-                            indicatorColor="secondary"
-                            style={{backgroundColor: "#2b262d", color: "#f2ebe5" }}
-                        >
-                            <Tab icon={<HomeIcon />} aria-label="PORTFOLIO" label="PORTFOLIO" href="#" />
-                            <Tab icon={<FaceIcon />} aria-label="EXPERIENCES" label="EXPERIENCES" href="#experiences" />
-                            <Tab icon={<BusinessCenterIcon />} aria-label="PROJECTS" label="PROJECTS" href="#projects" />
-                            <Tab icon={<BarChartIcon />} aria-label="SKILLS" label="SKILLS" href="#skills" />
-                            <Tab icon={<ContactMailIcon />} aria-label="CONTACT ME" label="CONTACT ME" href="#contact-me" />
-                        </Tabs>
+                    <Tabs
+                        value={value}
+                        orientation="vertical"
+                        onChange={handleChange}
+                        variant="fullWidth"
+                        indicatorColor="secondary"
+                        style={{ backgroundColor: "#2b262d", color: "#f2ebe5" }}
+                    >
+                        <Tab icon={<HomeIcon />} aria-label="PORTFOLIO" label="PORTFOLIO" href="#" />
+                        <Tab icon={<FaceIcon />} aria-label="EXPERIENCES" label="EXPERIENCES" href="#experiences" />
+                        <Tab icon={<BusinessCenterIcon />} aria-label="PROJECTS" label="PROJECTS" href="#projects" />
+                        <Tab icon={<BarChartIcon />} aria-label="SKILLS" label="SKILLS" href="#skills" />
+                        <Tab icon={<ContactMailIcon />} aria-label="CONTACT ME" label="CONTACT ME" href="#contact-me" />
+                    </Tabs>
                 </Paper>
+            </Scrollspy>
         </div>
     );
 }

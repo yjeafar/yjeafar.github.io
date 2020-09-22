@@ -11,7 +11,7 @@ export default function SiteFooter() {
             <footer id="footerStyle" >
                 <ExternalLinkIcons/>
                 <br />
-                <Row className=" d-flex justify-content-center"> Made with React &nbsp; <img src={reactFooter} alt="react"/> </Row>
+                <Row className="d-flex justify-content-center"> Made with React &nbsp; <img src={reactFooter} alt="react"/> </Row>
             </footer>
         </div>
     );

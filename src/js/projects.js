@@ -13,8 +13,6 @@ import HomeServer from './projects/homeServer';
 import URLShortener from './projects/urlShortener';
 import OnlineResume from './projects/onlineResume';
 
-
-
 const images = [ //Holds values for first row images
   {
     url: bell,
@@ -120,6 +118,10 @@ const projects = [
   { id: 4, project: <OnlineResume/> }
 ];
 
+function setState(){
+  window.history.pushState("", "Projects", "/#projects");
+}
+
 
 export default function Projects() {
 
@@ -149,6 +151,8 @@ export default function Projects() {
   }
 
   const classes = useStyles();
+
+ // setState();
 
   return (
     <div className="lightBackground" id="projects">

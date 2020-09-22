@@ -1,3 +1,7 @@
+.App {
+  font-family: "Quicksand", sans-serif !important;
+}
+
 .sectionTitle {
   text-align: center;
 }
@@ -6,6 +10,7 @@
   color: black;
   background-color: black;
   height: 1x;
+  margin-bottom: 50px;
 }
 
 .sectionLine {

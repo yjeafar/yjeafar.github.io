@@ -11,13 +11,17 @@ import me from '../pictures/capture.png';
 import { Row, Col, Container } from 'react-bootstrap';
 import '../css/about-me.css';
 
-export default function AboutMe() {
+function setState(){
+  window.history.pushState("", "About Me", "/#");
+}
 
+export default function AboutMe() {
+  // setState();
   return (
-    <div>
+    <div data-spy="scroll" data-target=".header" data-offset="50">
       <NavBar />
       <div className="lightBackground">
-        <Container className="containerStyle" className="AboutMe">
+        <Container className="containerStyle, AboutMe">
           <Row className="justify-content-md-center">
             <Col style={{ paddingLeft: "15%" }} >
               <h1>Hello! I'm Yasser. </h1>
