@@ -7,7 +7,7 @@ import { Switch } from "react-router-dom";
 import NotFound from './js/not-found';
 import Experiences from './js/experiences';
 import Skills from './js/skills';
-import './App.css'
+import './App.css';
 
 export default function App() {
 

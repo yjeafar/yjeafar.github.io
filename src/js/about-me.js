@@ -6,19 +6,15 @@ import Skills from './skills'
 import NavBar from './navBar';
 import ExternalLinkIcons from './external-link-icons';
 import SiteFooter from './site-footer';
-import { Element } from 'react-scroll';
 import me from '../pictures/capture.png';
 import { Row, Col, Container } from 'react-bootstrap';
 import '../css/about-me.css';
-
-function setState(){
-  window.history.pushState("", "About Me", "/#");
-}
+import ScrollableSection from 'react-update-url-on-scroll/lib/ScrollableSection';
 
 export default function AboutMe() {
-  // setState();
   return (
-    <div data-spy="scroll" data-target=".header" data-offset="50">
+    <div>
+      <ScrollableSection name={'#'}>
       <NavBar />
       <div className="lightBackground">
         <Container className="containerStyle, AboutMe">
@@ -45,13 +41,12 @@ export default function AboutMe() {
           </Row>
         </Container>
       </div>
-      <Element id='example-destination' name='example-destination'>
         <Experiences />
-      </Element>
       <Projects />
       <Skills />
       <ContactMe />
       <SiteFooter />
+      </ScrollableSection>
     </div>
   );
 }

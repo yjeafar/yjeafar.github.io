@@ -6,6 +6,7 @@ import Button from '@material-ui/core/Button';
 import { Card, CardContent } from '@material-ui/core';
 import '../css/contact-me.css'
 import { Container, Row, Col, Alert, Spinner } from 'react-bootstrap';
+import ScrollableSection from 'react-update-url-on-scroll/lib/ScrollableSection';
 
 
 const useStyles = makeStyles((theme) => ({
@@ -46,7 +47,6 @@ const useStyles = makeStyles((theme) => ({
     height: "3rem"
   }
 }));
-
 
 export default function ContactMe(props) {
 
@@ -122,11 +122,12 @@ export default function ContactMe(props) {
     }
   }
 
-  
+
 
   return (
     <div className="lightBackground" id="contact-me">
-      <Container className="containerStyle">
+      <ScrollableSection name={'/#contact-me'}>
+        <Container className="containerStyle">
           <Row className="justify-content-md-center">
             <Col md="5">
               <h1 className="sectionTitle">Contact Me</h1>
@@ -134,115 +135,116 @@ export default function ContactMe(props) {
               <hr className='horizontalLine' />
             </Col>
           </Row>
-        <div className="d-flex justify-content-center">
-          {progress && <Spinner animation="border" variant="primary" className={classes.spinner} size="lg" />}
-        </div>
-        <Alert show={successShow} variant="success" className={classes.alert}>
-          <Alert.Heading>Message Sent!</Alert.Heading>
-          <p>
-            Thanks for the message! Please allow a day or two for me to respond.
-        </p>
-          <hr />
-          <div className="d-flex justify-content-end">
-            <Button onClick={() => setSuccessShow(false)} variant="outline-success">
-              Click here to close
-          </Button>
+          <div className="d-flex justify-content-center">
+            {progress && <Spinner animation="border" variant="primary" className={classes.spinner} size="lg" />}
           </div>
-        </Alert>
-        <Alert show={failShow} variant="danger" className={classes.alert}>
-          <Alert.Heading> Oh No, the Message Failed to Send!</Alert.Heading>
-          <p>
-            Uh-Oh... Something went wrong. Please try again. If the problem persists, please reach out to me in one of the ways specified below, and let me know.
+          <Alert show={successShow} variant="success" className={classes.alert}>
+            <Alert.Heading>Message Sent!</Alert.Heading>
+            <p>
+              Thanks for the message! Please allow a day or two for me to respond.
         </p>
-          <hr />
-          <div className="d-flex justify-content-end">
-            <Button onClick={() => setFailShow(false)} variant="outline-danager">
-              Click here to close
+            <hr />
+            <div className="d-flex justify-content-end">
+              <Button onClick={() => setSuccessShow(false)} variant="outline-success">
+                Click here to close
           </Button>
-          </div>
-        </Alert>
-        <Card className={classes.card}>
-          <CardContent>
-            <form id="contactForm" className={classes.root} autoComplete="off" onSubmit={handleSubmit}>
-              <div className={classes.margin}>
-                <Grid container spacing={1} alignItems="flex-end">
-                  <TextField
-                    error={!name && touched.includes("name")} // Empty name, initialized to be a space so this is not triggered
-                    helperText={getErrorText('name')} // Only show helper text on error
-                    id="filled-required"
-                    label="Name"
-                    name="name"
-                    value={name}
-                    onBlur={(e) => handleBlur(e)}
-                    required
-                    variant="outlined"
-                    margin="dense"
-                    className={classes.textLength}
-                    onChange={e => setName(e.target.value)} // Set state hook to new value everytime it changes
-                  />
-                </Grid>
-              </div>
-              <div className={classes.margin}>
-                <Grid container spacing={1} alignItems="flex-end">
-                  <TextField
-                    error={(!email && touched.includes("email")) || (touched.includes("email") && email.length > 5 && !email.match(/(?:[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*|"(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21\x23-\x5b\x5d-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])*")@(?:(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?|\[(?:(?:(2(5[0-5]|[0-4][0-9])|1[0-9][0-9]|[1-9]?[0-9]))\.){3}(?:(2(5[0-5]|[0-4][0-9])|1[0-9][0-9]|[1-9]?[0-9])|[a-z0-9-]*[a-z0-9]:(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21-\x5a\x53-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])+)\])/))}
-                    helperText={getErrorText('email')}
-                    id="filled-required"
-                    label="Email"
-                    name="email"
-                    value={email}
-                    onBlur={(e) => handleBlur(e)}
-                    required
-                    variant="outlined"
-                    margin="dense"
-                    className={classes.textLength}
-                    onChange={e => setEmail(e.target.value)}
-                  />
-                </Grid>
-              </div>
-              <div>
-                <Grid container spacing={1} alignItems="flex-end">
-                  <Grid item>
+            </div>
+          </Alert>
+          <Alert show={failShow} variant="danger" className={classes.alert}>
+            <Alert.Heading> Oh No, the Message Failed to Send!</Alert.Heading>
+            <p>
+              Uh-Oh... Something went wrong. Please try again. If the problem persists, please reach out to me in one of the ways specified below, and let me know.
+        </p>
+            <hr />
+            <div className="d-flex justify-content-end">
+              <Button onClick={() => setFailShow(false)} variant="outline-danager">
+                Click here to close
+          </Button>
+            </div>
+          </Alert>
+          <Card className={classes.card}>
+            <CardContent>
+              <form id="contactForm" className={classes.root} autoComplete="off" onSubmit={handleSubmit}>
+                <div className={classes.margin}>
+                  <Grid container spacing={1} alignItems="flex-end">
                     <TextField
-                      error={(!message && touched.includes("message")) || (touched.includes("message") && message.length <= 5)}
-                      helperText={getErrorText('message')}
-                      id="outlined-multiline-static"
-                      label="Message"
-                      name="message"
-                      value={message}
+                      error={!name && touched.includes("name")} // Empty name, initialized to be a space so this is not triggered
+                      helperText={getErrorText('name')} // Only show helper text on error
+                      id="filled-required"
+                      label="Name"
+                      name="name"
+                      value={name}
                       onBlur={(e) => handleBlur(e)}
                       required
-                      multiline
-                      rows={10}
-                      rowsMax={10}
-                      className={classes.textLength}
                       variant="outlined"
                       margin="dense"
-                      onChange={e => setMessage(e.target.value)}
+                      className={classes.textLength}
+                      onChange={e => setName(e.target.value)} // Set state hook to new value everytime it changes
                     />
                   </Grid>
-                </Grid>
-              </div>
-              <Row>
-                <Col>
-                  <Button
-                    className={classes.clearButton}
-                    variant="contained"
-                    color="secondary"
-                    onClick={() => resetForm()}> Reset </Button>
-                </Col>
-                <Col>
-                  <Button
-                    className={classes.submitButton}
-                    variant="contained"
-                    color="primary"
-                    type="submit"> Submit </Button>
-                </Col>
-              </Row>
-            </form>
-          </CardContent>
-        </Card>
-      </Container>
+                </div>
+                <div className={classes.margin}>
+                  <Grid container spacing={1} alignItems="flex-end">
+                    <TextField
+                      error={(!email && touched.includes("email")) || (touched.includes("email") && email.length > 5 && !email.match(/(?:[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*|"(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21\x23-\x5b\x5d-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])*")@(?:(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?|\[(?:(?:(2(5[0-5]|[0-4][0-9])|1[0-9][0-9]|[1-9]?[0-9]))\.){3}(?:(2(5[0-5]|[0-4][0-9])|1[0-9][0-9]|[1-9]?[0-9])|[a-z0-9-]*[a-z0-9]:(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21-\x5a\x53-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])+)\])/))}
+                      helperText={getErrorText('email')}
+                      id="filled-required"
+                      label="Email"
+                      name="email"
+                      value={email}
+                      onBlur={(e) => handleBlur(e)}
+                      required
+                      variant="outlined"
+                      margin="dense"
+                      className={classes.textLength}
+                      onChange={e => setEmail(e.target.value)}
+                    />
+                  </Grid>
+                </div>
+                <div>
+                  <Grid container spacing={1} alignItems="flex-end">
+                    <Grid item>
+                      <TextField
+                        error={(!message && touched.includes("message")) || (touched.includes("message") && message.length <= 5)}
+                        helperText={getErrorText('message')}
+                        id="outlined-multiline-static"
+                        label="Message"
+                        name="message"
+                        value={message}
+                        onBlur={(e) => handleBlur(e)}
+                        required
+                        multiline
+                        rows={10}
+                        rowsMax={10}
+                        className={classes.textLength}
+                        variant="outlined"
+                        margin="dense"
+                        onChange={e => setMessage(e.target.value)}
+                      />
+                    </Grid>
+                  </Grid>
+                </div>
+                <Row>
+                  <Col>
+                    <Button
+                      className={classes.clearButton}
+                      variant="contained"
+                      color="secondary"
+                      onClick={() => resetForm()}> Reset </Button>
+                  </Col>
+                  <Col>
+                    <Button
+                      className={classes.submitButton}
+                      variant="contained"
+                      color="primary"
+                      type="submit"> Submit </Button>
+                  </Col>
+                </Row>
+              </form>
+            </CardContent>
+          </Card>
+        </Container>
+      </ScrollableSection>
     </div>
   );
 }

@@ -2,6 +2,7 @@ import React from 'react';
 import { Row, Col, Container } from 'react-bootstrap';
 import Skillset from './skillBar';
 import '../css/skills.css';
+import ScrollableSection from 'react-update-url-on-scroll/lib/ScrollableSection';
 
 export default function Skills() {
 
@@ -25,6 +26,7 @@ export default function Skills() {
 
     return (
         <div className="randomBackground" id="skills">
+            <ScrollableSection name={'/#skills'}>
                 <Container className="containerStyle">
                     <Row className="justify-content-md-center">
                         <Col md="5">
@@ -45,7 +47,7 @@ export default function Skills() {
                                 </li>
                                 <li className="listStyle">
                                     <span className="skillTitle"> Java </span>
-                                    <Skillset className="skill" value={languageValues.Java}/>
+                                    <Skillset className="skill" value={languageValues.Java} />
                                 </li>
                                 <li className="listStyle">
                                     <span className="skillTitle"> AngularJS</span>
@@ -81,7 +83,7 @@ export default function Skills() {
                                 </li>
                                 <li className="listStyle">
                                     <span className="skillTitle"> React </span>
-                                    <Skillset className="skill" value={languageValues.React}  />
+                                    <Skillset className="skill" value={languageValues.React} />
                                 </li>
                                 <li className="listStyle">
                                     <span className="skillTitle"> Django </span>
@@ -93,7 +95,7 @@ export default function Skills() {
                                 </li>
                                 <li className="listStyle">
                                     <span className="skillTitle"> CSS </span>
-                                    <Skillset className="skill" value={languageValues.CSS}  />
+                                    <Skillset className="skill" value={languageValues.CSS} />
                                 </li>
                                 <li className="listStyle">
                                     <span className="skillTitle"> SQL </span>
@@ -101,7 +103,7 @@ export default function Skills() {
                                 </li>
                                 <li className="listStyle">
                                     <span className="skillTitle"> Domain Driven Design </span>
-                                    <Skillset className="skill" value={languageValues.DomainDrivenDesign}  />
+                                    <Skillset className="skill" value={languageValues.DomainDrivenDesign} />
                                 </li>
                             </ul>
                         </Col>
@@ -181,7 +183,7 @@ export default function Skills() {
                                 </li>
                                 <li className="listStyle">
                                     <span className="skillTitle"> Apache </span>
-                                    <Skillset className="skill" value={otherSkillValues.Apache } />
+                                    <Skillset className="skill" value={otherSkillValues.Apache} />
                                 </li>
                                 <li className="listStyle">
                                     <span className="skillTitle"> PiHole </span>
@@ -211,6 +213,7 @@ export default function Skills() {
                         </Col>
                     </Row>
                 </Container>
-            </div>
+            </ScrollableSection>
+        </div>
     );
 }

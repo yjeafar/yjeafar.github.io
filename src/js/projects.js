@@ -7,11 +7,13 @@ import '../css/projects.css';
 import bell from '../pictures/bellGraph.jpg';
 import pc from '../pictures/pc.jpg';
 import urlShortener from  '../pictures/urlshortener.jpg'; 
+import me from '../pictures/me.jpg'
 import { Collapse } from '@material-ui/core';
 import BasketballCoaches from './projects/basketballCoach';
 import HomeServer from './projects/homeServer';
 import URLShortener from './projects/urlShortener';
 import OnlineResume from './projects/onlineResume';
+import ScrollableSection from 'react-update-url-on-scroll/lib/ScrollableSection';
 
 const images = [ //Holds values for first row images
   {
@@ -36,7 +38,7 @@ const images = [ //Holds values for first row images
 
 const images2 = [ // Holds values for second row imgaes
   {
-    url: bell,
+    url: me,
     title: 'This Website',
     width: '99%',
     id: 4
@@ -155,6 +157,7 @@ export default function Projects() {
  // setState();
 
   return (
+    <ScrollableSection name={'#projects'}>
     <div className="lightBackground" id="projects">
       <Container  className="Projects"id="containerStyle">
          <Row className="justify-content-md-center">
@@ -242,5 +245,6 @@ export default function Projects() {
       </div>
       </Container>
       </div>
+      </ScrollableSection>
   );
 }
