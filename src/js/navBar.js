@@ -1,5 +1,4 @@
-import React, { useEffect, useState } from 'react';
-import ReactDOM from 'react-dom';
+import React, { useState } from 'react';
 import Paper from '@material-ui/core/Paper';
 import { makeStyles } from '@material-ui/core/styles';
 import Tabs from '@material-ui/core/Tabs';
@@ -12,8 +11,7 @@ import BarChartIcon from '@material-ui/icons/BarChart';
 import '../css/navBar.css'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import * as TabValue from '../enum';
-import Scrollspy from 'react-scrollspy';
-import { isVisible } from './isVisible';
+import * as $ from 'jquery';
 
 export default function NavBar() {
 
@@ -35,29 +33,32 @@ export default function NavBar() {
 
     let timer = null;
 
-    window.addEventListener('scroll', function () {
-        if (timer !== null) {
-            clearTimeout(timer);
-        }
-        timer = setTimeout(function () {
-            if (tabSelected) {
-                setValue(TabValue.Initial[window.location.hash]); // Add event listener to change tab once user types in url manually
-                console.log(TabValue.Initial[window.location.hash]);
-                setTabSelected(false);
-            }
-        }, 500);
-    }, false);
+    // function handleScroll(){
+
+    //     window.addEventListener('scroll', function () {
+    //         if (timer !== null) {
+    //             clearTimeout(timer);
+    //         }
+    //         timer = setTimeout(function () {
+    //             if (tabSelected) {
+    //                 setValue(TabValue.Initial[window.location.hash]); // Add event listener to change tab once user types in url manually
+    //                 console.log(TabValue.Initial[window.location.hash]);
+    //                 setTabSelected(false);
+    //             }
+    //         }, 600);
+    //     }, false);
+    // }
+    
+    $(window).on('hashchange', function() {
+        console.log('changed!')
+      });
 
     function handleChange(e, newValue) {
         setValue(newValue);
-        console.log(value)
+        console.log(value);
         setTabSelected(true);
+        console.log(window.location.hash)
     }
-    // useEffect(() => {
-    // function getValue() {
-    //         return value;
-    // }}, [value])
-
 
 
 

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import TextField from '@material-ui/core/TextField';
 import Grid from '@material-ui/core/Grid';
@@ -122,11 +122,11 @@ export default function ContactMe(props) {
     }
   }
 
-
+  console.log(props)
 
   return (
-    <div className="lightBackground" id="contact-me">
-      <ScrollableSection name={'/#contact-me'}>
+    <div className="lightBackground" id="contact-me" ref={props.projectRef} >
+      <ScrollableSection name={'/#contact-me'} affecthistory="true">
         <Container className="containerStyle">
           <Row className="justify-content-md-center">
             <Col md="5">

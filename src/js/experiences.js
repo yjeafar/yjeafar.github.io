@@ -4,7 +4,6 @@ import '../css/experiences.css';
 import { Box } from '@material-ui/core';
 import ScrollableSection from 'react-update-url-on-scroll/lib/ScrollableSection';
 
-
 export default function Experiences() {
   return (
     <div className="grayBackground" id="experiences">

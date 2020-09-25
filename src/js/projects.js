@@ -124,7 +124,6 @@ function setState(){
   window.history.pushState("", "Projects", "/#projects");
 }
 
-
 export default function Projects() {
 
   const [selected, setSelected] = React.useState(0); // 0 is not a key in projects object
@@ -154,10 +153,10 @@ export default function Projects() {
 
   const classes = useStyles();
 
- // setState();
+
 
   return (
-    <ScrollableSection name={'#projects'}>
+    <ScrollableSection name={'#projects'} affecthistory="true">
     <div className="lightBackground" id="projects">
       <Container  className="Projects"id="containerStyle">
          <Row className="justify-content-md-center">

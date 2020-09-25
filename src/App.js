@@ -1,5 +1,5 @@
 import React from 'react';
-import AboutMe from './js/about-me';
+import AllComponents from './js/all-components';
 import Projects from './js/projects';
 import ContactMe from './js/contact-me';
 import { Route } from 'react-router';
@@ -15,7 +15,7 @@ export default function App() {
     <main>
         <div className="App">
           <Switch>
-            <Route path="/" component={AboutMe} exact />
+            <Route path="/" component={AllComponents} exact />
             <Route path="/experiences" component={Experiences} />
             <Route path="/projects" component={Projects} />
             <Route path="/skills" component={Skills} />

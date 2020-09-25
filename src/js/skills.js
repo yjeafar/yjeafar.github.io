@@ -26,7 +26,7 @@ export default function Skills() {
 
     return (
         <div className="randomBackground" id="skills">
-            <ScrollableSection name={'/#skills'}>
+            <ScrollableSection name={'/#skills'} affecthistory="true">
                 <Container className="containerStyle">
                     <Row className="justify-content-md-center">
                         <Col md="5">

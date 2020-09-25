@@ -1,22 +1,18 @@
-import React from 'react';
-import Experiences from './experiences';
-import Projects from './projects';
-import ContactMe from './contact-me';
-import Skills from './skills'
+import React, { useRef } from 'react';
 import NavBar from './navBar';
 import ExternalLinkIcons from './external-link-icons';
-import SiteFooter from './site-footer';
 import me from '../pictures/capture.png';
 import { Row, Col, Container } from 'react-bootstrap';
 import '../css/about-me.css';
 import ScrollableSection from 'react-update-url-on-scroll/lib/ScrollableSection';
 
 export default function AboutMe() {
+  const projectRef = React.createRef();
   return (
-    <div>
-      <ScrollableSection name={'#'}>
+    <div >
+      <ScrollableSection name={'#'} >
       <NavBar />
-      <div className="lightBackground">
+      <div className="lightBackground" ref={projectRef}>
         <Container className="containerStyle, AboutMe">
           <Row className="justify-content-md-center">
             <Col style={{ paddingLeft: "15%" }} >
@@ -41,11 +37,6 @@ export default function AboutMe() {
           </Row>
         </Container>
       </div>
-        <Experiences />
-      <Projects />
-      <Skills />
-      <ContactMe />
-      <SiteFooter />
       </ScrollableSection>
     </div>
   );
