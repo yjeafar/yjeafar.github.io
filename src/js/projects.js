@@ -153,11 +153,11 @@ export default function Projects() {
 
   const classes = useStyles();
 
-
+  const projectRef = React.createRef();
 
   return (
-    <ScrollableSection name={'#projects'} affecthistory="true">
-    <div className="lightBackground" id="projects">
+    <ScrollableSection name={'#projects'}>
+    <div className="lightBackground" id="projects" forwardref={projectRef}>
       <Container  className="Projects"id="containerStyle">
          <Row className="justify-content-md-center">
            <Col md="5">
