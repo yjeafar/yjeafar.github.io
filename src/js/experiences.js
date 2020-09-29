@@ -4,12 +4,9 @@ import '../css/experiences.css';
 import { Box } from '@material-ui/core';
 import ScrollableSection from 'react-update-url-on-scroll/lib/ScrollableSection';
 
-export default function Experiences(props) {
-  console.log(props.parent)
-  const experienceRef = React.createRef();
+export default function Experiences({forwardedRef}) {
   return (
-    <div className="grayBackground" id="experiences" >
-      <ScrollableSection name={'#experiences'}>
+    <div className="grayBackground" id="experiences" ref={forwardedRef} >
         <Container className="containerStyle">
           <Row className="justify-content-md-center">
             <Col md="5">
@@ -216,7 +213,6 @@ export default function Experiences(props) {
           </div>
           <br />
         </Container>
-      </ScrollableSection>
     </div>
   );
 }

@@ -4,7 +4,7 @@ import Skillset from './skillBar';
 import '../css/skills.css';
 import ScrollableSection from 'react-update-url-on-scroll/lib/ScrollableSection';
 
-export default function Skills() {
+export default function Skills({forwardedRef}) {
 
     var languageValues = {
         Cplusplus: 3, Java: 2, CSharp: 4, Bootstrap: 3,
@@ -25,8 +25,7 @@ export default function Skills() {
     };
 
     return (
-        <div className="randomBackground" id="skills">
-            <ScrollableSection name={'/#skills'} affecthistory="true">
+        <div className="randomBackground" id="skills" ref={forwardedRef}>
                 <Container className="containerStyle">
                     <Row className="justify-content-md-center">
                         <Col md="5">
@@ -213,7 +212,6 @@ export default function Skills() {
                         </Col>
                     </Row>
                 </Container>
-            </ScrollableSection>
         </div>
     );
 }

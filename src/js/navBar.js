@@ -49,9 +49,9 @@ export default function NavBar() {
     //     }, false);
     // }
     
-    $(window).on('hashchange', function() {
-        console.log('changed!')
-      });
+    // $(window).on('hashchange', function() {
+    //     console.log('changed!')
+    //   });
 
     function handleChange(e, newValue) {
         setValue(newValue);

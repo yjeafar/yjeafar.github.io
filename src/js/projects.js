@@ -124,7 +124,7 @@ function setState(){
   window.history.pushState("", "Projects", "/#projects");
 }
 
-export default function Projects() {
+export default function Projects({forwardedRef}) {
 
   const [selected, setSelected] = React.useState(0); // 0 is not a key in projects object
 
@@ -153,11 +153,8 @@ export default function Projects() {
 
   const classes = useStyles();
 
-  const projectRef = React.createRef();
-
   return (
-    <ScrollableSection name={'#projects'}>
-    <div className="lightBackground" id="projects" forwardref={projectRef}>
+    <div className="lightBackground" id="projects" ref={ forwardedRef }>
       <Container  className="Projects"id="containerStyle">
          <Row className="justify-content-md-center">
            <Col md="5">
@@ -244,6 +241,5 @@ export default function Projects() {
       </div>
       </Container>
       </div>
-      </ScrollableSection>
   );
 }

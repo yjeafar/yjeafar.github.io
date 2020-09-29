@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import React from 'react';
 import NavBar from './navBar';
 import ExternalLinkIcons from './external-link-icons';
 import me from '../pictures/capture.png';
@@ -6,13 +6,11 @@ import { Row, Col, Container } from 'react-bootstrap';
 import '../css/about-me.css';
 import ScrollableSection from 'react-update-url-on-scroll/lib/ScrollableSection';
 
-export default function AboutMe() {
-  const projectRef = React.createRef();
+export default function AboutMe({forwardedRef}) {
   return (
     <div >
-      <ScrollableSection name={'#'} >
       <NavBar />
-      <div className="lightBackground" ref={projectRef}>
+      <div className="lightBackground" ref={ forwardedRef }>
         <Container className="containerStyle, AboutMe">
           <Row className="justify-content-md-center">
             <Col style={{ paddingLeft: "15%" }} >
@@ -37,7 +35,6 @@ export default function AboutMe() {
           </Row>
         </Container>
       </div>
-      </ScrollableSection>
     </div>
   );
 }

@@ -48,7 +48,7 @@ const useStyles = makeStyles((theme) => ({
   }
 }));
 
-export default function ContactMe(props) {
+export default function ContactMe({forwardedRef}) {
 
   const [name, setName] = useState(""); // Set initial state, space used so no error displayed on page load
 
@@ -122,11 +122,8 @@ export default function ContactMe(props) {
     }
   }
 
-  console.log(props)
-
   return (
-    <div className="lightBackground" id="contact-me" ref={props.projectRef} >
-      <ScrollableSection name={'/#contact-me'} affecthistory="true">
+    <div className="lightBackground" id="contact-me" ref={ forwardedRef } >
         <Container className="containerStyle">
           <Row className="justify-content-md-center">
             <Col md="5">
@@ -244,7 +241,6 @@ export default function ContactMe(props) {
             </CardContent>
           </Card>
         </Container>
-      </ScrollableSection>
     </div>
   );
 }
