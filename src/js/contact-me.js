@@ -69,23 +69,23 @@ export default function ContactMe({forwardedRef}) {
   function getErrorText(label) {
     switch (label) {
       case 'name':
-        if (!name && touched[0]) {
+        if (!name && touched.includes('name')) {
           return ("Name can't be empty");
         }
         break;
       case 'email':
-        if (email.length < 1 && touched[1]) {
+        if (email.length < 1 && touched.includes('email')) {
           return ("Email can't be empty");
         }
-        else if (touched[1] && email.length > 5 && !email.match(/(?:[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*|"(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21\x23-\x5b\x5d-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])*")@(?:(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?|\[(?:(?:(2(5[0-5]|[0-4][0-9])|1[0-9][0-9]|[1-9]?[0-9]))\.){3}(?:(2(5[0-5]|[0-4][0-9])|1[0-9][0-9]|[1-9]?[0-9])|[a-z0-9-]*[a-z0-9]:(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21-\x5a\x53-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])+)\])/)) {
+        else if (touched.includes('email') && email.length > 5 && !email.match(/(?:[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*|"(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21\x23-\x5b\x5d-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])*")@(?:(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?|\[(?:(?:(2(5[0-5]|[0-4][0-9])|1[0-9][0-9]|[1-9]?[0-9]))\.){3}(?:(2(5[0-5]|[0-4][0-9])|1[0-9][0-9]|[1-9]?[0-9])|[a-z0-9-]*[a-z0-9]:(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21-\x5a\x53-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])+)\])/)) {
           return ('Invalid Email');
         }
         break;
       case 'message':
-        if (!message && touched[2]) {
+        if (!message && touched.includes('message')) {
           return ("Message can't be empty");
         }
-        else if (touched[2] && message.length <= 5) {
+        else if (touched.includes('message') && message.length <= 5) {
           return ('Message is too short')
         }
         break;
@@ -102,6 +102,7 @@ export default function ContactMe({forwardedRef}) {
   }
 
   function handleBlur(event) {
+    console.log(event.target.name)
     if (!touched.includes(event.target.name)) {
       setTouched([
         ...touched,
@@ -165,7 +166,7 @@ export default function ContactMe({forwardedRef}) {
                 <div className={classes.margin}>
                   <Grid container spacing={1} alignItems="flex-end">
                     <TextField
-                      error={!name && touched.includes("name")} // Empty name, initialized to be a space so this is not triggered
+                      error={!name && touched.includes("name")} // Check if array has name, if so then it was touched
                       helperText={getErrorText('name')} // Only show helper text on error
                       id="filled-required"
                       label="Name"

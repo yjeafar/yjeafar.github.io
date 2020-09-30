@@ -1,6 +1,6 @@
 .AboutMe {
     padding-bottom: 5%;
-    padding-top: 5%;
+    padding-top: 3%;
 }
 
 #pictureBorder {
@@ -8,4 +8,14 @@
     padding: 8% 5% 7% 9%;
     width: 50%;
     min-width: 300px;
+}
+
+#appHeader {
+    text-align: center;
+    font-size: 50px;
+    padding-bottom: 1%;
+}
+
+#appSubHeader {
+    text-align: center;
 }

@@ -4,14 +4,16 @@ import ExternalLinkIcons from './external-link-icons';
 import me from '../pictures/capture.png';
 import { Row, Col, Container } from 'react-bootstrap';
 import '../css/about-me.css';
-import ScrollableSection from 'react-update-url-on-scroll/lib/ScrollableSection';
 
-export default function AboutMe({forwardedRef}) {
+export default function AboutMe({ forwardedRef }) {
   return (
     <div >
       <NavBar />
-      <div className="lightBackground" ref={ forwardedRef }>
+      <div className="lightBackground" ref={forwardedRef}>
         <Container className="containerStyle, AboutMe">
+          <h1 id="appHeader">Yasser Jeafar </h1>
+          <h2 id="appSubHeader">Online Resume</h2>
+          <hr className='horizontalLine' style={{width: '50%'}} />
           <Row className="justify-content-md-center">
             <Col style={{ paddingLeft: "15%" }} >
               <h1>Hello! I'm Yasser. </h1>

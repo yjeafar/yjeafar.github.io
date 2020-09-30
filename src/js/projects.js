@@ -7,13 +7,12 @@ import '../css/projects.css';
 import bell from '../pictures/bellGraph.jpg';
 import pc from '../pictures/pc.jpg';
 import urlShortener from  '../pictures/urlshortener.jpg'; 
-import me from '../pictures/me.jpg'
+import portfolio from '../pictures/portfolio.jpg'
 import { Collapse } from '@material-ui/core';
 import BasketballCoaches from './projects/basketballCoach';
 import HomeServer from './projects/homeServer';
 import URLShortener from './projects/urlShortener';
 import OnlineResume from './projects/onlineResume';
-import ScrollableSection from 'react-update-url-on-scroll/lib/ScrollableSection';
 
 const images = [ //Holds values for first row images
   {
@@ -38,7 +37,7 @@ const images = [ //Holds values for first row images
 
 const images2 = [ // Holds values for second row imgaes
   {
-    url: me,
+    url: portfolio,
     title: 'This Website',
     width: '99%',
     id: 4
