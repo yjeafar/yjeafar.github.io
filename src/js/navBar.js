@@ -25,38 +25,17 @@ export default function NavBar() {
 
     const [value, setValue] = useState(TabValue.Initial[window.location.hash]); // Sets tab based on url path (enum holds paths)
 
-    const [tabSelected, setTabSelected] = useState(true); // Sets tab based on url path (enum holds paths)
-
     window.addEventListener('hashchange', () => {
         setValue(TabValue.Initial[window.location.hash]) // Add event listener to change tab once user types in url manually
     });
-
-    // let timer = null;
-
-    // function handleScroll(){
-
-    //     window.addEventListener('scroll', function () {
-    //         if (timer !== null) {
-    //             clearTimeout(timer);
-    //         }
-    //         timer = setTimeout(function () {
-    //             if (tabSelected) {
-    //                 setValue(TabValue.Initial[window.location.hash]); // Add event listener to change tab once user types in url manually
-    //                 console.log(TabValue.Initial[window.location.hash]);
-    //                 setTabSelected(false);
-    //             }
-    //         }, 600);
-    //     }, false);
-    // }
     
-    // $(window).on('hashchange', function() {
-    //     console.log('changed!')
-    //   });
+    $(window).on('hashchange', function() {
+        console.log('changed!')
+      });
 
     function handleChange(e, newValue) {
         setValue(newValue);
         console.log(value);
-        setTabSelected(true);
         console.log(window.location.hash)
     }
 

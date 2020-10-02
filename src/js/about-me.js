@@ -13,7 +13,7 @@ export default function AboutMe({ forwardedRef }) {
         <Container className="containerStyle, AboutMe">
           <h1 id="appHeader">Yasser Jeafar </h1>
           <h2 id="appSubHeader">Online Resume</h2>
-          <hr className='horizontalLine' style={{width: '50%'}} />
+          <hr className='horizontalLine' style={{width: '70%'}} />
           <Row className="justify-content-md-center">
             <Col style={{ paddingLeft: "15%" }} >
               <h1>Hello! I'm Yasser. </h1>
