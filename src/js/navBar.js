@@ -31,7 +31,7 @@ export default function NavBar() {
         setValue(TabValue.Initial[window.location.hash]) // Add event listener to change tab once user types in url manually
     });
 
-    let timer = null;
+    // let timer = null;
 
     // function handleScroll(){
 

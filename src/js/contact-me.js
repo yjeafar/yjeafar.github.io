@@ -6,7 +6,6 @@ import Button from '@material-ui/core/Button';
 import { Card, CardContent } from '@material-ui/core';
 import '../css/contact-me.css'
 import { Container, Row, Col, Alert, Spinner } from 'react-bootstrap';
-import ScrollableSection from 'react-update-url-on-scroll/lib/ScrollableSection';
 
 
 const useStyles = makeStyles((theme) => ({
@@ -14,7 +13,7 @@ const useStyles = makeStyles((theme) => ({
     margin: theme.spacing(1),
   },
   card: {
-    width: 600,
+    width: "67%",
     marginTop: 50,
     marginLeft: "auto",
     marginRight: "auto",
@@ -23,7 +22,7 @@ const useStyles = makeStyles((theme) => ({
   submitButton: {
     marginTop: 10,
     float: "right",
-    marginRight: 40,
+    marginRight: "20%",
     marginBottom: 20
   },
   clearButton: {
@@ -39,7 +38,7 @@ const useStyles = makeStyles((theme) => ({
   alert: {
     marginLeft: "auto",
     marginRight: "auto",
-    width: 600,
+    width: "80%",
   },
   spinner: {
     marginTop: 10,

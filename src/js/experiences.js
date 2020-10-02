@@ -2,7 +2,6 @@ import React from 'react';
 import { Row, Container, Col } from 'react-bootstrap';
 import '../css/experiences.css';
 import { Box } from '@material-ui/core';
-import ScrollableSection from 'react-update-url-on-scroll/lib/ScrollableSection';
 
 export default function Experiences({forwardedRef}) {
   return (
@@ -19,23 +18,25 @@ export default function Experiences({forwardedRef}) {
           <h2>
             Education
         </h2>
-          <Row className='companyName'>
-            <Col xs={6} md={7}>
+          <Row className='companyName' >
+            <Col xs={6} md={7} style={{minWidth: 280}} >
+              <span >
               University of Michigan - Dearborn
+              </span>
             </Col>
-            <Col xs={6} md={5} >
-              <span style={{ float: "right" }}>
+            <Col xs={6} md={5} style={{minWidth: 200}} >
+              <span>
                 September 2016 - December 2019
             </span>
             </Col>
           </Row>
-          <Box m={1} className="boxBorder">
+          <Box m={1} className="boxBorder" >
             <Row className='positionName'>
               <Col xs={12} md={12}>
                 Bachelor of Science in Software Engineering
             </Col>
             </Row>
-            <div className="experienceContainer">
+            <div className="experienceContainer"  style={{overflow:"hidden" }}>
               I started school knowing I would do engineering but not knowing what exactly. Coming from a Middle Eastern background and with my
               parents being first generation immigrants without a whole lot of knowledge about computers, I didn't consider Software Engineering
               at first. After some time, I took a CIS class, and knew this was what I wanted to do for the rest of my life. I joined the Insitute
