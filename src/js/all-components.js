@@ -27,11 +27,15 @@ export default function AllComponents() {
     const skillsComponentHeight = ReactDOM.findDOMNode(skillsRef.current).clientHeight;
     const contactMeComponentHeight = ReactDOM.findDOMNode(contactMeRef.current).clientHeight;
 
-    const projectsHeight = aboutMeComponentHeight + experiencesComponentHeight + projectsComponentHeight;
+    const experienceHeight = aboutMeComponentHeight + experiencesComponentHeight;
+
+    const projectsHeight = experienceHeight + projectsComponentHeight;
 
     const skillsHeight = projectsHeight + skillsComponentHeight;
 
     const contactMeHeight = skillsHeight + contactMeComponentHeight;
+
+    console.log(projectsHeight, skillsHeight)
 
     let timer = null;
 
@@ -40,14 +44,14 @@ export default function AllComponents() {
         clearTimeout(timer);
       }
       timer = setTimeout(function () {
+        console.log(window.scrollY);
         if (window.scrollY >= 0 && window.scrollY <= aboutMeComponentHeight) {
           window.history.pushState("", "About Me", "/#");
-          
         }
-        else if (window.scrollY >= aboutMeComponentHeight && window.scrollY <= experiencesComponentHeight) {
+        else if (window.scrollY >= aboutMeComponentHeight && window.scrollY <= experienceHeight) {
           window.history.pushState("", "Experiences", "/#experiences");
         }
-        else if (window.scrollY >= experiencesComponentHeight && window.scrollY <= projectsHeight) {
+        else if (window.scrollY >= experienceHeight && window.scrollY <= projectsHeight) {
           window.history.pushState("", "Projects", "/#projects");
         }
         else if (window.scrollY >= projectsHeight && window.scrollY <= skillsHeight) {

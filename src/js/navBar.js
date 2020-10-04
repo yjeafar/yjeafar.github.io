@@ -11,7 +11,7 @@ import BarChartIcon from '@material-ui/icons/BarChart';
 import '../css/navBar.css'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import * as TabValue from '../enum';
-import * as $ from 'jquery';
+
 
 export default function NavBar() {
 
@@ -28,17 +28,10 @@ export default function NavBar() {
     window.addEventListener('hashchange', () => {
         setValue(TabValue.Initial[window.location.hash]) // Add event listener to change tab once user types in url manually
     });
-    
-    $(window).on('hashchange', function() {
-        console.log('changed!')
-      });
 
     function handleChange(e, newValue) {
         setValue(newValue);
-        console.log(value);
-        console.log(window.location.hash)
     }
-
 
 
     return (
