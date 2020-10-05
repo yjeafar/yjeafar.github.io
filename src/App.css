@@ -4,12 +4,14 @@
 
 .sectionTitle {
   text-align: center;
+  color:#9f496e;
 }
 
 .horizontalLine {
-  color: black;
-  background-color: black;
-  height: 1x;
+  color: silver;
+  background-color: silver;
+  height: 1px;
+  margin-top: 25px;
   margin-bottom: 50px;
 }
 
@@ -21,15 +23,15 @@
 
 .lightBackground {
   width: 100%;
-  background-color: #f2ebe5;
+  background-color: #f7f4ef;
 }
 
-.grayBackground {
+.blueBackground {
   width: 100%;
-  background-color: #647295;
+  background-color: #94a7ae;
 }
 
-.randomBackground {
+.magentaBackground {
   width: 100%;
   background-color: #9f496e;
 }

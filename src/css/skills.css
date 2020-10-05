@@ -1,5 +1,6 @@
 .headerStyle { /* Used to set the same height since height has multiple lines*/
     padding-bottom:10px;
+    color: #9f496e;
 }
 
 .SkillSet {
@@ -31,11 +32,5 @@
 
 .listStyle {
     min-height: 30px;
-    min-width: 350px;
+    min-width: 326px;
 }
-
-
-/* .skill ul > li .skillTitle {
-    display: inline-block;
-    width: 60%;
-} */

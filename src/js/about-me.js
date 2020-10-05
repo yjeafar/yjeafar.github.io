@@ -12,28 +12,28 @@ export default function AboutMe({ forwardedRef }) {
       <div className="lightBackground" ref={forwardedRef}>
         <Container className="containerStyle, AboutMe">
           <h1 id="appHeader">Yasser Jeafar </h1>
-          <h2 id="appSubHeader">Online Resume</h2>
-          <hr className='horizontalLine' style={{width: '70%'}} />
-          <Row className="justify-content-md-center">
-            <Col style={{ paddingLeft: "15%" }} >
-              <h1>Hello! I'm Yasser. </h1>
-              <div style={{ paddingBottom: 10 }}>
-                I'm a Software Engineer that has professional full stack developer experience. Check out my ever-exapnding portfolio page to see some of my work!
+          <h2 className="sectionTitle">Online Resume</h2>
+          <hr className='horizontalLine' style={{ width: '70%' }} />
+          <Row className="justify-content-md-center" >
+            <div id="pictureBorder">
+              <Col style={{ float:"left", width:"50%", backgroundColor:"#4B3F4B",  height:"100%"}} >
+                <h1>Hello! I'm Yasser. </h1>
+                <div style={{ paddingBottom: 10 }}>
+                  I'm a Software Engineer that has professional full stack developer experience. Check out my ever-exapnding projects section below to see some of my work!
               </div>
-              <h3>About Me</h3>
-              <p>
-                I love learning new technologies, Linux, and FOSS. In my spare time, I enjoy fishing, amateur star gazing
+                <h3>About Me</h3>
+                <p>
+                  I love learning new technologies, Linux, and FOSS. In my spare time, I enjoy fishing, amateur star gazing
                 (when I can actually setup my telescope properly), hiking, and Game of Thrones (excluding the last season) <span role="img" aria-label="Smiling Emoji">😄</span>
-              </p>
-            </Col>
-            <Col>
-              <div id="pictureBorder">
-                <img src={me} alt="me" />
-                <div style={{ paddingRight: "5%", paddingTop: "10%" }}>
+                </p>
+              </Col>
+              <Col style={{float: "right", width:"50%", paddingLeft: 0}}>
+                <img src={me} alt="me" width="100%" height="500" />
+              </Col>
+            </div>
+            <div  className="justify-content-md-center" style={{ paddingTop: "1%" }}>
                   <ExternalLinkIcons />
-                </div>
-              </div>
-            </Col>
+            </div>
           </Row>
         </Container>
       </div>

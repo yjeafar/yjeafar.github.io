@@ -25,7 +25,7 @@ export default function Skills({forwardedRef}) {
     };
 
     return (
-        <div className="randomBackground" id="skills" ref={forwardedRef}>
+        <div className="blueBackground" id="skills" ref={forwardedRef}>
                 <Container className="containerStyle">
                     <Row className="justify-content-md-center">
                         <Col md="5">
