@@ -1,24 +1,25 @@
 .header {
     position:fixed; 
     margin-left: 87%;
-    margin-top: 17%;
+    margin-top: 13%;
     overflow: hidden;
     min-width: 160px;
 }
+
 html {
     scroll-behavior: smooth;
 }
 
-/* a { 
-    color: #0004ff;
+a :hover { 
+    color: #945c74;
     text-decoration: none;
-} */
+}
 
 .MuiTabs-flexContainer > a:hover { /* Take off everything before and including > if you want everything hovered over to be the same color */
-    color: #9f496e !important;
+    color: #945c74 !important;
 }
 
 .MuiTab-textColorInherit.Mui-selected { /* Current tab selected */ 
     opacity: 1;
-    color: #9f496e;  
+    color: #945c74;  
 }

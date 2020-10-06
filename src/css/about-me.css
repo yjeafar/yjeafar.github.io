@@ -12,9 +12,22 @@
 #appHeader {
     text-align: center;
     font-size: 50px;
-    padding-bottom: 1%;
+    color: #945c74;
 }
 
 #appSubHeader {
     text-align: center;
+}
+
+#headerStyle {
+    padding-top: 1%;
+    padding-bottom: 1%;
+    background-color: #e2d9dc;
+    width: 100%;
+    min-height: 75px;
+}
+
+#nameStyle {
+    font-size: 40px;
+    color: #945c74;
 }

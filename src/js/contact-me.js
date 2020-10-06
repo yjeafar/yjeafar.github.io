@@ -18,12 +18,14 @@ const useStyles = makeStyles((theme) => ({
     marginLeft: "auto",
     marginRight: "auto",
     marginBottom: 50,
+    backgroundColor: "#e2d9dc"
   },
   submitButton: {
     marginTop: 10,
     float: "right",
-    marginRight: "20%",
-    marginBottom: 20
+    marginRight: "17%",
+    marginBottom: 20,
+    backgroundColor: "#945c74"
   },
   clearButton: {
     marginTop: 10,
@@ -128,7 +130,7 @@ export default function ContactMe({forwardedRef}) {
           <Row className="justify-content-md-center">
             <Col md="5">
               <h1 className="sectionTitle">Contact Me</h1>
-              <div className="sectionTitle">I usually respond pretty quickly, technology is great </div>
+              <div className="sectionSubTitle">I usually respond pretty quickly, technology is great </div>
               <hr className='horizontalLine' />
             </Col>
           </Row>
@@ -223,17 +225,11 @@ export default function ContactMe({forwardedRef}) {
                 </div>
                 <Row>
                   <Col>
-                    <Button
-                      className={classes.clearButton}
-                      variant="contained"
-                      color="secondary"
-                      onClick={() => resetForm()}> Reset </Button>
                   </Col>
                   <Col>
                     <Button
                       className={classes.submitButton}
                       variant="contained"
-                      color="primary"
                       type="submit"> Submit </Button>
                   </Col>
                 </Row>

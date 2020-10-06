@@ -5,18 +5,18 @@ import { Box } from '@material-ui/core';
 
 export default function Experiences({ forwardedRef }) {
   return (
-    <div className="blueBackground" id="experiences" ref={forwardedRef} >
+    <div className="secondBackground" id="experiences" ref={forwardedRef} >
       <Container className="containerStyle">
         <Row className="justify-content-md-center">
           <Col md="5">
             <h1 className="sectionTitle">Experiences</h1>
-            <div className="sectionTitle">The experiences from my life </div>
+            <div className="sectionSubTitle">The experiences from my life </div>
             <hr className="horizontalLine" />
           </Col>
         </Row>
         <br />
         <div className="sectionSpacing">
-          <h2>
+          <h2 style={{color: "#945c74"}}>
             Education
         </h2>
           <Row className='companyName' >
@@ -49,7 +49,7 @@ export default function Experiences({ forwardedRef }) {
           <br />
         </div>
         <div>
-          <h2>
+          <h2 style={{color: "#945c74"}}>
             Work Experience
         </h2>
           <div className="sectionSpacing">

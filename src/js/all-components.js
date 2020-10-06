@@ -35,8 +35,6 @@ export default function AllComponents() {
 
     const contactMeHeight = skillsHeight + contactMeComponentHeight;
 
-    console.log(projectsHeight, skillsHeight)
-
     let timer = null;
 
     window.addEventListener('scroll', function () {
@@ -45,16 +43,16 @@ export default function AllComponents() {
       }
       timer = setTimeout(function () {
         console.log(window.scrollY);
-        if (window.scrollY >= 0 && window.scrollY <= aboutMeComponentHeight) {
+        if (window.scrollY >= 0 && window.scrollY < aboutMeComponentHeight) {
           window.history.pushState("", "About Me", "/#");
         }
-        else if (window.scrollY >= aboutMeComponentHeight && window.scrollY <= experienceHeight) {
+        else if (window.scrollY > aboutMeComponentHeight && window.scrollY < experienceHeight) {
           window.history.pushState("", "Experiences", "/#experiences");
         }
-        else if (window.scrollY >= experienceHeight && window.scrollY <= projectsHeight) {
+        else if (window.scrollY > experienceHeight && window.scrollY < projectsHeight) {
           window.history.pushState("", "Projects", "/#projects");
         }
-        else if (window.scrollY >= projectsHeight && window.scrollY <= skillsHeight) {
+        else if (window.scrollY > projectsHeight && window.scrollY < skillsHeight) {
           // console.log(TabValue.Initial[window.location.hash]);
           window.history.pushState("", "Skills", "/#skills");
         }

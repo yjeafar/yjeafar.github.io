@@ -25,12 +25,12 @@ export default function Skills({forwardedRef}) {
     };
 
     return (
-        <div className="blueBackground" id="skills" ref={forwardedRef}>
+        <div className="secondBackground" id="skills" ref={forwardedRef}>
                 <Container className="containerStyle">
                     <Row className="justify-content-md-center">
                         <Col md="5">
                             <h1 className="sectionTitle">Skills</h1>
-                            <div className="sectionTitle">Skills from my life </div>
+                            <div className="sectionSubTitle">Skills from my life </div>
                             <hr className='horizontalLine' />
                         </Col>
                     </Row>

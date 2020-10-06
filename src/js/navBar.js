@@ -42,7 +42,7 @@ export default function NavBar() {
                     orientation="vertical"
                     onChange={handleChange}
                     variant="fullWidth"
-                    indicatorColor="secondary"
+                    indicatorColor="primary"
                     style={{ backgroundColor: "#2b262d", color: "#f2ebe5" }}
                 >
                     <Tab icon={<HomeIcon />} aria-label="PORTFOLIO" label="PORTFOLIO" href="#" />
