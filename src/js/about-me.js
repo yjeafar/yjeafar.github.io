@@ -13,8 +13,8 @@ export default function AboutMe({ forwardedRef }) {
           <Col id="nameStyle">
             <span>Yasser Jeafar </span>
           </Col>
-          <Col>
-            <span>
+          <Col id="externalLinks">
+            <span style={{float: "right"}}>
               <ExternalLinkIcons />
             </span>
           </Col>

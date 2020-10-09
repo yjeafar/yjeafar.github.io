@@ -42,7 +42,6 @@ export default function AllComponents() {
         clearTimeout(timer);
       }
       timer = setTimeout(function () {
-        console.log(window.scrollY);
         if (window.scrollY >= 0 && window.scrollY < aboutMeComponentHeight) {
           window.history.pushState("", "About Me", "/#");
         }

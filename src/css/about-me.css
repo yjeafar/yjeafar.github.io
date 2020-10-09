@@ -28,6 +28,14 @@
 }
 
 #nameStyle {
-    font-size: 40px;
+    font-size: 35px;
     color: #945c74;
+    min-width: 380px;
+    padding-left: 20%;
+}
+
+#externalLinks {
+    padding-top:10px;
+    padding-right: 20%;
+    min-width: 300px;
 }

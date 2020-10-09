@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import ButtonBase from '@material-ui/core/ButtonBase';
 import Typography from '@material-ui/core/Typography';
@@ -6,7 +6,7 @@ import { Container, Col, Row } from 'react-bootstrap';
 import '../css/projects.css';
 import bell from '../pictures/bellGraph.jpg';
 import pc from '../pictures/pc.jpg';
-import urlShortener from  '../pictures/urlshortener.jpg'; 
+import urlShortener from '../pictures/urlshortener.jpg';
 import portfolio from '../pictures/portfolio.jpg'
 import { Collapse } from '@material-ui/core';
 import BasketballCoaches from './projects/basketballCoach';
@@ -14,7 +14,7 @@ import HomeServer from './projects/homeServer';
 import URLShortener from './projects/urlShortener';
 import OnlineResume from './projects/onlineResume';
 
-const images = [ //Holds values for first row images
+const imagesRow1 = [ //Holds values for first row images
   {
     url: bell,
     title: 'Coaching Skill with Age',
@@ -35,7 +35,7 @@ const images = [ //Holds values for first row images
   },
 ];
 
-const images2 = [ // Holds values for second row imgaes
+const imagesRow2 = [ // Holds values for second row imgaes
   {
     url: portfolio,
     title: 'This Website',
@@ -113,23 +113,19 @@ const useStyles = makeStyles((theme) => ({
 
 
 const projects = [
-  { id: 1, project: <BasketballCoaches/> }, // Object to hold speicfic id and comnponent, for project. This is to make sure I only have one 
-  { id: 2, project: <HomeServer/> },        // collapse component below, making it dynamic.
-  { id: 3, project: <URLShortener/> },
-  { id: 4, project: <OnlineResume/> }
+  { id: 1, project: <BasketballCoaches /> }, // Object to hold speicfic id and comnponent, for project. This is to make sure I only have one 
+  { id: 2, project: <HomeServer /> },        // collapse component below, making it dynamic.
+  { id: 3, project: <URLShortener /> },
+  { id: 4, project: <OnlineResume /> }
 ];
 
-function setState(){
-  window.history.pushState("", "Projects", "/#projects");
-}
+export default function Projects({ forwardedRef }) {
 
-export default function Projects({forwardedRef}) {
+  const [selected, setSelected] = useState(0); // 0 is not a key in projects object
 
-  const [selected, setSelected] = React.useState(0); // 0 is not a key in projects object
+  const [showProject, setShow] = useState(false);
 
-  const [showProject, setShow] = React.useState(false);
-
-  const [projectSelected, setProject] = React.useState([]);
+  const [projectSelected, setProject] = useState([]);
 
   const handleSelect = (projectId) => {
     setSelected(projectId);
@@ -138,107 +134,119 @@ export default function Projects({forwardedRef}) {
 
   function renderProjectComponent(projectId) {
 
-  let temp = projects.filter(e => e.id === projectId) 
+    let temp = projects.filter(e => e.id === projectId)
 
-  setProject(temp); // State hook sets after method is complete. This causes an error because I need it set right away, workaround is a temp var
-    console.log(selected, projectId);
-    if (temp[0]) { // There is a value in array, meaning image was clicked
-        if (selected === projectId || (!showProject && selected !== projectId) || (selected === 0))  // If the old id is the same as current id, show/hide element. 
-         {                                                                                           // If not, keep showing element. If old value is not the same as the
-          setShow((prev => !prev));                                                                  // current value and it is not shown, then show it. Captures all clicks
-        }
-      }
+    setProject(temp); // State hook sets after method is complete. This causes an error because I need it set right away, workaround is a temp var
+    if (temp[0]) {    // There is a value in array, meaning image was clicked
+      if (selected === projectId || (!showProject && selected !== projectId) || (selected === 0))  // If the old id is the same as current id, show/hide element. 
+      {                                                                                            // If not, keep showing element. If old value is not the same as the
+        setShow((prev => !prev));                                                                  // current value and it is not shown, then show it. Captures all clicks
+      }                                                                                            // on buttons
+    }
+  }
+
+  function checker(projectId, projectShow) {
+    console.log(projectId, projectShow)
+    return (projectId > 3 && projectShow)
+  }
+
+  function Test() {
+    useEffect(() => {
+      return () => checker(projectSelected[0]?.id, showProject);
+    }, [])
   }
 
   const classes = useStyles();
 
   return (
-    <div className="lightBackground" id="projects" ref={ forwardedRef }>
-      <Container  className="Projects"id="containerStyle">
-         <Row className="justify-content-md-center">
-           <Col md="5">
-             <h1 className="sectionTitle">Projects</h1>
-             <div className="sectionSubTitle"> The projects from my life </div>
-             <hr className='horizontalLine' />
-           </Col>
-         </Row>
-      {images.map((image) => (
-        <ButtonBase
-          focusRipple
-          onClick={() => handleSelect(image.id)}
-          key={image.title}
-          className={classes.image}
-          focusVisibleClassName={classes.focusVisible}
-          style={{
-            width: image.width,
-          }}
-        >
-          <span
-            className={classes.imageSrc}
+    <div className="lightBackground" id="projects" ref={forwardedRef}>
+      <Container className="Projects" id="containerStyle">
+        <Row className="justify-content-md-center">
+          <Col md="5">
+            <h1 className="sectionTitle">Projects</h1>
+            <div className="sectionSubTitle"> The projects from my life </div>
+            <hr className='horizontalLine' />
+          </Col>
+        </Row>
+        {imagesRow1.map((image) => (
+          <ButtonBase
+            focusRipple
+            onClick={() => handleSelect(image.id)}
+            key={image.title} // Assign id of project to each button, keeps track of which one was clicked 
+            className={classes.image}
+            focusVisibleClassName={classes.focusVisible}
             style={{
-              backgroundImage: `url(${image.url})`,
+              width: image.width,
             }}
-          />
-          <span className={classes.imageBackdrop} />
-          <span className={classes.imageButton}>
-            <Typography
-              component="span"
-              variant="subtitle1"
-              color="inherit"
-              className={classes.imageTitle}
-              // onClick={(e) => e.target.style="opacity: 1" }
-            >
-              {image.title}
-              <span className={classes.imageMarked} />
-            </Typography>
-          </span>
-        </ButtonBase>
-      ))}
-      
-      <div className="projectSpacing">
-          <Collapse in = {showProject && projectSelected[0].id <= 3}> 
-            { projectSelected[0]?.project } 
+          >
+            <span
+              className={classes.imageSrc}
+              style={{
+                backgroundImage: `url(${image.url})`,
+              }}
+            />
+            <span className={classes.imageBackdrop} />
+            <span className={classes.imageButton}>
+              <Typography
+                component="span"
+                variant="subtitle1"
+                color="inherit"
+                className={classes.imageTitle}
+              >
+                {image.title}
+                <span className={classes.imageMarked} />
+              </Typography>
+            </span>
+          </ButtonBase>
+        ))}
+
+        <div className="projectSpacing">
+          <Collapse in={showProject && projectSelected[0].id <= 3}>
+            {projectSelected[0]?.project}
           </Collapse>
-      </div>
+        </div>
 
-
-      {images2.map((image) => (
-        <ButtonBase
-          focusRipple
-          onClick={() => handleSelect(image.id)}
-          key={image.title}
-          className={classes.image}
-          focusVisibleClassName={classes.focusVisible}
-          style={{
-            width: image.width,
-          }}
-        >
-          <span
-            className={classes.imageSrc}
+        {imagesRow2.map((image) => (
+          <ButtonBase
+            focusRipple
+            onClick={() => handleSelect(image.id)}
+            key={image.title}
+            className={classes.image}
+            focusVisibleClassName={classes.focusVisible}
             style={{
-              backgroundImage: `url(${image.url})`,
+              width: image.width,
             }}
-          />
-          <span className={classes.imageBackdrop} />
-          <span className={classes.imageButton}>
-            <Typography
-              component="span"
-              variant="subtitle1"
-              color="inherit"
-              className={classes.imageTitle}
-            >
-              {image.title}
-              <span className={classes.imageMarked} />
-            </Typography>
-          </span>
-        </ButtonBase>
-      ))}
-      <div className="projectSpacing">
-          <Collapse in = {showProject && projectSelected[0].id >= 4}> 
-            { projectSelected[0]?.project } 
+          >
+            <span
+              className={classes.imageSrc}
+              style={{
+                backgroundImage: `url(${image.url})`,
+              }}
+            />
+            <span className={classes.imageBackdrop} />
+            <span className={classes.imageButton}>
+              <Typography
+                component="span"
+                variant="subtitle1"
+                color="inherit"
+                className={classes.imageTitle}
+              >
+                {image.title}
+                <span className={classes.imageMarked} />
+              </Typography>
+            </span>
+          </ButtonBase>
+        ))}
+
+        <div className="projectSpacing">
+          {/* pro = showProject, x = projectSelected[0]?.id */}
+          {/* { useEffect(() => console.log(projectSelected[0]?.id))} */}
+          <Collapse in={Test()}>
+            {console.log(Test())}
+            {projectSelected[0]?.project}
           </Collapse>
-      </div>
+        </div>
       </Container>
-      </div>
+    </div>
   );
 }
