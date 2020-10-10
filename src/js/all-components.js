@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useRef } from 'react';
 import ReactDOM from 'react-dom';
 import Experiences from './experiences';
 import Projects from './projects';
@@ -65,7 +65,7 @@ export default function AllComponents() {
   })
 
   return (
-    <div className="LoadComponents">
+    <div>
       <AboutMe forwardedRef={aboutMeRef} />
       <Experiences forwardedRef={experienceRef} />
       <Projects forwardedRef={projectsRef} />

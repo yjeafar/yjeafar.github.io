@@ -9,7 +9,7 @@ export default function AboutMe({ forwardedRef }) {
   return (
     <div>
       <div id="headerStyle">
-        <Row>
+        <Row style={{marginRight:0 /* Horizontal scrollbar shown for page website this */}}> 
           <Col id="nameStyle">
             <span>Yasser Jeafar </span>
           </Col>

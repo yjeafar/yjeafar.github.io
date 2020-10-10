@@ -1,9 +1,8 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import ButtonBase from '@material-ui/core/ButtonBase';
 import Typography from '@material-ui/core/Typography';
 import { Container, Col, Row } from 'react-bootstrap';
-import '../css/projects.css';
 import bell from '../pictures/bellGraph.jpg';
 import pc from '../pictures/pc.jpg';
 import urlShortener from '../pictures/urlshortener.jpg';
@@ -13,6 +12,7 @@ import BasketballCoaches from './projects/basketballCoach';
 import HomeServer from './projects/homeServer';
 import URLShortener from './projects/urlShortener';
 import OnlineResume from './projects/onlineResume';
+import '../css/projects.css';
 
 const imagesRow1 = [ //Holds values for first row images
   {
@@ -61,11 +61,11 @@ const useStyles = makeStyles((theme) => ({
         opacity: 0,
       },
       '& $imageTitle': {
-        border: '4px solid currentColor',
+        border: '4px solid #945c74',
       },
     },
   },
-  focusVisible: {},
+  focusVisible: { },
   imageButton: {
     position: 'absolute',
     left: 0,
@@ -75,7 +75,7 @@ const useStyles = makeStyles((theme) => ({
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
-    color: theme.palette.common.white,
+    color: "#945c74",
   },
   imageSrc: {
     position: 'absolute',
@@ -99,18 +99,18 @@ const useStyles = makeStyles((theme) => ({
   imageTitle: {
     position: 'relative',
     padding: `${theme.spacing(2)}px ${theme.spacing(4)}px ${theme.spacing(1) + 6}px`,
+    fontWeight: 600
   },
   imageMarked: {
     height: 3,
     width: 18,
-    backgroundColor: theme.palette.common.white,
+    backgroundColor: "#945c74",
     position: 'absolute',
     bottom: -2,
     left: 'calc(50% - 9px)',
     transition: theme.transitions.create('opacity'),
   },
 }));
-
 
 const projects = [
   { id: 1, project: <BasketballCoaches /> }, // Object to hold speicfic id and comnponent, for project. This is to make sure I only have one 
@@ -121,39 +121,66 @@ const projects = [
 
 export default function Projects({ forwardedRef }) {
 
-  const [selected, setSelected] = useState(0); // 0 is not a key in projects object
+  const [showProjectRow1, setShowRow1] = useState(false);
 
-  const [showProject, setShow] = useState(false);
+  const [showProjectRow2, setShowRow2] = useState(false);
 
-  const [projectSelected, setProject] = useState([]);
+  const [showProjectRow3, setShowRow3] = useState(false);
+
+  const [row1ProjectSelected, setRow1Project] = useState([]);
+
+  const [row2ProjectSelected, setRow2Project] = useState([]);
+
+  const [row3ProjectSelected, setRow3Project] = useState([]);
 
   const handleSelect = (projectId) => {
-    setSelected(projectId);
     renderProjectComponent(projectId);
   };
 
   function renderProjectComponent(projectId) {
 
-    let temp = projects.filter(e => e.id === projectId)
+    let isRow1Shown = false; // Variable used to check if the collapse element in the first row is shown
 
-    setProject(temp); // State hook sets after method is complete. This causes an error because I need it set right away, workaround is a temp var
-    if (temp[0]) {    // There is a value in array, meaning image was clicked
-      if (selected === projectId || (!showProject && selected !== projectId) || (selected === 0))  // If the old id is the same as current id, show/hide element. 
-      {                                                                                            // If not, keep showing element. If old value is not the same as the
-        setShow((prev => !prev));                                                                  // current value and it is not shown, then show it. Captures all clicks
-      }                                                                                            // on buttons
+    let isRow2Shown = false; // Variable used to check if the collapse element in the second row is shown
+
+    let isRow3Shown = false; // Variable used to check if the collapse element in the third row is shown
+
+    let temp = projects.filter(e => e.id === projectId); // Finds the project that the user has selected and gets the id for it (defined in projects object above)
+
+    // Seperated the projects by rows for the two different Collapse elements. If id is between 1-3 it's in row 1, 4-6 is row 2, etc. Will never exceed 3 rows
+    if (temp[0].id <= 3) {
+      setRow1Project(temp);
+    } else if (temp[0].id > 3 && temp[0].id <= 6) {
+      setRow2Project(temp);
+    } else if (temp[0].id > 6) {
+      setRow3Project(temp);
     }
-  }
 
-  function checker(projectId, projectShow) {
-    console.log(projectId, projectShow)
-    return (projectId > 3 && projectShow)
-  }
+    /* Logic to show/hide the two collapse elements, makes them seem like they are working together. First part checks if its in the first row. The second part checks if the 
+       user has clicked the same element as before, if so show/hide it. The condition after the || operator is to check if the project is currently being shown, if false then 
+       it'll show the element. Inside of the if, a temp var is set to check if the current row is being shown or now, and then showProject hook is set */
 
-  function Test() {
-    useEffect(() => {
-      return () => checker(projectSelected[0]?.id, showProject);
-    }, [])
+    if (temp[0].id <= 3 && (temp[0] === row1ProjectSelected[0] || !showProjectRow1)) {
+      isRow1Shown = !showProjectRow1;
+      setShowRow1(isRow1Shown);
+    } else if ((temp[0].id > 3 && temp[0].id <= 6) || (!showProjectRow2 && (temp[0].id > 3 && temp[0].id <= 6))) { // Similar logic to above
+      isRow2Shown = !showProjectRow2;
+      setShowRow2(isRow2Shown);
+    } else if ((temp[0].id > 6) || (!showProjectRow3 && temp[0].id > 6)) {
+      isRow3Shown = !showProjectRow3;
+      setShowRow3(isRow3Shown);
+    }
+
+    if (isRow1Shown) { // If the Collapse element in row 1 is shown, then hide the Collapse element in the second row and third row, and vice versa
+      setShowRow2(false);
+      setShowRow3(false);
+    } else if (isRow2Shown) {
+      setShowRow1(false);
+      setShowRow3(false);
+    } else if (isRow3Shown) {
+      setShowRow1(false);
+      setShowRow2(false);
+    }
   }
 
   const classes = useStyles();
@@ -201,8 +228,8 @@ export default function Projects({ forwardedRef }) {
         ))}
 
         <div className="projectSpacing">
-          <Collapse in={showProject && projectSelected[0].id <= 3}>
-            {projectSelected[0]?.project}
+          <Collapse in={showProjectRow1 && row1ProjectSelected[0]}>
+            {row1ProjectSelected[0]?.project}
           </Collapse>
         </div>
 
@@ -231,6 +258,7 @@ export default function Projects({ forwardedRef }) {
                 color="inherit"
                 className={classes.imageTitle}
               >
+                
                 {image.title}
                 <span className={classes.imageMarked} />
               </Typography>
@@ -239,11 +267,14 @@ export default function Projects({ forwardedRef }) {
         ))}
 
         <div className="projectSpacing">
-          {/* pro = showProject, x = projectSelected[0]?.id */}
-          {/* { useEffect(() => console.log(projectSelected[0]?.id))} */}
-          <Collapse in={Test()}>
-            {console.log(Test())}
-            {projectSelected[0]?.project}
+          <Collapse in={showProjectRow2 && row2ProjectSelected[0]}>
+            {row2ProjectSelected[0]?.project}
+          </Collapse>
+        </div>
+
+        <div className="projectSpacing">
+          <Collapse in={showProjectRow3 && row3ProjectSelected[0]}>
+            {row3ProjectSelected[0]?.project}
           </Collapse>
         </div>
       </Container>

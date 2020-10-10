@@ -2,7 +2,6 @@ import React from 'react';
 import { Row, Col, Container } from 'react-bootstrap';
 import Skillset from './skillBar';
 import '../css/skills.css';
-import ScrollableSection from 'react-update-url-on-scroll/lib/ScrollableSection';
 
 export default function Skills({forwardedRef}) {
 

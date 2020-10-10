@@ -25,7 +25,11 @@ const useStyles = makeStyles((theme) => ({
     float: "right",
     marginRight: "17%",
     marginBottom: 20,
-    backgroundColor: "#945c74"
+    backgroundColor: "#945c74",
+    '&:hover': {
+      backgroundColor: "#f2ebe5",
+      color: '#2b262d'
+  }
   },
   clearButton: {
     marginTop: 10,
@@ -111,7 +115,6 @@ export default function ContactMe({forwardedRef}) {
       ])
     }
   }
-
 
   function handleSubmit(e) {
     e.preventDefault();
@@ -230,7 +233,7 @@ export default function ContactMe({forwardedRef}) {
                     <Button
                       className={classes.submitButton}
                       variant="contained"
-                      type="submit"> Submit </Button>
+                      type="submit"> Send Message </Button>
                   </Col>
                 </Row>
               </form>

@@ -7,10 +7,6 @@
     font-style: italic;
 }
 
-.Experiences {
-    min-height: 1000px;
-}
-
 .boxBorder {
     border:3px ridge silver;
     border-radius: 15px;

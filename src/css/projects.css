@@ -14,7 +14,8 @@
 
 
 .projectBorder {
-    border: 1px black solid ;
+    border: 3px ridge silver;
+    border-radius: 15px;
     padding: 5px;
 }
 
