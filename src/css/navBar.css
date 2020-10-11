@@ -1,9 +1,14 @@
-.header {
+.navBar {
     position:fixed; 
     margin-left: 87%;
     margin-top: 13%;
-    overflow: hidden;
     min-width: 160px;
+}
+
+@media screen and (max-width: 1200px ) {
+    .navBar {
+        display: none;
+    }
 }
 
 html {

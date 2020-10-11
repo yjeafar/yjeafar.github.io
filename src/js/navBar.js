@@ -33,9 +33,8 @@ export default function NavBar() {
         setValue(newValue);
     }
 
-
     return (
-        <div className="header">
+        <div className="navBar">
             <Paper square className={classes.root}>
                 <Tabs
                     value={value}

@@ -187,7 +187,7 @@ export default function Projects({ forwardedRef }) {
 
   return (
     <div className="lightBackground" id="projects" ref={forwardedRef}>
-      <Container className="Projects" id="containerStyle">
+      <Container className="containerStyle">
         <Row className="justify-content-md-center">
           <Col md="5">
             <h1 className="sectionTitle">Projects</h1>
