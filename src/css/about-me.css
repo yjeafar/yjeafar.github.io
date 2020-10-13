@@ -4,8 +4,8 @@
 }
 
 #pictureBorder {
-    padding: 1% 5% 2% 9%;
-    width: 87%;
+    padding: 1% 10% 2% 10%;
+    width: 90%;
     min-width: 300px;
 }
 
@@ -30,7 +30,7 @@
 #nameStyle {
     font-size: 35px;
     color: #945c74;
-    min-width: 380px;
+    min-width: 385px;
     padding-left: 20%;
 }
 

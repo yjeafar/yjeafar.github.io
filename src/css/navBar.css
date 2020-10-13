@@ -1,11 +1,11 @@
 .navBar {
     position:fixed; 
-    margin-left: 87%;
-    margin-top: 13%;
-    min-width: 160px;
+    /* right: 8%; */
+    right: 4%;
+    top: 35%;
 }
 
-@media screen and (max-width: 1200px ) {
+@media screen and (max-width: 830px ) {
     .navBar {
         display: none;
     }
@@ -28,3 +28,7 @@ a :hover {
     opacity: 1;
     color: #945c74;  
 }
+
+.MuiTab-root {
+    min-width: 120px !important; /* Override default width for tabs, 160 was too large */
+  }

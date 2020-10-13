@@ -5,31 +5,65 @@ import '../css/skills.css';
 
 export default function Skills({forwardedRef}) {
 
-    var languageValues = {
+    const languageValues = {
         Cplusplus: 3, Java: 2, CSharp: 4, Bootstrap: 3,
         SQL: 4, AngularJs: 4, React: 3, Django: 3,
         Python: 3, JavaScript: 5, Typescript: 5, HTML: 5,
         CSS: 4, DomainDrivenDesign: 5, MVC: 4
     };
 
-    var toolValues = {
+    const toolValues = {
         VirtualBox: 4, Git: 3, FileZilla: 5,
         SSMS: 5, Docker: 2, CloneZilla: 5, SublimeText: 3,
         VisualStudio: 5, NotepadPlusPlus: 4, SSIS: 4, MSOffice: 5,
     };
 
-    var otherSkillValues = {
+    const otherSkillValues = {
         Linux: 4, Apache: 2, Bash: 5, NextCloud: 5,
         PiHole: 5, HomeServer: 3, RSAEncryptions: 4,
     };
+
+
+
+    const languageValuesCol1 = {
+        Cplusplus: 3, Java: 2, AngularJs: 4, Python: 3,
+        JavaScript: 5, HTML: 5, Bootstrap: 3, MVC: 4
+    };
+
+    const languageValuesCol2 = {
+        CSharp: 4, React: 3, Django: 3, Typescript: 5, 
+        CSS: 4, SQL: 4, DomainDrivenDesign: 5
+    };
+
+    const toolValuesCol1 = {
+        Git: 3, CloneZilla: 5, SSIS: 4, MSOffice: 5, 
+        SublimeText: 3, VirtualBox: 4,
+    }
+
+    const toolValuesCol2 = {
+        Docker: 2, FileZilla: 5, SSMS: 5,
+        NotepadPlusPlus: 4, VisualStudio: 5, 
+    }
+
+    const otherSkillValuesCol1 = {
+        Linux: 4, Apache: 2, PiHole: 5, NextCloud: 5,
+    }
+
+    const otherSkillValuesCol2 = {
+        Bash: 5, HomeServer: 3, RSAEncryptions: 4,
+    }
+
+
+    /* Work on splitting this page up into elements */ 
 
     return (
         <div className="secondBackground" id="skills" ref={forwardedRef}>
                 <Container className="containerStyle">
                     <Row className="justify-content-md-center">
-                        <Col md="5">
+                        <Col md="12">
                             <h1 className="sectionTitle">Skills</h1>
-                            <div className="sectionSubTitle">Skills from my life </div>
+                            <div className="sectionSubTitle"> "There's always room for improvement no matter what." - Ali Krieger
+ </div>
                             <hr className='horizontalLine' />
                         </Col>
                     </Row>

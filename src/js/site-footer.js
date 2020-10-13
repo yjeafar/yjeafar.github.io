@@ -2,7 +2,7 @@ import React from 'react';
 import { Row } from 'react-bootstrap';
 import ExternalLinkIcons from './external-link-icons';
 import '../css/site-footer.css';
-import reactFooter from '../pictures/reactFooter.png';
+import reactFooter from '../images/reactFooter.png';
 
 export default function SiteFooter() {
 

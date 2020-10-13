@@ -8,15 +8,15 @@ export default function Experiences({ forwardedRef }) {
     <div className="secondBackground" id="experiences" ref={forwardedRef} >
       <Container className="containerStyle">
         <Row className="justify-content-md-center">
-          <Col md="5">
+          <Col md="12">
             <h1 className="sectionTitle">Experiences</h1>
-            <div className="sectionSubTitle">The experiences from my life </div>
+            <div className="sectionSubTitle">"The only real mistake is the one from which we learn nothing." ― Henry Ford  </div>
             <hr className="horizontalLine" />
           </Col>
         </Row>
         <br />
         <div className="sectionSpacing">
-          <h2 style={{color: "#945c74"}}>
+          <h2 style={{ color: "#945c74" }}>
             Education
         </h2>
           <Row className='companyName' >
@@ -37,7 +37,7 @@ export default function Experiences({ forwardedRef }) {
                 Bachelor of Science in Software Engineering
             </Col>
             </Row>
-            <div className="experienceContainer" style={{ overflow: "hidden" }}>
+            <div className="experienceContainer" >
               I started school knowing I would do engineering but not knowing what exactly. Coming from a Middle Eastern background and with my
               parents being first generation immigrants without a whole lot of knowledge about computers, I didn't consider Software Engineering
               at first. After some time, I took a CIS class, and knew this was what I wanted to do for the rest of my life. I joined the Insitute
@@ -49,7 +49,7 @@ export default function Experiences({ forwardedRef }) {
           <br />
         </div>
         <div>
-          <h2 style={{color: "#945c74"}}>
+          <h2 style={{ color: "#945c74" }}>
             Work Experience
         </h2>
           <div className="sectionSpacing">
@@ -73,39 +73,38 @@ export default function Experiences({ forwardedRef }) {
                 <div className="bulletStyle">
                   <ul>
                     <li>
-                      Blue Cross Blue Shield of Michigan is an independent licensee of Blue Cross Blue Shield, and the largest health insurance provider in Michigan.
+                      Blue Cross Blue Shield of Michigan is the largest health insurance provider in Michigan
                   </li>
                     <li>
                       I started at Blue Cross after getting offered an internship while I was still in school. At the time, they had me work on pages that would generate
-                      reports, used to help Underwriters complete settlements quicker.
+                      reports, used to help underwriters complete settlements quicker
                   </li>
                     <li>
-                      I completed this assignment (created 5 reports users can select from) using Angular 7.0 and C# 4.3, with Entity Framework to help with the SQL statements.
+                      I completed this assignment (created 5 reports users can select from) using Angular 7.0 and C# 4.3, with Entity Framework to help with backend SQL statements
                     <ul>
                         <li>
-                          I did both the front and back end (design, implelmentation, and testing) using a Domain Driven Design architecture.
+                          I designed, implemented, and tested both the front and back end using a Domain Driven Design architecture
                   </li>
                         <li>
-                          This assignmnet helped the team start getting off of applications 10+ years old that were run as a command line application.
+                          This assignmnet helped the team retire applications 10+ years old that were run in the command line
                   </li>
                       </ul>
                     </li>
                     <li>
-                      I was offered a full time position to start In January of 2020
+                      I was offered a full time position to start in January of 2020
                   </li>
                     <li>
                       Since starting, I have made many changes to different applications via ehancements and new features
                     <ul>
-                        <li> Updates included: quicker processing times, errors users were getting, updated current applications etc</li>
+                        <li> Updates included: accelerating processing times, requirement gathering, updating current applications, etc.</li>
                         <li>
-                          Some new features I added were: added a comment section on our application, new pages to display/update/delete customer information,
-                          and much more
+                          Some new features I added were: a new comment section in our application, new pages to display/update/delete customer information,
+                          and more
                       </li>
                       </ul>
                     </li>
                     <li>
-                      I have also been working with SSIS packages to automate input of data files into the database, and working on creating new SharePoint
-                      Online sites
+                      Worked with SSIS packages to automate input of data files into the database, and created new SharePoint Online sites
                   </li>
                   </ul>
                 </div>
@@ -128,37 +127,36 @@ export default function Experiences({ forwardedRef }) {
                 <Row className='positionName'>
                   <Col xs={12} md={6}>
                     Business Application Intern
-              </Col>
+                  </Col>
                 </Row>
                 <div className="bulletStyle">
                   <ul>
                     <li>
-                      DTE Energy is a public utility company that provides gas and water to many Michiganders as well as to other states.
+                      DTE Energy is a public utility company that provides gas and electricity to over 2 million Michiganders.
                   </li>
                     <li>
-                      When first starting at DTE, they recently switched billing systems so there were now many lights and traffic signals
-                      that they were not in the new system.
+                      When I started at DTE, they recently switched billing systems, so there were many lights and traffic signals
+                      unaccounted for in the new system
                   </li>
                     <li>
                       My main objective was to work on the traffic signals as there had been excel files with 2 million+ records in them with
-                      wodden poles and their coordinates.
+                      wodden poles and their coordinates
                   </li>
                     <li>
                       With another intern, we worked with Python using Anaconda to clean up the data, then exported the file to SQL and I ran
-                      queries to cross reference the coordinates of the pole with what was currently in our system.
+                      queries to cross reference the coordinates of the pole with what was currently in our system
                     <ul>
                         <li>
                           I ended up finding about $70,000 in annual revenue that we weren't billing for. We had teams go out and check
-                          and they located some of the lights that were not in the system
+                          and they located some of the lights/signals that were not in the system
                       </li>
                       </ul>
                     </li>
                     <li>
-                      DTE offered me my spot back after my internship at BCBSM, and I accepted so I could help see this project to the end. When I came
-                      back, I looked for more traffic lights, then moved onto street lights.
+                      DTE offered me my spot back after my internship at BCBSM, and I accepted
                     <ul>
                         <li>
-                          I found about $50,000 in annual revenue from street lights by working with SQL and doing a similar process to what I did with the traffic signals.
+                          I found about $50,000 in annual revenue from street lights by working with SQL and doing a similar process to what I did with the traffic signals
                       </li>
                       </ul>
                     </li>
@@ -190,19 +188,23 @@ export default function Experiences({ forwardedRef }) {
                     <li>
                       Epitec is a staffing/recruiting company that helps match employees with companies.
                   </li>
+                  <li>
+                      The stack we used was Angular 6, C# SQL, and Entity Framework
+                </li>
                     <li>
-                      This was my first internship working with Web Development and I was tasked with helping create a website for the employees to
-                      help streamline the hiring process
+                      I added charts, tables, filtered data, and made many chagnes to the scrum based development website
+                 </li>
+                    <li>
+                      After learning a bit about full stack, I was moved onto production changes
                   </li>
                     <li>
-                      The application would automatically generate a contract with the correct information, and was downloadable as pdf
+                      When starting, I was tasked with helping create a website for employees, which would help streamline the hiring process
+                  </li>
+                    <li>
+                      The application would automatically generate a contract with the correct user and recruiter information, and was downloaded as a pdf
                  </li>
                     <li>
-                      I added charts, tables, filtered data, etc and once I learned what I was doing I moved onto production
-                      changes. We used Angular 6, with C# for the backend, SQL, and Entity Framework to incorpoate direct SQL into our backend
-                 </li>
-                    <li>
-                      I worked on parts that helped show the recruiter important information about the client, as well as work on creating new APIs for other
+                      I worked on parts that helped show the recruiter important information about the client, as well as work creating APIs for other
                       members of my team
                   </li>
                     <li>

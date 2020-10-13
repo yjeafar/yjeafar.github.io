@@ -3,10 +3,10 @@ import { makeStyles } from '@material-ui/core/styles';
 import ButtonBase from '@material-ui/core/ButtonBase';
 import Typography from '@material-ui/core/Typography';
 import { Container, Col, Row } from 'react-bootstrap';
-import bell from '../pictures/bellGraph.jpg';
-import pc from '../pictures/pc.jpg';
-import urlShortener from '../pictures/urlshortener.jpg';
-import portfolio from '../pictures/portfolio.jpg'
+import bell from '../images/bellGraph.jpg';
+import pc from '../images/pc.jpg';
+import urlShortener from '../images/urlshortener.jpg';
+import portfolio from '../images/portfolio.jpg'
 import { Collapse } from '@material-ui/core';
 import BasketballCoaches from './projects/basketballCoach';
 import HomeServer from './projects/homeServer';
@@ -61,7 +61,7 @@ const useStyles = makeStyles((theme) => ({
         opacity: 0,
       },
       '& $imageTitle': {
-        border: '4px solid #945c74',
+        border: '4px solid #945c74', /* Here is where styling issue is!*/
       },
     },
   },
@@ -98,7 +98,7 @@ const useStyles = makeStyles((theme) => ({
   },
   imageTitle: {
     position: 'relative',
-    padding: `${theme.spacing(2)}px ${theme.spacing(4)}px ${theme.spacing(1) + 6}px`,
+    padding: `${theme.spacing(2)}px ${theme.spacing(2)}px ${theme.spacing(1) + 4}px`,
     fontWeight: 600
   },
   imageMarked: {
@@ -189,9 +189,11 @@ export default function Projects({ forwardedRef }) {
     <div className="lightBackground" id="projects" ref={forwardedRef}>
       <Container className="containerStyle">
         <Row className="justify-content-md-center">
-          <Col md="5">
+          <Col md="12">
             <h1 className="sectionTitle">Projects</h1>
-            <div className="sectionSubTitle"> The projects from my life </div>
+            <div className="sectionSubTitle"> 
+              "Writing the first 90 percent of a computer program takes 90 percent of the time. The remaining ten percent also takes 90 percent of the time and the final touches
+               also take 90 percent of the time." – N.J. Rubenking </div>
             <hr className='horizontalLine' />
           </Col>
         </Row>

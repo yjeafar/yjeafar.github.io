@@ -18,7 +18,7 @@ export default function NavBar() {
     const useStyles = makeStyles({
         root: {
             flexGrow: 1,
-            width: 150,
+            width: 120
         },
     });
     const classes = useStyles();
