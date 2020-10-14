@@ -14,7 +14,7 @@ import URLShortener from './projects/urlShortener';
 import OnlineResume from './projects/onlineResume';
 import '../css/projects.css';
 
-const imagesRow1 = [ //Holds values for first row images
+const imagesRow1 = [ // Holds values for first row of images
   {
     url: bell,
     title: 'Coaching Skill with Age',
@@ -35,7 +35,7 @@ const imagesRow1 = [ //Holds values for first row images
   },
 ];
 
-const imagesRow2 = [ // Holds values for second row imgaes
+const imagesRow2 = [ // Holds values for second row of imgaes
   {
     url: portfolio,
     title: 'This Website',
