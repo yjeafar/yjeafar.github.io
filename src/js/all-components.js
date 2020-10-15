@@ -6,6 +6,7 @@ import ContactMe from './contact-me';
 import Skills from './skills'
 import AboutMe from './about-me'
 import SiteFooter from './site-footer';
+import NotFound from './not-found';
 import '../css/about-me.css';
 
 export default function AllComponents() {

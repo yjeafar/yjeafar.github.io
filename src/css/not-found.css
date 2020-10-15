@@ -1,0 +1,25 @@
+#notFound {
+    height: 100vh;
+}
+
+.footerPositioning {
+    position: fixed;
+    bottom: 0;
+    width: 100%
+}
+
+#largeFont {
+    font-size: 90px;
+}
+
+#pageNotFound {
+    font-size: 30px;
+}
+
+#alignText {
+    text-align: center;
+}
+
+#anchorMessage {
+    padding-left: 20%;
+}

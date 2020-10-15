@@ -2,8 +2,23 @@ import React from 'react';
 import { Row, Container, Col } from 'react-bootstrap';
 import '../css/experiences.css';
 import { Box } from '@material-ui/core';
+import { makeStyles } from '@material-ui/core/styles';
+
+  
+const useStyles = makeStyles((theme) => ({
+  datePosition: {
+    float: 'right'
+  },
+  accentColor: {
+    color: "#945c74"
+  }
+}));
+
 
 export default function Experiences({ forwardedRef }) {
+
+  const classes = useStyles();
+
   return (
     <div className="secondBackground" id="experiences" ref={forwardedRef} >
       <Container className="containerStyle">
@@ -16,7 +31,7 @@ export default function Experiences({ forwardedRef }) {
         </Row>
         <br />
         <div className="sectionSpacing">
-          <h2 style={{ color: "#945c74" }}>
+          <h2 className={ classes.accentColor }>
             Education
         </h2>
           <Row className='companyName' >
@@ -49,7 +64,7 @@ export default function Experiences({ forwardedRef }) {
           <br />
         </div>
         <div>
-          <h2 style={{ color: "#945c74" }}>
+          <h2 className={ classes.accentColor }>
             Work Experience
         </h2>
           <div className="sectionSpacing">
@@ -58,7 +73,7 @@ export default function Experiences({ forwardedRef }) {
                 Blue Cross Blue Shield of Michigan
             </Col>
               <Col xs={6} md={6}>
-                <span style={{ float: "right" }}>
+                <span className={ classes.datePosition }>
                   May 2019 - August 2019, January 2020 - Current
               </span>
               </Col>
@@ -117,7 +132,7 @@ export default function Experiences({ forwardedRef }) {
                 DTE Energy
               </Col>
               <Col xs={6} md={7}>
-                <span style={{ float: "right" }}>
+                <span className={ classes.datePosition }>
                   February 2019 - May 2019, August 2019 - December 2019
               </span>
               </Col>
@@ -171,7 +186,7 @@ export default function Experiences({ forwardedRef }) {
                 Epitec
             </Col>
               <Col xs={6} md={5}>
-                <span style={{ float: "right" }}>
+                <span className={ classes.datePosition }>
                   June 2018 – August 2018
               </span>
               </Col>

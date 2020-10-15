@@ -112,7 +112,6 @@ export default function ContactMe({forwardedRef}) {
   }
 
   function handleBlur(event) {
-    console.log(event.target.name)
     if (!touched.includes(event.target.name)) {
       setTouched([
         ...touched,
