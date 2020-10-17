@@ -74,28 +74,30 @@ export default function ContactMe({forwardedRef}) {
 
   // Regex to verify if user input is valid email format
 
-  const emailRegex = /(?:[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*|"(|\\)*")@(?:(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?|\[(?:(?:(2(5[0-5]|[0-4][0-9])|1[0-9][0-9]|[1-9]?[0-9]))\.){3}(?:(2(5[0-5]|[0-4][0-9])|1[0-9][0-9]|[1-9]?[0-9])|[a-z0-9-]*[a-z0-9]:(|\\)+)\])/
+  const emailRegex = 
+  
+  /(?:[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*|"(|\\)*")@(?:(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?|\[(?:(?:(2(5[0-5]|[0-4][0-9])|1[0-9][0-9]|[1-9]?[0-9]))\.){3}(?:(2(5[0-5]|[0-4][0-9])|1[0-9][0-9]|[1-9]?[0-9])|[a-z0-9-]*[a-z0-9]:(|\\)+)\])/
 
   function getErrorText(label) {
-    switch (label) {
+    switch (label) { // Switch statement looks to see if the textbox was touched and depeending on what the user inputs (or doesn't), returns the error message
       case 'name':
         if (!name && touched.includes('name')) {
           return ("Name can't be empty");
         }
         break;
       case 'email':
-        if (email.length < 1 && touched.includes('email')) {
+        if (email.length < 1 && touched.includes('email')) { // Email is empty and was touched
           return ("Email can't be empty");
         }
-        else if (touched.includes('email') && email.length > 5 && !email.match(emailRegex)) {
+        else if (touched.includes('email') && !email.match(emailRegex)) { // Email was touched and does not match regex
           return ('Invalid Email');
         }
         break;
       case 'message':
-        if (!message && touched.includes('message')) {
+        if (!message && touched.includes('message')) { 
           return ("Message can't be empty");
         }
-        else if (touched.includes('message') && message.length <= 5) {
+        else if (touched.includes('message') && message.length <= 5) { // Message has to be more than 5 characters
           return ('Message is too short')
         }
         break;
@@ -112,7 +114,7 @@ export default function ContactMe({forwardedRef}) {
   }
 
   function handleBlur(event) {
-    if (!touched.includes(event.target.name)) {
+    if (!touched.includes(event.target.name)) { // Touched is an array that holds the values that were touched. Adds the value only once
       setTouched([
         ...touched,
         event.target.name
@@ -120,9 +122,9 @@ export default function ContactMe({forwardedRef}) {
     }
   }
 
-  function handleSubmit(e) {
+  function handleSubmit(e) { // Function sets progress bar, sends email, and returns the alert
     e.preventDefault();
-    if (name && email && message) {
+    if (name && email && message && message.length > 5) {
       setProgress(true);
       window.emailjs.send(
         'gmail', 'OnlineResume', { message: message, user_name: name, user_email: email }
@@ -179,7 +181,7 @@ export default function ContactMe({forwardedRef}) {
                       label="Name"
                       name="name"
                       value={name}
-                      onBlur={(e) => handleBlur(e)}
+                      onBlur={(e) => handleBlur(e)} // When the user clicks on the text box, this method is called
                       required
                       variant="outlined"
                       margin="dense"
@@ -189,7 +191,7 @@ export default function ContactMe({forwardedRef}) {
                 </div>
                 <div className={classes.margin}>
                     <TextField
-                      error={(!email && touched.includes("email")) || (touched.includes("email") && email.length > 5 && !email.match(emailRegex))}
+                      error={(!email && touched.includes("email")) || (touched.includes("email") && !email.match(emailRegex))}
                       helperText={getErrorText('email')}
                       id="filled-required"
                       label="Email"

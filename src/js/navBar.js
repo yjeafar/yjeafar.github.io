@@ -15,6 +15,8 @@ import * as TabValue from '../enum';
 
 export default function NavBar() {
 
+    // Component is responsible for vertical nav bar on the right side
+
     const useStyles = makeStyles({
         root: {
             flexGrow: 1,

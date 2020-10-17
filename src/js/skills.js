@@ -56,7 +56,7 @@ export default function Skills({ forwardedRef }) {
         return (
             <ul className="noBullets">
             { skillSection.map(skill => (
-                    <li className="listStyle">
+                    <li className="listStyle" key={ skill.name }>
                         <span className="skillTitle"> {skill.name} </span>
                         <Skillset className="skill" value={skill.value} />
                     </li>

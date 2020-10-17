@@ -9,11 +9,11 @@
 }
 
 #largeFont {
-    font-size: 90px;
+    font-size: 75px;
 }
 
 #pageNotFound {
-    font-size: 30px;
+    font-size: 27px;
 }
 
 #alignText {
@@ -22,4 +22,10 @@
 
 #anchorMessage {
     padding-left: 20%;
+
+}
+
+#errorMessage {
+    padding-top: 30%;
+    font-family: "Lucida Console", Courier, monospace;
 }

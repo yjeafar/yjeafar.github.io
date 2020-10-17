@@ -5,6 +5,9 @@ import GitHubIcon from '@material-ui/icons/GitHub';
 import LinkedInIcon from '@material-ui/icons/LinkedIn';
 
 export default function ExternalLinkIcons() {
+
+    // This component was created to show the github, linkedin, and email icons. Added it as a component because it will be expanded upon
+
     return (
         <div>
                 <Row className="d-flex justify-content-center">
