@@ -149,7 +149,7 @@ export default function ContactMe({forwardedRef}) {
           <Alert show={successShow} variant="success" className={classes.alert}>
             <Alert.Heading>Message Sent!</Alert.Heading>
             <p>
-              Thanks for the message! Please allow a day or two for me to respond.
+              Thanks for the message! Please give me a day or two to respond.
         </p>
             <hr />
             <div className="d-flex justify-content-end">
@@ -159,9 +159,10 @@ export default function ContactMe({forwardedRef}) {
             </div>
           </Alert>
           <Alert show={failShow} variant="danger" className={classes.alert}>
-            <Alert.Heading> Oh No, the Message Failed to Send!</Alert.Heading>
+            <Alert.Heading> Message Failed to Send </Alert.Heading>
             <p>
-              Uh-Oh... Something went wrong. Please try again. If the problem persists, please reach out to me in one of the ways specified below, and let me know.
+              Uh-Oh... Something went wrong. Please try again. If the problem persists, please reach out to me on LinkedIn or send me an email (click on the icon in the header/footer),
+              and let me know.
         </p>
             <hr />
             <div className="d-flex justify-content-end">
