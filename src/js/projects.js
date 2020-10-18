@@ -35,7 +35,7 @@ const imagesRow1 = [ // Holds values for first row of images
   },
 ];
 
-const imagesRow2 = [ // Holds values for second row of imgaes
+const imagesRow2 = [ // Holds values for second row of images
   {
     url: portfolio,
     title: 'This Website',
@@ -61,7 +61,7 @@ const useStyles = makeStyles((theme) => ({
         opacity: 0,
       },
       '& $imageTitle': {
-        border: '4px solid #945c74', /* Here is where styling issue is!*/
+        border: '4px solid #945c74',
       },
     },
   },
