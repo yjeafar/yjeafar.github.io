@@ -11,7 +11,7 @@ const pictures = [grumpyCat, properCat, dualCats, catInBox, standingCat];
 export default function NotFound() {
   return (
     <div className="secondBackground" id="notFound">
-      <Container className="containerStyle">
+      <Container className="notFoundStyle">
         <Row>
           <Col style={{ float: "left" }}>
             {/* Images in array are sized differently which makes page look weird. Working on resizing them to be similar in height and width, commented out for now */  }

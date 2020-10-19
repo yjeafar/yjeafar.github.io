@@ -29,3 +29,12 @@
     padding-top: 30%;
     font-family: "Lucida Console", Courier, monospace;
 }
+
+.notFoundStyle {
+    margin-right: auto;
+    margin-left: auto;
+    width: 80%;
+    max-width: 1280px;
+    min-width: 280px;
+    padding: 1% 10%;
+}

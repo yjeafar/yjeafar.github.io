@@ -36,7 +36,7 @@ export default function Skills({ forwardedRef }) {
         { name: 'FileZilla', value: 5, col: 2 },
         { name: 'SSMS', value: 5, col: 2 },
         { name: 'Notepad++', value: 4, col: 2 },
-        { name: 'VisualStudio', value: 5, col: 2 }
+        { name: 'Visual Studio', value: 5, col: 2 }
     ];
 
 
@@ -46,8 +46,8 @@ export default function Skills({ forwardedRef }) {
         { name: 'PiHole', value: 5, col: 1 },
         { name: 'NextCloud', value: 5, col: 1 },
         { name: 'Bash', value: 5, col: 2 },
-        { name: 'HomeServer', value: 3, col: 2 },
-        { name: 'RSAEncryptions', value: 4, col: 2 }
+        { name: 'Home Server', value: 3, col: 2 },
+        { name: 'RSA Encryptions', value: 4, col: 2 }
     ];
 
     /* Code is repeated for each skill section (Languages, Tools, Other Skills) and creates list item with small icon to symbolize the skill level */

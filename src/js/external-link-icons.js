@@ -25,7 +25,7 @@ export default function ExternalLinkIcons() {
                             </Col>
                         </Row>
                     </a>
-                    <a href="mailto: test@email.com" className="linkStyle">
+                    <a href="mailto: yasser@jeafar.com" className="linkStyle">
                         <Row>
                             <Col>
                                 <AlternateEmailIcon fontSize="large"  />
