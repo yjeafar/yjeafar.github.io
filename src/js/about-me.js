@@ -32,7 +32,7 @@ export default function AboutMe({ forwardedRef }) {
   const classes = useStyles();
 
   return (
-    <div>
+    <div ref={forwardedRef}>
       <div id="headerStyle">
         <Row style={{marginRight:0 /* Row margin adds horizontal scroll bar, this makes sure it doesn't appear */}}> 
           <Col id="nameStyle">
@@ -46,16 +46,16 @@ export default function AboutMe({ forwardedRef }) {
         </Row>
       </div>
       <NavBar />
-      <div className="lightBackground" ref={forwardedRef}>
+      <div className="lightBackground" >
         <Container className="containerStyle, AboutMe">
         <h1 id="appHeader">Online Resume</h1>
           <hr className='horizontalLine' style={{ width: '70%' }} />
           <Row className="justify-content-md-center" >
             <div id="pictureBorder">
-              <Col className={ classes.imageStyle }> 
-                <img src={me} alt="me" width="100%" height="500" />
+              <Col className= { classes.imageStyle }> 
+                <img id="imageMinWidth" src={me} alt="me" width="100%" height="500" />
               </Col>
-              <Col className={classes.descriptionStyle} > 
+              <Col className={classes.descriptionStyle} id="aboutMeMinWidth" > 
                 <h1 className={ classes.accentColor }>Hello! I'm Yasser. </h1>
                 <div style={{ paddingBottom: 10 }}>
                   I'm a Software Engineer that has professional full stack developer experience. Check out my ever-exapnding projects section below to see some of my work.

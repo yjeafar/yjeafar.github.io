@@ -35,12 +35,12 @@ export default function Experiences({ forwardedRef }) {
             Education
         </h2>
           <Row className='companyName' >
-            <Col xs={6} md={7} style={{ minWidth: 280 }} >
+            <Col xs={6} md={6} >
               <span >
                 University of Michigan - Dearborn
               </span>
             </Col>
-            <Col xs={6} md={5} style={{ minWidth: 200 }} >
+            <Col xs={6} md={6} className={ classes.datePosition } >
               <span>
                 September 2016 - December 2019
             </span>
@@ -113,13 +113,13 @@ export default function Experiences({ forwardedRef }) {
                     <ul>
                         <li> Updates included: accelerating processing times, requirement gathering, updating current applications, etc.</li>
                         <li>
-                          Some new features I added were: a new comment section in our application, new pages to display/update/delete customer information,
+                          Some new features I added were: a new comment section in our application, new pages to display, update, and/or delete customer information,
                           and more
                       </li>
                       </ul>
                     </li>
                     <li>
-                      Worked with SSIS packages to automate input of data files into the database, and created new SharePoint Online sites
+                      Created SSIS packages to automate input of data files into the database, and created new SharePoint Online sites
                   </li>
                   </ul>
                 </div>
