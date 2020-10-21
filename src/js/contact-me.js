@@ -3,6 +3,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
 import { Card, CardContent } from '@material-ui/core';
+import * as EmailValidator from 'email-validator';
 import '../css/contact-me.css'
 import { Container, Row, Col, Alert, Spinner } from 'react-bootstrap';
 
@@ -72,12 +73,6 @@ export default function ContactMe({forwardedRef}) {
 
   const classes = useStyles();
 
-  // Regex to verify if user input is valid email format
-
-  const emailRegex = 
-  
-  /(?:[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*|"(|\\)*")@(?:(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?|\[(?:(?:(2(5[0-5]|[0-4][0-9])|1[0-9][0-9]|[1-9]?[0-9]))\.){3}(?:(2(5[0-5]|[0-4][0-9])|1[0-9][0-9]|[1-9]?[0-9])|[a-z0-9-]*[a-z0-9]:(|\\)+)\])/
-
   function getErrorText(label) {
     switch (label) { // Switch statement looks to see if the textbox was touched and depeending on what the user inputs (or doesn't), returns the error message
       case 'name':
@@ -89,7 +84,7 @@ export default function ContactMe({forwardedRef}) {
         if (email.length < 1 && touched.includes('email')) { // Email is empty and was touched
           return ("Email can't be empty");
         }
-        else if (touched.includes('email') && !email.match(emailRegex)) { // Email was touched and does not match regex
+        else if (touched.includes('email') && !EmailValidator.validate(email)) { // Email was touched and does not match regex
           return ('Invalid Email');
         }
         break;
@@ -192,7 +187,7 @@ export default function ContactMe({forwardedRef}) {
                 </div>
                 <div className={classes.margin}>
                     <TextField
-                      error={(!email && touched.includes("email")) || (touched.includes("email") && !email.match(emailRegex))}
+                      error={(!email && touched.includes("email")) || (touched.includes("email") && !EmailValidator.validate(email))}
                       helperText={getErrorText('email')}
                       id="filled-required"
                       label="Email"

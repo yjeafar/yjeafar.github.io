@@ -1,7 +1,7 @@
 {
   "name": "website",
   "version": "0.1.0",
-  "homepage":"http://jeafar.com",
+  "homepage": "http://jeafar.com",
   "private": true,
   "dependencies": {
     "@material-ui/core": "^4.11.0",
@@ -10,6 +10,7 @@
     "@testing-library/react": "^9.5.0",
     "@testing-library/user-event": "^7.2.1",
     "bootstrap": "^4.5.2",
+    "email-validator": "^2.0.4",
     "jquery": "^3.5.1",
     "popper.js": "^1.16.1",
     "react": "^16.13.1",
@@ -17,7 +18,7 @@
     "react-dom": "^16.13.1",
     "react-redux": "^6.0.1",
     "react-router-dom": "^5.2.0",
-    "react-scripts": "^3.4.3",
+    "react-scripts": "^3.4.4",
     "react-scroll": "^1.8.1",
     "react-scrollspy": "^3.4.3",
     "react-update-url-on-scroll": "^3.5.0",
