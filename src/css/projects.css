@@ -6,10 +6,11 @@
 
 
 .projectSpacing {
-    width: 60%;
+    width: 75%;
     margin-Left: auto;
     margin-right: auto;
-    padding-bottom: 3%;
+    padding-top: 2%;
+    padding-bottom: 2%;
 }
 
 
