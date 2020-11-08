@@ -65,7 +65,7 @@ export default function AboutMe({ forwardedRef }) {
                 >About Me</h3>
                 <p>
                   I love learning new technologies, Linux, and FOSS. In my spare time, I enjoy fishing, amateur star gazing
-                (when I can actually setup my telescope properly), hiking, and Game of Thrones (excluding the last season <span role="img" aria-label="Smiling Emoji">😄</span> )
+                (when I can actually setup my telescope properly), hiking, and Game of Thrones (excluding the last season <span role="img" aria-label="Smiling Emoji">😄</span>)
                 </p>
               </Col>
             </div>
