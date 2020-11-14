@@ -13,11 +13,11 @@ const useStyles = makeStyles((theme) => ({
     margin: theme.spacing(1),
   },
   textLength: {
-    width: "90%",
+    width: "95%",
     marginLeft: 15
   },
   card: {
-    width: "70%",
+    width: "85%",
     marginTop: 50,
     marginLeft: "auto",
     marginRight: "auto",
@@ -27,7 +27,7 @@ const useStyles = makeStyles((theme) => ({
   submitButton: {
     marginTop: 15,
     float: "right",
-    marginRight: "17%",
+    marginRight: "8%",
     marginBottom: 15,
     opacity: 0.75,
     backgroundColor: "#945c74",
