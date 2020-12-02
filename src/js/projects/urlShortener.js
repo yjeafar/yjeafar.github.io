@@ -12,9 +12,10 @@ export default function URLShortener() {
       </h2>
       <Box m={1} className="projectBorder">
         <p>
-          This project is still in the works. It will work like bitly and google shortener (before it was discontinued). It will
-          allow for the user to put in a full url and it will automatically shortnen it, allowing them to go to that specific url. A link will before
-          posted here once I complete the project and it works the way I would like it to.
+          This project was a small website that works like bitly. I created the project from scratch using VueJs 3.0, NodeJS (Express), and MongoDB.
+          I used a library named nanoid to create the unique id for each url and the mongoose package to connect and store the data in the database, which was done in
+          Atlas. The user can copy and go to the url that is shortened via the domain name I have. The project is avaliable on my GitHub page and 
+          will be hosted on my server soon.
         </p>
       </Box>
     </div>
