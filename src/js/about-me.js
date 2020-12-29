@@ -58,14 +58,14 @@ export default function AboutMe({ forwardedRef }) {
               <Col className={classes.descriptionStyle} id="aboutMeMinWidth" > 
                 <h1 className={ classes.accentColor }>Hello! I'm Yasser. </h1>
                 <div style={{ paddingBottom: 10 }}>
-                  I'm a Software Engineer that has professional full stack developer experience. Check out my ever-exapanding projects section below to see some of my work.
-                  You could also download <Link to='/files/resume.pdf' target="_blank" download="Yasser_Jeafar_Resume.pdf"> a copy of my resume.</Link> 
+                  I'm a Software Engineer with professional Full Stack experience. Check out my ever-expanding projects section below to see some of my work!
+                  You could also download <Link to='/files/resume.pdf' target="_blank" download="Yasser_Jeafar_Resume.pdf"> a copy of my resume </Link> for a quick summary. 
               </div>
                 <h3 className={ classes.accentColor }
                 >About Me</h3>
                 <p>
-                  I love learning new technologies, Linux, and FOSS. In my spare time, I enjoy fishing, amateur star gazing
-                (when I can actually setup my telescope properly), hiking, and Game of Thrones (excluding the last season <span role="img" aria-label="Smiling Emoji">😄</span>)
+                  I love acquiring new skills, and I am a huge user of FOSS. In my spare time, I enjoy fishing, amateur star gazing
+                (when I can actually setup my telescope properly), hiking, playing video games, and Game of Thrones (excluding the last season <span role="img" aria-label="Smiling Emoji">😄</span>)
                 </p>
               </Col>
             </div>

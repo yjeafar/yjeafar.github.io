@@ -19,8 +19,8 @@
   color: silver;
   background-color: silver;
   height: 1px;
-  margin-top: 25px;
-  margin-bottom: 50px;
+  margin-top: 30px;
+  margin-bottom: 25px;
   opacity: 0.4;
   width: 100%;
 }
@@ -51,5 +51,5 @@
   width: 80%;
   max-width: 1280px;
   min-width: 280px;
-  padding: 5% 10%;
+  padding: 4% 10%;
 }

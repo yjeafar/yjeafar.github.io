@@ -54,10 +54,10 @@ export default function Experiences({ forwardedRef }) {
             </Row>
             <div className="experienceContainer" >
               I started school knowing I would do engineering but not knowing what exactly. Coming from a Middle Eastern background and with my
-              parents being first generation immigrants without a whole lot of knowledge about computers, I didn't consider Software Engineering
-              at first. After some time, I took a CIS class, and knew this was what I wanted to do for the rest of my life. I joined the Insitute
-              of Software Engineers and volunteered to help at Hackathons and taught kids in low privillage areas to code through Google Code Corps.
-              I graduated with a 3.80 GPA and was on the dean's list for multiple consecutive semesters.
+              parents being first generation immigrants without a whole lot of knowledge about computers, I didn't really consider Software Engineering.
+              During my second semester, I took a CIS class and right away knew this was what I wanted to do for the rest of my life. I joined the Institute
+              of Software Engineers and volunteered to help at Hackathons. I also was apart of Google Code Corps, where I helped teach kids in low privilege 
+              areas about coding. I graduated with a 3.80 GPA and was on the dean's list for multiple consecutive semesters.
             </div>
           </Box>
           <hr className='horizontalLine' style={{ marginBottom: 25, marginTop: 50 }} />
@@ -95,13 +95,13 @@ export default function Experiences({ forwardedRef }) {
                       reports, used to help underwriters complete settlements quicker
                   </li>
                     <li>
-                      I completed this assignment (created 5 reports users can select from) using Angular 7.0 and C# 4.3, with Entity Framework to help with backend SQL statements
+                      I completed this assignment (created 5 reports users can select from) using Angular 7.0 and C# 4.3, with Entity Framework for backend SQL statements
                     <ul>
                         <li>
                           I designed, implemented, and tested both the front and back end using a Domain Driven Design architecture
                   </li>
                         <li>
-                          This assignmnet helped the team retire applications 10+ years old that were run in the command line
+                          This project was part of a larger initiative to retire 10+ years old applications that were run in the command line
                   </li>
                       </ul>
                     </li>
@@ -109,12 +109,12 @@ export default function Experiences({ forwardedRef }) {
                       I was offered a full time position to start in January of 2020
                   </li>
                     <li>
-                      Since starting, I have made many changes to different applications via ehancements and new features
+                      Since starting, I have made many changes to different applications via enhancements and new features
                     <ul>
                         <li> Updates included: accelerating processing times, requirement gathering, updating current applications, etc.</li>
                         <li>
-                          Some new features I added were: a new comment section in our application, new pages to display, update, and/or delete customer information,
-                          and more
+                          Some new features I added were: a new comment section in our application, new pages to display, update and/or delete customer information, 
+                          created many new SQL tables, integrated new tables into our application, and much more
                       </li>
                       </ul>
                     </li>
@@ -154,21 +154,21 @@ export default function Experiences({ forwardedRef }) {
                       unaccounted for in the new system
                   </li>
                     <li>
-                      My main objective was to work on the traffic signals as there had been excel files with 2 million+ records in them with
-                      wodden poles and their coordinates
+                      My main objective was to work on finding traffic signals, as there had been excel files with 2 million+ records in them with
+                      wooden poles and their coordinates
                   </li>
                     <li>
                       With another intern, we worked with Python using Anaconda to clean up the data, then exported the file to SQL and I ran
                       queries to cross reference the coordinates of the pole with what was currently in our system
                     <ul>
                         <li>
-                          I ended up finding about $70,000 in annual revenue that we weren't billing for. We had teams go out and check
-                          and they located some of the lights/signals that were not in the system
+                          I ended up finding about $70,000 in annual revenue that DTE wasn't billing for. We had teams go out and check
+                          and they verified the lights/signals in the field that were not in the system
                       </li>
                       </ul>
                     </li>
                     <li>
-                      DTE offered me my spot back after my internship at BCBSM, and I accepted
+                      DTE offered to extend my internship after I completed my internship at BCBSM, and I accepted
                     <ul>
                         <li>
                           I found about $50,000 in annual revenue from street lights by working with SQL and doing a similar process to what I did with the traffic signals
@@ -204,22 +204,22 @@ export default function Experiences({ forwardedRef }) {
                       Epitec is a staffing/recruiting company that helps match employees with companies.
                   </li>
                   <li>
-                      The stack we used was Angular 6, C# SQL, and Entity Framework
+                      The stack we used was Angular 6, C#, SQL, and Entity Framework
                 </li>
                     <li>
-                      I added charts, tables, filtered data, and made many chagnes to the scrum based development website
+                      I added charts, tables, filtered data, and made many changes to the scrum based development website
                  </li>
                     <li>
-                      After learning a bit about full stack, I was moved onto production changes
+                      After learning about full stack, I was moved to production changes for users
                   </li>
                     <li>
-                      When starting, I was tasked with helping create a website for employees, which would help streamline the hiring process
+                      When starting, I was tasked with helping create a website for the employees, which would help streamline the hiring process
                   </li>
                     <li>
                       The application would automatically generate a contract with the correct user and recruiter information, and was downloaded as a pdf
                  </li>
                     <li>
-                      I worked on parts that helped show the recruiter important information about the client, as well as work creating APIs for other
+                      I worked on parts that helped show the recruiter important information about the client, as well as worked on creating APIs for other
                       members of my team
                   </li>
                     <li>

@@ -18,7 +18,7 @@ const useStyles = makeStyles((theme) => ({
   },
   card: {
     width: "85%",
-    marginTop: 50,
+    marginTop: 30,
     marginLeft: "auto",
     marginRight: "auto",
     marginBottom: 50,
@@ -74,7 +74,7 @@ export default function ContactMe({forwardedRef}) {
   const classes = useStyles();
 
   function getErrorText(label) {
-    switch (label) { // Switch statement looks to see if the textbox was touched and depeending on what the user inputs (or doesn't), returns the error message
+    switch (label) { // Switch statement looks to see if the textbox was touched and depending on what the user inputs (or doesn't), returns the error message
       case 'name':
         if (!name && touched.includes('name')) {
           return ("Name can't be empty");
@@ -161,7 +161,7 @@ export default function ContactMe({forwardedRef}) {
         </p>
             <hr />
             <div className="d-flex justify-content-end">
-              <Button onClick={() => setFailShow(false)} variant="outline-danager">
+              <Button onClick={() => setFailShow(false)} variant="outline-danger">
                 Click here to close
           </Button>
             </div>
@@ -182,7 +182,7 @@ export default function ContactMe({forwardedRef}) {
                       variant="outlined"
                       margin="dense"
                       className={classes.textLength}
-                      onChange={e => setName(e.target.value)} // Set state hook to new value everytime it changes
+                      onChange={e => setName(e.target.value)} // Set state hook to new value every time it changes
                     />
                 </div>
                 <div className={classes.margin}>
