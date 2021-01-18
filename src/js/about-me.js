@@ -33,8 +33,8 @@ export default function AboutMe({ forwardedRef }) {
 
   return (
     <div ref={forwardedRef}>
-      <div id="headerStyle">
-        <Row style={{marginRight:0 /* Row margin adds horizontal scroll bar, this makes sure it doesn't appear */}}> 
+      {/* <div id="headerStyle">
+        <Row style={{marginRight:0 }}> 
           <Col id="nameStyle">
             <span>Yasser Jeafar </span>
           </Col>
@@ -44,7 +44,7 @@ export default function AboutMe({ forwardedRef }) {
             </span>
           </Col>
         </Row>
-      </div>
+      </div> */}
       <NavBar />
       <div className="lightBackground" >
         <Container className="containerStyle, AboutMe">

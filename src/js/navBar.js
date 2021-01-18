@@ -46,7 +46,7 @@ export default function NavBar() {
                     indicatorColor="primary"
                     style={{ backgroundColor: "#2b262d", color: "#f2ebe5" }}
                 >
-                    <Tab icon={<HomeIcon />} aria-label="PORTFOLIO" label="PORTFOLIO" href="#" />
+                    <Tab icon={<HomeIcon />} aria-label="ABOUT ME" label="ABOUT ME" href="#about-me" />
                     <Tab icon={<FaceIcon />} aria-label="EXPERIENCES" label="EXPERIENCES" href="#experiences" />
                     <Tab icon={<BusinessCenterIcon />} aria-label="PROJECTS" label="PROJECTS" href="#projects" />
                     <Tab icon={<BarChartIcon />} aria-label="SKILLS" label="SKILLS" href="#skills" />

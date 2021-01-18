@@ -1,5 +1,5 @@
 export const Initial = { // Used to set active tab if user types in url
-    '': 0,
+    '#about-me': 0,
     '#experiences': 1,
     '#projects': 2,
     '#skills': 3,

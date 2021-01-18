@@ -147,7 +147,7 @@ export default function Projects({ forwardedRef }) {
 
     let temp = projects.filter(e => e.id === projectId); // Finds the project that the user has selected and gets the id for it (defined in projects object above)
 
-    // Seperated the projects by rows for the two different Collapse elements. If id is between 1-3 it's in row 1, 4-6 is row 2, etc. Will never exceed 3 rows
+    // Separated the projects by rows for the two different Collapse elements. If id is between 1-3 it's in row 1, 4-6 is row 2, etc. Will never exceed 3 rows
     if (temp[0].id <= 3) {
       setRow1Project(temp);
     } else if (temp[0].id > 3 && temp[0].id <= 6) {
