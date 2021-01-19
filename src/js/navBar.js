@@ -28,7 +28,11 @@ export default function NavBar() {
     const [value, setValue] = useState(TabValue.Initial[window.location.hash]); // Sets tab based on url path (enum holds paths)
 
     window.addEventListener('hashchange', () => {
-        setValue(TabValue.Initial[window.location.hash]) // Add event listener to change tab once user types in url manually
+        if (TabValue.Initial[window.location.hash] !== -1) {
+            setValue(TabValue.Initial[window.location.hash]) // Add event listener to change tab once user types in url manually
+        } else {
+            setValue(0) // If in the view of # (picture), then set the tab to About Me
+        }
     });
 
     function handleChange(e, newValue) {

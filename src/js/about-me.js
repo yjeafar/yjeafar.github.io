@@ -32,7 +32,7 @@ export default function AboutMe({ forwardedRef }) {
   const classes = useStyles();
 
   return (
-    <div ref={forwardedRef}>
+    <div ref={forwardedRef} id="about-me">
       {/* <div id="headerStyle">
         <Row style={{marginRight:0 }}> 
           <Col id="nameStyle">
@@ -45,7 +45,6 @@ export default function AboutMe({ forwardedRef }) {
           </Col>
         </Row>
       </div> */}
-      <NavBar />
       <div className="lightBackground" >
         <Container className="containerStyle, AboutMe">
         <h1 id="appHeader">Online Resume</h1>

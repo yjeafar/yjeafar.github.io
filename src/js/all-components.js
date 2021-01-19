@@ -8,6 +8,7 @@ import AboutMe from './about-me'
 import SiteFooter from './site-footer';
 import Welcome from './welcome.js'
 import '../css/about-me.css';
+import NavBar from './navBar';
 
 export default function AllComponents() {
 
@@ -69,7 +70,7 @@ export default function AllComponents() {
           window.history.replaceState("", "Contact Me", "/#contact-me");
         }
         window.dispatchEvent(new HashChangeEvent('hashchange'));
-      }, 100); // Timer makes sure scroll event is updated once every 100 ms 
+      }, 100); // Timer makes sure scroll event is updated only once every 100 ms 
     }, false);
   })
 
@@ -78,6 +79,7 @@ export default function AllComponents() {
   return (
     <div>
       <Welcome forwardedRef={welcomeRef} /> 
+      <NavBar/>
       <AboutMe forwardedRef={aboutMeRef} /> 
       <Experiences forwardedRef={experienceRef} />
       <Projects forwardedRef={projectsRef} />
