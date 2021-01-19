@@ -1,6 +1,4 @@
 import React from 'react';
-import NavBar from './navBar';
-import ExternalLinkIcons from './external-link-icons';
 import { makeStyles } from '@material-ui/core/styles';
 import me from '../images/capture.png';
 import { Row, Col, Container } from 'react-bootstrap';
