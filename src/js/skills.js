@@ -11,7 +11,7 @@ export default function Skills({ forwardedRef }) {
         { name: 'C++', value: 3, col: 1 },
         { name: 'Java', value: 2, col: 1 },
         { name: 'AngularJs', value: 4, col: 1 },
-        { name: 'Python', value: 3, col: 1 },
+        { name: 'Python', value: 4, col: 1 },
         { name: 'JavaScript', value: 5, col: 1 },
         { name: 'HTML', value: 5, col: 1 },
         { name: 'Bootstrap', value: 3, col: 1 },

@@ -31,18 +31,6 @@ export default function AboutMe({ forwardedRef }) {
 
   return (
     <div ref={forwardedRef} id="about-me">
-      {/* <div id="headerStyle">
-        <Row style={{marginRight:0 }}> 
-          <Col id="nameStyle">
-            <span>Yasser Jeafar </span>
-          </Col>
-          <Col id="externalLinks">
-            <span style={{float: "right"}}>
-              <ExternalLinkIcons />
-            </span>
-          </Col>
-        </Row>
-      </div> */}
       <div className="lightBackground" >
         <Container className="containerStyle, AboutMe">
         <h1 id="appHeader">Online Resume</h1>
@@ -55,8 +43,8 @@ export default function AboutMe({ forwardedRef }) {
               <Col className={classes.descriptionStyle} id="aboutMeMinWidth" > 
                 <h1 className={ classes.accentColor }>Hello! I'm Yasser. </h1>
                 <div style={{ paddingBottom: 10 }}>
-                  I'm a Software Engineer with professional Full Stack experience. Check out my ever-expanding projects section below to see some of my work!
-                  You could also download <Link to='/files/resume.pdf' target="_blank" download="Yasser_Jeafar_Resume.pdf"> a copy of my resume </Link> for a quick summary. 
+                  I'm a Software Engineer with experience as a professional Full Stack developer. Check out my ever-expanding projects section below to see some of my work!
+                  You could also download <Link to='/files/resume.pdf' target="_blank" download="Yasser_Jeafar_Resume.pdf"> a copy of my resume </Link> for a quick summary of everything. 
               </div>
                 <h3 className={ classes.accentColor }
                 >About Me</h3>

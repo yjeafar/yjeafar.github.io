@@ -6,7 +6,7 @@
 
 #pictureBorder {
     padding: 1% 12% 2% 12%;
-    width: 90%;
+    width: 95%;
     min-width: 300px;
 }
 
@@ -41,7 +41,7 @@
     min-width: 300px;
 }
 
-@media screen and (max-width: 550px ) {
+@media screen and (max-width: 767px ) {
     #imageMinWidth {
         display: none;
     }
@@ -50,6 +50,6 @@
         float: right
     }
     #pictureBorder {
-        margin-left: 5%;
+        margin-left:5%;
     }
 }
