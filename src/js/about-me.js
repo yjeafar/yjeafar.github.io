@@ -43,8 +43,8 @@ export default function AboutMe({ forwardedRef }) {
               <Col className={classes.descriptionStyle} id="aboutMeMinWidth" > 
                 <h1 className={ classes.accentColor }>Hello! I'm Yasser. </h1>
                 <div style={{ paddingBottom: 10 }}>
-                  I'm a Software Engineer with experience as a professional Full Stack developer. Check out my ever-expanding projects section below to see some of my work!
-                  You could also download <Link to='/files/resume.pdf' target="_blank" download="Yasser_Jeafar_Resume.pdf"> a copy of my resume </Link> for a quick summary of everything. 
+                  I'm a Software Engineer with experience as a professional Full Stack developer. Check out my ever-expanding projects section below to see some of my work, and 
+                  if you have any questions, please feel free to reach out to me!
               </div>
                 <h3 className={ classes.accentColor }
                 >About Me</h3>
