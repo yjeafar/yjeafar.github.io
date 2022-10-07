@@ -21,7 +21,7 @@ const useStyles = makeStyles((theme) => ({
     marginTop: 30,
     marginLeft: "auto",
     marginRight: "auto",
-    marginBottom: 50,
+    marginBottom: 30,
     backgroundColor: "#e2d9dc"
   },
   submitButton: {
@@ -130,7 +130,7 @@ export default function ContactMe({forwardedRef}) {
 
   return (
     <div className="lightBackground" id="contact-me" ref={ forwardedRef } >
-        <Container className="containerStyle">
+        <Container className="containerStyle, ContactMe">
           <Row className="justify-content-md-center">
             <Col md="12">
               <h1 className="sectionTitle">Contact Me</h1>

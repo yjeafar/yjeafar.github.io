@@ -10,7 +10,6 @@ export default function Welcome({ forwardedRef }) {
         <img src={ocean} alt='ocean painting' id='welcomeImg'></img>
         <div className='welcomeBlock'>
           <div style={{ fontSize: 65 }}>Yasser Jeafar</div>
-          <hr className="welcomeLine" />
           <p>Online Portfolio</p>
         </div>
         <div id="externalLinks">

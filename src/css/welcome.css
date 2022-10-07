@@ -27,17 +27,6 @@
     padding-right: 20px;
 }
 
-.welcomeLine {
-    position: absolute;
-    top: 53%;
-    left: 0;
-    right: 0;
-    width: 400px;
-    color: #945c74;
-    height: 10px;
-    margin: 0 auto;
-}
-
 #imageSource {
     position: absolute;
     left: 0;

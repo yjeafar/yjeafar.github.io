@@ -1,16 +1,12 @@
 .companyName {
     font-weight: bold;
     padding-left: 15px;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: large;
 }
 
 .positionName {
     font-style: italic;
-}
-
-.boxBorder {
-    border:3px ridge silver;
-    border-radius: 15px;
-    padding: 5px;
 }
 
 .experienceSpacing {
@@ -21,18 +17,22 @@
     padding: 25px;
 }
 
-ul {
-    list-style: none;
- }
- 
+
 .bulletStyle > ul li:before {
-    content: "•";
+    list-style-type: circle;
     font-size: 150%;
     padding-right: 5px;
  }
 
  .bulletStyle > ul li ul li:before {
-    content: "○";
+    list-style-type: circle;
     font-size: 90%;
     padding-right: 5px;
  }
+
+
+ ui li {
+    list-style-position: outside !important;
+ }
+
+ 
